@@ -3,13 +3,13 @@ import { cleanup, render, screen } from '@testing-library/react';
 
 import { Link } from '../Link';
 
-describe('render', () => {
+describe('Link component', () => {
   afterEach(cleanup);
 
   const text = 'Link';
   const url = '/link';
 
-  it('link component', () => {
+  it('should be rendered', () => {
     const { asFragment } = render(
       <MemoryRouter>
         <Link text={text} url={url} />
@@ -18,13 +18,6 @@ describe('render', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
-});
-
-describe('Link', () => {
-  afterEach(cleanup);
-
-  const text = 'Link';
-  const url = '/link';
 
   it('should be in the document', () => {
     render(
