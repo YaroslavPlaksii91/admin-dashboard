@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUpMessage component should be rendered 1`] = `
+<DocumentFragment>
+  <div>
+    <p>
+      Don't have an account?
+    </p>
+    <a
+      href="/register"
+    >
+      Sign up
+    </a>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.text {
+  font-size: 14px;
+  line-height: 1.43;
+  color: var(--secondary-text-color);
+}
