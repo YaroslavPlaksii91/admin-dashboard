@@ -8,9 +8,9 @@ import styles from './AuthContainer.module.css';
 
 export const AuthContainer: FC<AuthContainerProps> = ({ children }) => {
   return (
-    <div className={styles.wrapper} data-testid={AUTH_CONTAINER_TEST_ID}>
+    <section className={styles.wrapper} data-testid={AUTH_CONTAINER_TEST_ID}>
       <Logo />
       {children}
-    </div>
+    </section>
   );
 };
