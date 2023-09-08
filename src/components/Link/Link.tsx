@@ -5,10 +5,10 @@ import { LinkProps } from './types';
 
 import styles from './Link.module.css';
 
-export const Link: FC<LinkProps> = ({ url, text }) => {
+export const Link: FC<LinkProps> = ({ url, children }) => {
   return (
     <RouterLink to={url} className={styles.link}>
-      {text}
+      {children}
     </RouterLink>
   );
 };
