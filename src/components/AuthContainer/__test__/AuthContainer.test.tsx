@@ -1,3 +1,4 @@
+import { MemoryRouter } from 'react-router-dom';
 import { cleanup, render, screen } from '@testing-library/react';
 
 import { AUTH_CONTAINER_TEST_ID } from '../constants';
@@ -10,9 +11,11 @@ describe('AuthContainer component', () => {
 
   it('should render AuthContainer component', () => {
     const { asFragment } = render(
-      <AuthContainer>
-        <MockedChildren />
-      </AuthContainer>,
+      <MemoryRouter>
+        <AuthContainer>
+          <MockedChildren />
+        </AuthContainer>
+      </MemoryRouter>,
     );
 
     expect(asFragment()).toMatchSnapshot();
@@ -20,9 +23,11 @@ describe('AuthContainer component', () => {
 
   it('should be in the document', () => {
     render(
-      <AuthContainer>
-        <MockedChildren />
-      </AuthContainer>,
+      <MemoryRouter>
+        <AuthContainer>
+          <MockedChildren />
+        </AuthContainer>
+      </MemoryRouter>,
     );
 
     expect(screen.getByTestId(AUTH_CONTAINER_TEST_ID)).toBeInTheDocument();
@@ -30,9 +35,11 @@ describe('AuthContainer component', () => {
 
   it('children should be in the document', () => {
     render(
-      <AuthContainer>
-        <MockedChildren />
-      </AuthContainer>,
+      <MemoryRouter>
+        <AuthContainer>
+          <MockedChildren />
+        </AuthContainer>
+      </MemoryRouter>,
     );
 
     expect(screen.getByText('Mocked Children')).toBeInTheDocument();

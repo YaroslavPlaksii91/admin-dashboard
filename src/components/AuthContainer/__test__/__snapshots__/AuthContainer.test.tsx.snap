@@ -6,8 +6,7 @@ exports[`AuthContainer component should render AuthContainer component 1`] = `
     data-testid="authContainer"
   >
     <a
-      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-9829ob-MuiTypography-root-MuiLink-root"
-      href="#"
+      href="/"
     >
       <div
         class=""

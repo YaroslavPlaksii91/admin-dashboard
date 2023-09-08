@@ -3,7 +3,9 @@
 exports[`SignUpMessage component should be rendered 1`] = `
 <DocumentFragment>
   <div>
-    <p>
+    <p
+      class="MuiTypography-root MuiTypography-body1 css-c7xp52-MuiTypography-root"
+    >
       Don't have an account?
     </p>
     <a

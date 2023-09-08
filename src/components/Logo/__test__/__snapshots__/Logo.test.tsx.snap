@@ -3,8 +3,7 @@
 exports[`Logo component should render Logo component with horizontal type 1`] = `
 <DocumentFragment>
   <a
-    class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-9829ob-MuiTypography-root-MuiLink-root"
-    href="#"
+    href="/"
   >
     <div
       class="undefined"
@@ -35,8 +34,7 @@ exports[`Logo component should render Logo component with horizontal type 1`] = 
 exports[`Logo component should render Logo component with vertical type 1`] = `
 <DocumentFragment>
   <a
-    class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-9829ob-MuiTypography-root-MuiLink-root"
-    href="#"
+    href="/"
   >
     <div
       class=""
