@@ -1,0 +1,22 @@
+.wrapperVertical {
+  text-align: center;
+}
+
+.wrapperHorizontal {
+  display: flex;
+  align-items: center;
+}
+
+.wrapperVertical .iconVertical {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.wrapperHorizontal .iconHorizontal {
+  font-size: 32px;
+  margin-right: 12px;
+}
+
+.wrapper .text {
+  color: var(--gray-light-color);
+}

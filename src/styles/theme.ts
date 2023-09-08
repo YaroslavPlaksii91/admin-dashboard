@@ -1,5 +1,18 @@
 import { createTheme } from '@mui/material/styles';
 
+declare module '@mui/material/styles' {
+  interface Palette {
+    grayLightColor: string;
+    redColor: string;
+    // Додайте інші власні кольори, які вам потрібні
+  }
+  interface PaletteOptions {
+    grayLightColor?: string;
+    redColor?: string;
+    // Додайте інші власні кольори, які вам потрібні
+  }
+}
+
 export const theme = createTheme({
   components: {
     MuiSvgIcon: {
@@ -35,6 +48,10 @@ export const theme = createTheme({
       lineHeight: 1.43,
       letterSpacing: 0.3,
     },
+  },
+  palette: {
+    grayLightColor: '#a4a6b3',
+    redColor: '#f12b2c',
   },
   spacing: 4,
 });
