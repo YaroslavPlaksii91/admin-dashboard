@@ -2,7 +2,7 @@
 
 exports[`AuthContainer component should render AuthContainer component 1`] = `
 <DocumentFragment>
-  <div
+  <section
     data-testid="authContainer"
   >
     <a
@@ -34,6 +34,6 @@ exports[`AuthContainer component should render AuthContainer component 1`] = `
     <div>
       Mocked Children
     </div>
-  </div>
+  </section>
 </DocumentFragment>
 `;
