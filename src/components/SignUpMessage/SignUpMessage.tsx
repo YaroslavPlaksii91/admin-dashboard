@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { ROUTES } from '@routes/constants';
-import { Link } from '..';
+import { Link } from '@components/Link/Link';
 
 import styles from './SignUpMessage.module.css';
 
