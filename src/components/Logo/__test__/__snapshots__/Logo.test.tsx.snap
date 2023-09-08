@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo component should render Logo component with horizontal type 1`] = `
+<DocumentFragment>
+  <a
+    class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-9829ob-MuiTypography-root-MuiLink-root"
+    href="#"
+  >
+    <div
+      class="undefined"
+    >
+      <svg
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium undefined css-i4bv87-MuiSvgIcon-root"
+        focusable="false"
+        role="img"
+        viewBox="0 0 24 24"
+      >
+        <use
+          href="/src/assets/icons/sprite.svg#icon-logo"
+        />
+        <title>
+          Logo
+        </title>
+      </svg>
+      <p
+        class="MuiTypography-root MuiTypography-h3 css-asei96-MuiTypography-root"
+      >
+        Dashboard Kit
+      </p>
+    </div>
+  </a>
+</DocumentFragment>
+`;
+
+exports[`Logo component should render Logo component with vertical type 1`] = `
+<DocumentFragment>
+  <a
+    class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-9829ob-MuiTypography-root-MuiLink-root"
+    href="#"
+  >
+    <div
+      class=""
+    >
+      <svg
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        focusable="false"
+        role="img"
+        viewBox="0 0 24 24"
+      >
+        <use
+          href="/src/assets/icons/sprite.svg#icon-logo"
+        />
+        <title>
+          Logo
+        </title>
+      </svg>
+      <p
+        class="MuiTypography-root MuiTypography-h3 css-asei96-MuiTypography-root"
+      >
+        Dashboard Kit
+      </p>
+    </div>
+  </a>
+</DocumentFragment>
+`;
