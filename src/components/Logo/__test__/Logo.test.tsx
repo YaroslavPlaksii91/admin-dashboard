@@ -1,3 +1,4 @@
+import { MemoryRouter } from 'react-router-dom';
 import { cleanup, render, screen } from '@testing-library/react';
 
 import { LOGO_TYPES } from '../constants';
@@ -7,19 +8,31 @@ describe('Logo component', () => {
   afterEach(cleanup);
 
   it('should render Logo component with vertical type', () => {
-    const { asFragment } = render(<Logo type={LOGO_TYPES.VERTICAL} />);
+    const { asFragment } = render(
+      <MemoryRouter>
+        <Logo />
+      </MemoryRouter>,
+    );
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render Logo component with horizontal type', () => {
-    const { asFragment } = render(<Logo type={LOGO_TYPES.HORIZONTAL} />);
+    const { asFragment } = render(
+      <MemoryRouter>
+        <Logo type={LOGO_TYPES.HORIZONTAL} />
+      </MemoryRouter>,
+    );
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should be in the document', () => {
-    render(<Logo />);
+    render(
+      <MemoryRouter>
+        <Logo />
+      </MemoryRouter>,
+    );
 
     const logoIcon = screen.getByRole('img');
     const logoText = screen.getByText('Dashboard Kit');

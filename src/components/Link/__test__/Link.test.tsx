@@ -12,7 +12,7 @@ describe('Link component', () => {
   it('should be rendered', () => {
     const { asFragment } = render(
       <MemoryRouter>
-        <Link text={text} url={url} />
+        <Link url={url}>{text}</Link>
       </MemoryRouter>,
     );
 
@@ -22,7 +22,7 @@ describe('Link component', () => {
   it('should be in the document', () => {
     render(
       <MemoryRouter>
-        <Link text={text} url={url} />
+        <Link url={url}>{text}</Link>
       </MemoryRouter>,
     );
 
@@ -34,7 +34,7 @@ describe('Link component', () => {
   it('should have correct url address', () => {
     render(
       <MemoryRouter>
-        <Link text={text} url={url} />
+        <Link url={url}>{text}</Link>
       </MemoryRouter>,
     );
 
@@ -46,7 +46,7 @@ describe('Link component', () => {
   it('should have correct text', () => {
     render(
       <MemoryRouter>
-        <Link text={text} url={url} />
+        <Link url={url}>{text}</Link>
       </MemoryRouter>,
     );
 
