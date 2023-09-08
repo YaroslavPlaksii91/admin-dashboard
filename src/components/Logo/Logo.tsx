@@ -28,8 +28,7 @@ export const Logo: FC<LogoProps> = ({ type = LOGO_TYPES.VERTICAL }) => {
         <Typography
           variant="h3"
           component="p"
-          sx={{ opacity: 0.7 }}
-          className={styles.text}
+          sx={{ opacity: 0.7, color: 'grayLightColor' }}
         >
           Dashboard Kit
         </Typography>
