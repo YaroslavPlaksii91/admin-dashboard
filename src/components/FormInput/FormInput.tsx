@@ -34,7 +34,6 @@ export const FormInput: FC<FormInputProps> = ({
       InputLabelProps={{
         shrink: true,
       }}
-      sx={isPassword ? { mb: 6 } : undefined}
       InputProps={
         isPassword
           ? {
