@@ -7,8 +7,6 @@ import { EMAIL_REGEX, PASSWORD_MIN_LENGTH } from '@utils/constants';
 import { LOGIN_FIELDS, LOGIN_FIELDS_CONFIG } from './constants';
 import { FormInput } from '@components/FormInput/FormInput';
 
-import styles from './LoginForm.module.css';
-
 export const LoginForm: FC = () => {
   const {
     register,
@@ -21,7 +19,7 @@ export const LoginForm: FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate className={styles.form}>
+    <form onSubmit={handleSubmit(onSubmit)} noValidate>
       <FormInput
         {...LOGIN_FIELDS_CONFIG[LOGIN_FIELDS.EMAIL]}
         register={register('email', {
