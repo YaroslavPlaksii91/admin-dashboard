@@ -1,17 +1,19 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { Typography } from '@mui/material';
 
 import { AuthMain } from '@components/AuthMain/AuthMain';
 import { AuthContainer } from '@components/AuthContainer/AuthContainer';
-import { LoginForm } from './LoginForm/LoginForm';
+import { ForgotPasswordForm } from './ForgotPasswordForm/ForgotPasswordForm';
 import { SignUpMessage } from '@components/SignUpMessage/SignUpMessage';
 
-export const LoginPage: FC = () => {
+export const ForgotPasswordPage: FC = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   return (
     <AuthMain>
       <AuthContainer>
         <Typography variant="h2" sx={{ mb: 3 }}>
-          Log In to Dashboard Kit
+          Forgot password?
         </Typography>
 
         <Typography
@@ -19,12 +21,14 @@ export const LoginPage: FC = () => {
           component="p"
           sx={{ color: 'secondaryTextColor', mb: 12 }}
         >
-          Enter your email and password
+          {isSubmitted
+            ? 'Link to change your password has been sent to provided email if we have it inside our system'
+            : 'Enter your email from registered account'}
         </Typography>
 
-        <LoginForm />
+        {!isSubmitted && <ForgotPasswordForm setIsSubmitted={setIsSubmitted} />}
 
-        <SignUpMessage />
+        {!isSubmitted && <SignUpMessage />}
       </AuthContainer>
     </AuthMain>
   );
