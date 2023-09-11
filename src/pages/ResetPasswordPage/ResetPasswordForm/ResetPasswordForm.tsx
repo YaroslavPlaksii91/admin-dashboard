@@ -42,10 +42,6 @@ export const ResetPasswordForm: FC = () => {
         ]}
         register={register('confirmPassword', {
           required: 'Password is required',
-          minLength: {
-            value: PASSWORD_MIN_LENGTH,
-            message: 'Password must be at least 6 characters',
-          },
           validate: value => {
             const password = getValues('password');
             return value === password || 'Passwords do not match';
