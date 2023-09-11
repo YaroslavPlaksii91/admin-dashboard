@@ -1,10 +1,14 @@
 import { FC } from 'react';
 import { Typography } from '@mui/material';
 
+import { ROUTES } from '@routes/constants';
 import { AuthMain } from '@components/AuthMain/AuthMain';
 import { AuthContainer } from '@components/AuthContainer/AuthContainer';
 import { LoginForm } from './LoginForm/LoginForm';
 import { SignUpMessage } from '@components/SignUpMessage/SignUpMessage';
+import { Link } from '@components/Link/Link';
+
+import styles from './LoginPage.module.css';
 
 export const LoginPage: FC = () => {
   return (
@@ -23,6 +27,10 @@ export const LoginPage: FC = () => {
         </Typography>
 
         <LoginForm />
+
+        <span className={styles.link}>
+          <Link url={ROUTES.FORGOT_PASSWORD_PAGE}>Forgot password?</Link>
+        </span>
 
         <SignUpMessage />
       </AuthContainer>

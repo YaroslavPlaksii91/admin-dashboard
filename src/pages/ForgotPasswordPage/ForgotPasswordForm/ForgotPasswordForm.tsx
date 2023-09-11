@@ -10,6 +10,7 @@ import {
   FORGOT_PASSWORD_FIELDS,
   FORGOT_PASSWORD_FIELDS_CONFIG,
 } from './constants';
+import { getUser } from '@services/localeStorage';
 import { FormInput } from '@components/FormInput/FormInput';
 
 export const ForgotPasswordForm: FC<ForgotPasswordFormProps> = ({
@@ -23,11 +24,16 @@ export const ForgotPasswordForm: FC<ForgotPasswordFormProps> = ({
   const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<ForgotPasswordFormData> = data => {
+    const user = getUser(data);
+
+    if (!user) {
+      return console.error('User not found!');
+    }
+
     setIsSubmitted(true);
-    console.log(data);
 
     setTimeout(() => {
-      navigate(ROUTES.RESET_PASSWORD_PAGE);
+      navigate(ROUTES.RESET_PASSWORD_PAGE, { state: { from: data.email } });
     }, 3000);
   };
 
