@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Button } from '@mui/material';
 
@@ -8,6 +9,7 @@ import {
   RESET_PASSWORD_FIELDS,
   RESET_PASSWORD_FIELDS_CONFIG,
 } from './constants';
+import { changeUserPassword } from '@services/localeStorage';
 import { FormInput } from '@components/FormInput/FormInput';
 
 export const ResetPasswordForm: FC = () => {
@@ -17,9 +19,10 @@ export const ResetPasswordForm: FC = () => {
     formState: { errors },
     getValues,
   } = useForm<ResetPasswordFormData>();
+  const location = useLocation();
 
-  const onSubmit: SubmitHandler<ResetPasswordFormData> = data => {
-    console.log(data);
+  const onSubmit: SubmitHandler<ResetPasswordFormData> = ({ password }) => {
+    changeUserPassword(location.state.from, password);
   };
 
   return (

@@ -9,7 +9,7 @@
       "@redux/*": ["src/redux/*"],
       "@assets/*": ["src/assets/*"],
       "@routes/*": ["src/routes/*"],
-      "@services/*": ["src/service/*"],
+      "@services/*": ["src/services/*"],
       "@utils/*": ["src/utils/*"],
       "@styles/*": ["src/styles/*"],
     },

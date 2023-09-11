@@ -1,10 +1,13 @@
 import { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Button } from '@mui/material';
 
 import { LoginFormData } from './types';
+import { ROUTES } from '@routes/constants';
 import { EMAIL_REGEX, PASSWORD_MIN_LENGTH } from '@utils/constants';
 import { LOGIN_FIELDS, LOGIN_FIELDS_CONFIG } from './constants';
+import { getUser } from '@services/localeStorage';
 import { FormInput } from '@components/FormInput/FormInput';
 
 export const LoginForm: FC = () => {
@@ -13,9 +16,14 @@ export const LoginForm: FC = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<LoginFormData>();
+  const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<LoginFormData> = data => {
-    console.log(data);
+    const user = getUser(data);
+
+    user
+      ? navigate(ROUTES.HOME_PAGE, { replace: true })
+      : console.error('User not found!');
   };
 
   return (

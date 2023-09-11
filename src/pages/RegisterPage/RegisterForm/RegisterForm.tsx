@@ -10,6 +10,7 @@ import {
   LAST_NAME_MIN_LENGTH,
 } from '@utils/constants';
 import { REGISTER_FIELDS, REGISTER_FIELDS_CONFIG } from './constants';
+import { addUser } from '@services/localeStorage';
 import { FormInput } from '@components/FormInput/FormInput';
 
 export const RegisterForm: FC = () => {
@@ -18,10 +19,12 @@ export const RegisterForm: FC = () => {
     handleSubmit,
     formState: { errors },
     getValues,
+    reset,
   } = useForm<RegisterFormData>();
 
-  const onSubmit: SubmitHandler<RegisterFormData> = data => {
-    console.log(data);
+  const onSubmit: SubmitHandler<RegisterFormData> = user => {
+    addUser(user);
+    reset();
   };
 
   return (
