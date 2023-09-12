@@ -3,6 +3,7 @@ import { TextField, InputAdornment, IconButton } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 import { FormInputProps } from './types';
+import { TOGGLE_BUTTON_TEST_ID } from './constants';
 
 export const FormInput: FC<FormInputProps> = ({
   label,
@@ -44,6 +45,7 @@ export const FormInput: FC<FormInputProps> = ({
                     onClick={handleClickShowPassword}
                     onMouseDown={handleMouseDownPassword}
                     edge="end"
+                    data-testid={TOGGLE_BUTTON_TEST_ID}
                   >
                     {showPassword ? <VisibilityOff /> : <Visibility />}
                   </IconButton>
