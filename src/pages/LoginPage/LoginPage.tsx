@@ -4,9 +4,10 @@ import { Typography } from '@mui/material';
 import { ROUTES } from '@routes/constants';
 import { AuthMain } from '@components/AuthMain/AuthMain';
 import { AuthContainer } from '@components/AuthContainer/AuthContainer';
-import { LoginForm } from './LoginForm/LoginForm';
 import { SignUpMessage } from '@components/SignUpMessage/SignUpMessage';
 import { Link } from '@components/Link/Link';
+
+import { LoginForm } from './LoginForm/LoginForm';
 
 import styles from './LoginPage.module.css';
 

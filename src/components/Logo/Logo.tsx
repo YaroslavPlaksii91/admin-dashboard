@@ -2,21 +2,22 @@ import { FC } from 'react';
 import { Typography, SvgIcon } from '@mui/material';
 import classNames from 'classnames';
 
+import { Link } from '@components/Link/Link';
+
 import { LOGO_TYPES } from './constants';
 import { LogoProps } from './types';
-import { Link } from '@components/Link/Link';
 
 import styles from './Logo.module.css';
 
 export const Logo: FC<LogoProps> = ({ type = LOGO_TYPES.VERTICAL }) => {
   const wrapperClassName = classNames({
-    [styles.wrapperVertical]: Boolean(type === LOGO_TYPES.VERTICAL),
-    [styles.wrapperHorizontal]: Boolean(type === LOGO_TYPES.HORIZONTAL),
+    [styles.wrapperVertical]: type === LOGO_TYPES.VERTICAL,
+    [styles.wrapperHorizontal]: type === LOGO_TYPES.HORIZONTAL,
   });
 
   const iconClassName = classNames({
-    [styles.iconVertical]: Boolean(type === LOGO_TYPES.VERTICAL),
-    [styles.iconHorizontal]: Boolean(type === LOGO_TYPES.HORIZONTAL),
+    [styles.iconVertical]: type === LOGO_TYPES.VERTICAL,
+    [styles.iconHorizontal]: type === LOGO_TYPES.HORIZONTAL,
   });
 
   return (

@@ -3,8 +3,9 @@ import { Typography } from '@mui/material';
 
 import { AuthMain } from '@components/AuthMain/AuthMain';
 import { AuthContainer } from '@components/AuthContainer/AuthContainer';
-import { ResetPasswordForm } from './ResetPasswordForm/ResetPasswordForm';
 import { SignUpMessage } from '@components/SignUpMessage/SignUpMessage';
+
+import { ResetPasswordForm } from './ResetPasswordForm/ResetPasswordForm';
 
 export const ResetPasswordPage: FC = () => {
   return (

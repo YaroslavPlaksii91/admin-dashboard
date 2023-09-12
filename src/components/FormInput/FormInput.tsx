@@ -25,7 +25,7 @@ export const FormInput: FC<FormInputProps> = ({
   return (
     <TextField
       label={label}
-      type={isPassword && showPassword ? 'text' : type}
+      type={showPassword ? 'text' : type}
       placeholder={placeholder}
       variant="outlined"
       fullWidth

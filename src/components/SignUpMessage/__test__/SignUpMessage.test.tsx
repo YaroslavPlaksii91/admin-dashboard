@@ -2,6 +2,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { cleanup, render, screen } from '@testing-library/react';
 
 import { ROUTES } from '@routes/constants';
+
 import { SignUpMessage } from '../SignUpMessage';
 
 describe('SignUpMessage component', () => {
