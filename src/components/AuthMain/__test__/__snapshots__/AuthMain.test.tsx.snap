@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthMain component should be rendered 1`] = `
+<DocumentFragment>
+  <main>
+    <div>
+      Content
+    </div>
+  </main>
+</DocumentFragment>
+`;
