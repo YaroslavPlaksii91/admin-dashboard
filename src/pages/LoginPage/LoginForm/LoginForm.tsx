@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Button } from '@mui/material';
 
-import { LoginFormData } from './types';
 import { ROUTES } from '@routes/constants';
 import { EMAIL_REGEX, PASSWORD_MIN_LENGTH } from '@utils/constants';
-import { LOGIN_FIELDS, LOGIN_FIELDS_CONFIG } from './constants';
 import { getUser } from '@services/localeStorage';
 import { FormInput } from '@components/FormInput/FormInput';
+
+import { LOGIN_FIELDS, LOGIN_FIELDS_CONFIG } from './constants';
+import { LoginFormData } from './types';
 
 export const LoginForm: FC = () => {
   const {

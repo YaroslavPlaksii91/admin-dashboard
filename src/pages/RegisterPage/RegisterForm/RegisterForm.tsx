@@ -2,16 +2,17 @@ import { FC } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Button } from '@mui/material';
 
-import { RegisterFormData } from './types';
 import {
   EMAIL_REGEX,
   PASSWORD_MIN_LENGTH,
   FIRST_NAME_MIN_LENGTH,
   LAST_NAME_MIN_LENGTH,
 } from '@utils/constants';
-import { REGISTER_FIELDS, REGISTER_FIELDS_CONFIG } from './constants';
 import { addUser } from '@services/localeStorage';
 import { FormInput } from '@components/FormInput/FormInput';
+
+import { REGISTER_FIELDS, REGISTER_FIELDS_CONFIG } from './constants';
+import { RegisterFormData } from './types';
 
 export const RegisterForm: FC = () => {
   const {

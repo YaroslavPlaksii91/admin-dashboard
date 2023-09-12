@@ -3,8 +3,9 @@ import { Typography } from '@mui/material';
 
 import { AuthMain } from '@components/AuthMain/AuthMain';
 import { AuthContainer } from '@components/AuthContainer/AuthContainer';
-import { ForgotPasswordForm } from './ForgotPasswordForm/ForgotPasswordForm';
 import { SignUpMessage } from '@components/SignUpMessage/SignUpMessage';
+
+import { ForgotPasswordForm } from './ForgotPasswordForm/ForgotPasswordForm';
 
 export const ForgotPasswordPage: FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -26,9 +27,12 @@ export const ForgotPasswordPage: FC = () => {
             : 'Enter your email from registered account'}
         </Typography>
 
-        {!isSubmitted && <ForgotPasswordForm setIsSubmitted={setIsSubmitted} />}
-
-        {!isSubmitted && <SignUpMessage />}
+        {!isSubmitted && (
+          <>
+            <ForgotPasswordForm setIsSubmitted={setIsSubmitted} />
+            <SignUpMessage />
+          </>
+        )}
       </AuthContainer>
     </AuthMain>
   );

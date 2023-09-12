@@ -3,15 +3,16 @@ import { useNavigate } from 'react-router';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Button } from '@mui/material';
 
-import { ForgotPasswordFormData, ForgotPasswordFormProps } from './types';
 import { EMAIL_REGEX } from '@utils/constants';
 import { ROUTES } from '@routes/constants';
+import { getUser } from '@services/localeStorage';
+import { FormInput } from '@components/FormInput/FormInput';
+
+import { ForgotPasswordFormData, ForgotPasswordFormProps } from './types';
 import {
   FORGOT_PASSWORD_FIELDS,
   FORGOT_PASSWORD_FIELDS_CONFIG,
 } from './constants';
-import { getUser } from '@services/localeStorage';
-import { FormInput } from '@components/FormInput/FormInput';
 
 export const ForgotPasswordForm: FC<ForgotPasswordFormProps> = ({
   setIsSubmitted,

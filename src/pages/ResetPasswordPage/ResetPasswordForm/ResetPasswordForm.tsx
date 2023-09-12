@@ -3,14 +3,15 @@ import { useLocation } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Button } from '@mui/material';
 
-import { ResetPasswordFormData } from './types';
 import { PASSWORD_MIN_LENGTH } from '@utils/constants';
+import { changeUserPassword } from '@services/localeStorage';
+import { FormInput } from '@components/FormInput/FormInput';
+
+import { ResetPasswordFormData } from './types';
 import {
   RESET_PASSWORD_FIELDS,
   RESET_PASSWORD_FIELDS_CONFIG,
 } from './constants';
-import { changeUserPassword } from '@services/localeStorage';
-import { FormInput } from '@components/FormInput/FormInput';
 
 export const ResetPasswordForm: FC = () => {
   const {

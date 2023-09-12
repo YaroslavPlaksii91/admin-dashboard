@@ -3,6 +3,7 @@ import { Typography } from '@mui/material';
 
 import { AuthMain } from '@components/AuthMain/AuthMain';
 import { AuthContainer } from '@components/AuthContainer/AuthContainer';
+
 import { RegisterForm } from './RegisterForm/RegisterForm';
 
 export const RegisterPage: FC = () => {

@@ -1,8 +1,9 @@
 import { FC } from 'react';
 
+import { Logo } from '@components/Logo/Logo';
+
 import { AuthContainerProps } from './types';
 import { AUTH_CONTAINER_TEST_ID } from './constants';
-import { Logo } from '@components/Logo/Logo';
 
 import styles from './AuthContainer.module.css';
 
