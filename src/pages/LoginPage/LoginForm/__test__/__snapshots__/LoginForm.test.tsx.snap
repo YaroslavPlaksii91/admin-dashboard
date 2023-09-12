@@ -3,7 +3,6 @@
 exports[`LoginForm should be rendered 1`] = `
 <DocumentFragment>
   <form
-    data-testid="form"
     novalidate=""
   >
     <div
