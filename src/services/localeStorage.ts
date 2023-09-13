@@ -16,6 +16,20 @@ export const getUser = (email: string) => {
   }
 };
 
+export const getCurrentUser = () => {
+  try {
+    const storedUsers = JSON.parse(
+      localStorage.getItem(LOCALE_STORAGE_KEY) || '[]',
+    );
+
+    const user = storedUsers.find((u: UserStoreType) => u.isLoggedIn);
+
+    return user;
+  } catch (error) {
+    console.error('Error getting current user:', error);
+  }
+};
+
 export const addUser = (data: UserStoreType) => {
   try {
     const storedUsers = JSON.parse(
