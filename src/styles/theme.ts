@@ -60,6 +60,10 @@ export const theme = createTheme({
     },
     MuiButton: {
       styleOverrides: {
+        root: {
+          padding: 0,
+          minWidth: 0,
+        },
         contained: {
           height: 48,
           fontSize: 14,

@@ -6,6 +6,7 @@
 .wrapperHorizontal {
   display: flex;
   align-items: center;
+  margin-bottom: 59px;
 }
 
 .wrapperVertical .iconVertical {

@@ -5,7 +5,7 @@ import { Button } from '@mui/material';
 
 import { ROUTES } from '@routes/constants';
 import { EMAIL_REGEX, PASSWORD_MIN_LENGTH } from '@utils/constants';
-import { getUser } from '@services/localeStorage';
+import { getUser, setIsLoggedIn } from '@services/localeStorage';
 import { FormInput } from '@components/FormInput/FormInput';
 
 import { LOGIN_FIELDS, LOGIN_FIELDS_CONFIG } from './constants';
@@ -20,11 +20,14 @@ export const LoginForm: FC = () => {
   const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<LoginFormData> = data => {
-    const user = getUser(data);
+    const user = getUser(data.email);
 
-    user
-      ? navigate(ROUTES.HOME_PAGE, { replace: true })
-      : console.error('User not found!');
+    if (user?.password === data.password) {
+      setIsLoggedIn(user.email);
+      navigate(ROUTES.HOME_PAGE, { replace: true });
+    } else {
+      console.error('User not found!');
+    }
   };
 
   return (
