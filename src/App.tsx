@@ -5,6 +5,9 @@ import { ThemeProvider } from '@mui/material/styles';
 import { ROUTES } from '@routes/constants';
 import { PublicRoute } from '@routes/PublicRoute';
 import { ProtectedRoute } from '@routes/ProtectedRoute';
+import { Overview } from '@layout/Overview/Overview';
+import { Contacts } from '@layout/Contacts/Contacts';
+import { Tickets } from '@layout/Tickets/Tickets';
 
 import { theme } from '@styles/theme';
 
@@ -48,7 +51,12 @@ export const App: FC = () => {
                 <HomePage />
               </ProtectedRoute>
             }
-          ></Route>
+          >
+            <Route index element={<Navigate to={ROUTES.OVERVIEW} />} />
+            <Route path={ROUTES.OVERVIEW} element={<Overview />} />
+            <Route path={ROUTES.CONTACTS} element={<Contacts />} />
+            <Route path={ROUTES.TICKETS} element={<Tickets />} />
+          </Route>
           <Route
             path={ROUTES.REGISTER_PAGE}
             element={

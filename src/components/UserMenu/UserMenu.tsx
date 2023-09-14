@@ -75,7 +75,7 @@ export const UserMenu: FC = () => {
 
       {isLogoutVisible && (
         <Button
-          sx={{ position: 'absolute', top: '50px' }}
+          sx={{ position: 'absolute', top: '80px' }}
           onClick={handleLogoutClick}
         >
           Logout
