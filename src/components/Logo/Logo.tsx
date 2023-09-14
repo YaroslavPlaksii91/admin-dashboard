@@ -1,8 +1,9 @@
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
 import { Typography, SvgIcon } from '@mui/material';
 import classNames from 'classnames';
 
-import { Link } from '@components/Link/Link';
+import { ROUTES } from '@routes/constants';
 
 import { LOGO_TYPES } from './constants';
 import { LogoProps } from './types';
@@ -21,8 +22,8 @@ export const Logo: FC<LogoProps> = ({ type = LOGO_TYPES.VERTICAL }) => {
   });
 
   return (
-    <Link url="/">
-      <div className={wrapperClassName}>
+    <div className={wrapperClassName}>
+      <Link to={ROUTES.HOME_PAGE} className={styles.link}>
         <SvgIcon titleAccess="Logo" className={iconClassName}>
           <use href="/src/assets/icons/sprite.svg#icon-logo"></use>
         </SvgIcon>
@@ -33,7 +34,7 @@ export const Logo: FC<LogoProps> = ({ type = LOGO_TYPES.VERTICAL }) => {
         >
           Dashboard Kit
         </Typography>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };

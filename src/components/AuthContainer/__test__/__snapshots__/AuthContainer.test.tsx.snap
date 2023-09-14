@@ -5,11 +5,11 @@ exports[`AuthContainer component should render AuthContainer component 1`] = `
   <section
     data-testid="authContainer"
   >
-    <a
-      href="/"
+    <div
+      class=""
     >
-      <div
-        class=""
+      <a
+        href="/"
       >
         <svg
           class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
@@ -29,8 +29,8 @@ exports[`AuthContainer component should render AuthContainer component 1`] = `
         >
           Dashboard Kit
         </p>
-      </div>
-    </a>
+      </a>
+    </div>
     <div>
       Mocked Children
     </div>
