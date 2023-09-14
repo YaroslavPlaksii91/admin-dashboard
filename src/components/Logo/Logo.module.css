@@ -6,6 +6,11 @@
   margin-bottom: 59px;
 }
 
+.wrapperHorizontal:hover p,
+.wrapperHorizontal:focus p {
+  color: var(--accent-sidebar-color);
+}
+
 .wrapperVertical .iconVertical {
   font-size: 48px;
   margin-bottom: 12px;

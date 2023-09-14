@@ -144,6 +144,18 @@ export const theme = createTheme({
         },
       },
     },
+    MuiDrawer: {
+      styleOverrides: {
+        root: {
+          '& .MuiDrawer-paper': {
+            width: 255,
+            paddingTop: '37px',
+            backgroundColor: '#363740',
+            color: '#a4a6b3',
+          },
+        },
+      },
+    },
   },
   typography: {
     fontFamily: 'Mulish, sans-serif',

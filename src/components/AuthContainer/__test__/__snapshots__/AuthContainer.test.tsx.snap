@@ -25,7 +25,7 @@ exports[`AuthContainer component should render AuthContainer component 1`] = `
           </title>
         </svg>
         <p
-          class="MuiTypography-root MuiTypography-h3 css-army73-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-h3 css-14qosaq-MuiTypography-root"
         >
           Dashboard Kit
         </p>
