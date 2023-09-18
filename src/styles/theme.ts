@@ -156,6 +156,20 @@ export const theme = createTheme({
         },
       },
     },
+    MuiList: {
+      styleOverrides: {
+        root: {
+          padding: 0,
+        },
+      },
+    },
+    MuiListItem: {
+      styleOverrides: {
+        root: {
+          padding: 0,
+        },
+      },
+    },
   },
   typography: {
     fontFamily: 'Mulish, sans-serif',
@@ -175,6 +189,12 @@ export const theme = createTheme({
       fontSize: 14,
       lineHeight: 1.43,
       letterSpacing: 0.3,
+    },
+    subtitle2: {
+      fontSize: 14,
+      fontWeight: 600,
+      lineHeight: 1.43,
+      letterSpacing: 0.2,
     },
   },
   palette: {

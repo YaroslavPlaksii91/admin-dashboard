@@ -11,9 +11,13 @@ export const HomePage: FC = () => {
   const title = location.pathname.slice(1);
 
   return (
-    <Box sx={{ minHeight: '100vh', padding: '30px 33px 30px 285px' }}>
+    <Box
+      sx={{ minHeight: '100vh', padding: '30px 33px 30px 285px' }}
+      component="main"
+    >
       <Sidebar />
       <Box
+        component="header"
         sx={{
           display: 'flex',
           justifyContent: 'space-between',
