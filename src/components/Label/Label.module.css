@@ -21,14 +21,16 @@
   background-color: var(--input-border-color);
 }
 
-.success {
+.new,
+.normal {
   background-color: var(--green-color);
 }
 
-.warning {
+.urgent,
+.low {
   background-color: var(--yellow-color);
 }
 
-.error {
+.high {
   background-color: var(--red-color);
 }
