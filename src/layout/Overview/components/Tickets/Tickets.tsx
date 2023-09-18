@@ -57,6 +57,7 @@ export const Tickets: FC<TicketsProps> = ({ data }) => {
       <List>
         {data.map(item => (
           <ListItem
+            key={item.title}
             sx={{
               display: 'flex',
               justifyContent: 'space-between',
