@@ -1,5 +1,12 @@
 import { FC } from 'react';
-import { List, ListItem, Typography, Box, SvgIcon } from '@mui/material';
+import {
+  List,
+  ListItem,
+  Typography,
+  Box,
+  SvgIcon,
+  Button,
+} from '@mui/material';
 
 import { Link } from '@components/Link/Link';
 import { Label } from '@components/Label/Label';
@@ -65,9 +72,11 @@ export const Tasks: FC<TasksProps> = ({ data }) => {
         >
           Create new task
         </Typography>
-        <SvgIcon titleAccess="Add new task" sx={{ cursor: 'pointer' }}>
-          <use href="/src/assets/icons/sprite.svg#icon-create"></use>
-        </SvgIcon>
+        <Button>
+          <SvgIcon titleAccess="Add new task">
+            <use href="/src/assets/icons/sprite.svg#icon-create"></use>
+          </SvgIcon>
+        </Button>
       </Box>
 
       <List>
