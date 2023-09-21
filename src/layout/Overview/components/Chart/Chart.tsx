@@ -1,72 +1,104 @@
 import { FC } from 'react';
-import { List, ListItem, Typography, Box } from '@mui/material';
+import { Typography, Box } from '@mui/material';
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from 'recharts';
 
+import { getCurrentTime } from '@services/getCurrentTime';
+
+import { ActiveDot } from './ActiveDot';
+import { CustomTooltip } from './Tooltip';
+import { renderLegend } from './renderLegend';
 import { ChartProps } from './types';
 
-export const Chart: FC<ChartProps> = ({ data }) => {
+export const Chart: FC<ChartProps> = ({ trends }) => {
+  const currentTime = getCurrentTime();
+
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        mb: '30px',
-        backgroundColor: 'mainWhiteColor',
-        border: '1px solid',
-        borderColor: 'borderColor',
-        borderRadius: '8px',
-      }}
-    >
-      <Box sx={{ flexGrow: 1, padding: '32px' }}>
-        <Typography variant="h3">Today's trends</Typography>
-      </Box>
-      <Box
+    <Box sx={{ flexGrow: 1, padding: '32px' }}>
+      <Typography variant="h3" sx={{ mb: 2 }}>
+        Today's trends
+      </Typography>
+
+      <Typography
         sx={{
-          width: '342px',
-          padding: '8px 0',
-          borderLeft: '1px solid',
-          borderColor: 'borderColor',
+          fontSize: 12,
+          lineHeight: 1.33,
+          letterSpacing: 0.1,
+          color: 'secondaryTextColor',
         }}
       >
-        <List>
-          {data.map(item => (
-            <ListItem
-              key={item.section}
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                padding: '24px 0',
-                '&:not(:last-child)': {
-                  borderBottom: '1px solid',
-                  borderBottomColor: 'borderColor',
-                },
-              }}
-            >
-              <Typography
-                component="p"
-                sx={{
-                  fontWeight: 600,
-                  lineHeight: 1.38,
-                  letterSpacing: 0.3,
-                  mb: '6px',
-                  color: 'secondaryTextColor',
-                }}
-              >
-                {item.section}
-              </Typography>
-              <Typography
-                component="span"
-                sx={{
-                  fontSize: '24px',
-                  fontWeight: 700,
-                  letterSpacing: 0.3,
-                  lineHeight: 1.3,
-                }}
-              >
-                {item.value}
-              </Typography>
-            </ListItem>
-          ))}
-        </List>
-      </Box>
+        {currentTime}
+      </Typography>
+
+      <ResponsiveContainer height="90%">
+        <AreaChart
+          width={800}
+          height={400}
+          data={trends}
+          margin={{ top: 54, right: 0 }}
+        >
+          <XAxis
+            dataKey="hour"
+            tickLine={false}
+            axisLine={false}
+            tick={{
+              fontSize: 10,
+              letterSpacing: 0.1,
+              fill: '#9FA2B4',
+            }}
+            tickMargin={12}
+          />
+          <YAxis
+            yAxisId="right"
+            orientation="right"
+            tickCount={7}
+            axisLine={false}
+            tickLine={false}
+            tick={{
+              fontSize: 10,
+              letterSpacing: 0.1,
+              fill: '#9FA2B4',
+            }}
+          />
+          <CartesianGrid stroke="#EBEDF0" vertical={false} />
+          <Tooltip
+            content={<CustomTooltip />}
+            wrapperStyle={{ top: -75, left: -42 }}
+          />
+          <Legend content={renderLegend} />
+          <Area
+            type="natural"
+            dataKey="yesterday"
+            stroke="#DFE0EB"
+            strokeWidth={2}
+            yAxisId="right"
+            name="Yesterday"
+            dot={false}
+            activeDot={false}
+            fill="none"
+          />
+          <Area
+            type="natural"
+            dataKey="today"
+            stroke="#3751FF"
+            fill="#3751FF"
+            fillOpacity={0.1}
+            strokeWidth={2}
+            yAxisId="right"
+            name="Today"
+            dot={false}
+            activeDot={<ActiveDot />}
+          />
+        </AreaChart>
+      </ResponsiveContainer>
     </Box>
   );
 };

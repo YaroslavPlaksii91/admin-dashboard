@@ -1,8 +1,23 @@
 export type ChartItemType = {
-  section: string;
-  value: string;
+  hour: number;
+  today: number;
+  yesterday: number;
 };
 
 export type ChartProps = {
-  data: ChartItemType[];
+  trends: ChartItemType[];
+};
+
+export type ActiveDotProps = {
+  cx?: number;
+  cy?: number;
+};
+
+export type TooltipProps = {
+  active?: boolean;
+  payload?: { value: string }[];
+};
+
+export type RenderLegendProps = {
+  payload?: { value: string }[];
 };
