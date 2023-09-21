@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { cleanup, render, screen, fireEvent } from '@testing-library/react';
 
 import { LoginForm } from '../LoginForm';
@@ -6,6 +7,14 @@ const navigate = jest.fn();
 
 jest.mock('react-router', () => ({
   useNavigate: () => navigate,
+=======
+import { cleanup, render, screen } from '@testing-library/react';
+
+import { LoginForm } from '../LoginForm';
+
+jest.mock('react-router', () => ({
+  useNavigate: () => jest.fn(),
+>>>>>>> develop
 }));
 
 describe('LoginForm', () => {
@@ -28,6 +37,7 @@ describe('LoginForm', () => {
     expect(passwordInput).toBeInTheDocument();
     expect(submitButton).toBeInTheDocument();
   });
+<<<<<<< HEAD
 
   it('submits the form with valid data', async () => {
     render(<LoginForm />);
@@ -41,4 +51,6 @@ describe('LoginForm', () => {
 
     fireEvent.click(submitButton);
   });
+=======
+>>>>>>> develop
 });
