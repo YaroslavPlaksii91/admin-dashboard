@@ -2,11 +2,11 @@
 
 exports[`Logo component should render Logo component with horizontal type 1`] = `
 <DocumentFragment>
-  <a
-    href="/"
+  <div
+    class="undefined"
   >
-    <div
-      class="undefined"
+    <a
+      href="/"
     >
       <svg
         class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium undefined css-i4bv87-MuiSvgIcon-root"
@@ -22,22 +22,22 @@ exports[`Logo component should render Logo component with horizontal type 1`] = 
         </title>
       </svg>
       <p
-        class="MuiTypography-root MuiTypography-h3 css-army73-MuiTypography-root"
+        class="MuiTypography-root MuiTypography-h3 css-14qosaq-MuiTypography-root"
       >
         Dashboard Kit
       </p>
-    </div>
-  </a>
+    </a>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Logo component should render Logo component with vertical type 1`] = `
 <DocumentFragment>
-  <a
-    href="/"
+  <div
+    class=""
   >
-    <div
-      class=""
+    <a
+      href="/"
     >
       <svg
         class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
@@ -53,11 +53,11 @@ exports[`Logo component should render Logo component with vertical type 1`] = `
         </title>
       </svg>
       <p
-        class="MuiTypography-root MuiTypography-h3 css-army73-MuiTypography-root"
+        class="MuiTypography-root MuiTypography-h3 css-14qosaq-MuiTypography-root"
       >
         Dashboard Kit
       </p>
-    </div>
-  </a>
+    </a>
+  </div>
 </DocumentFragment>
 `;

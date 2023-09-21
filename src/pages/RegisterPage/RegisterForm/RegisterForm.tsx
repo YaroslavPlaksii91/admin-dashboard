@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Button } from '@mui/material';
 
@@ -8,6 +9,7 @@ import {
   FIRST_NAME_MIN_LENGTH,
   LAST_NAME_MIN_LENGTH,
 } from '@utils/constants';
+import { ROUTES } from '@routes/constants';
 import { addUser } from '@services/localeStorage';
 import { FormInput } from '@components/FormInput/FormInput';
 
@@ -20,12 +22,13 @@ export const RegisterForm: FC = () => {
     handleSubmit,
     formState: { errors },
     getValues,
-    reset,
   } = useForm<RegisterFormData>();
+  const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<RegisterFormData> = user => {
-    addUser(user);
-    reset();
+    addUser({ ...user, isLoggedIn: true });
+
+    navigate(ROUTES.HOME_PAGE, { replace: true });
   };
 
   return (

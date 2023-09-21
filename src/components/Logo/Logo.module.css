@@ -1,11 +1,14 @@
 .wrapperVertical {
   margin-bottom: 32px;
-  text-align: center;
 }
 
 .wrapperHorizontal {
-  display: flex;
-  align-items: center;
+  margin-bottom: 59px;
+}
+
+.wrapperHorizontal:hover p,
+.wrapperHorizontal:focus p {
+  color: var(--accent-sidebar-color);
 }
 
 .wrapperVertical .iconVertical {
@@ -16,4 +19,10 @@
 .wrapperHorizontal .iconHorizontal {
   font-size: 32px;
   margin-right: 12px;
+}
+
+.wrapperHorizontal .link {
+  display: flex;
+  align-items: center;
+  padding-left: 32px;
 }

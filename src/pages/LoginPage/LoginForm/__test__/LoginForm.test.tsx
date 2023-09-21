@@ -2,8 +2,10 @@ import { cleanup, render, screen } from '@testing-library/react';
 
 import { LoginForm } from '../LoginForm';
 
+const navigate = jest.fn();
+
 jest.mock('react-router', () => ({
-  useNavigate: () => jest.fn(),
+  useNavigate: () => navigate,
 }));
 
 describe('LoginForm', () => {

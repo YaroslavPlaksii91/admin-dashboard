@@ -3,6 +3,11 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 
 import { ROUTES } from '@routes/constants';
+import { PublicRoute } from '@routes/PublicRoute';
+import { ProtectedRoute } from '@routes/ProtectedRoute';
+import { Overview } from '@layout/Overview/Overview';
+import { Contacts } from '@layout/Contacts/Contacts';
+import { Tickets } from '@layout/Tickets/Tickets';
 
 import { theme } from '@styles/theme';
 
@@ -39,16 +44,50 @@ export const App: FC = () => {
     <ThemeProvider theme={theme}>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path={ROUTES.HOME_PAGE} element={<HomePage />} />
-          <Route path={ROUTES.REGISTER_PAGE} element={<RegisterPage />} />
-          <Route path={ROUTES.LOGIN_PAGE} element={<LoginPage />} />
+          <Route
+            path={ROUTES.HOME_PAGE}
+            element={
+              <ProtectedRoute redirectPath={ROUTES.LOGIN_PAGE}>
+                <HomePage />
+              </ProtectedRoute>
+            }
+          >
+            <Route index element={<Navigate to={ROUTES.OVERVIEW} />} />
+            <Route path={ROUTES.OVERVIEW} element={<Overview />} />
+            <Route path={ROUTES.CONTACTS} element={<Contacts />} />
+            <Route path={ROUTES.TICKETS} element={<Tickets />} />
+          </Route>
+          <Route
+            path={ROUTES.REGISTER_PAGE}
+            element={
+              <PublicRoute redirectPath={ROUTES.HOME_PAGE}>
+                <RegisterPage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path={ROUTES.LOGIN_PAGE}
+            element={
+              <PublicRoute redirectPath={ROUTES.HOME_PAGE}>
+                <LoginPage />
+              </PublicRoute>
+            }
+          />
           <Route
             path={ROUTES.FORGOT_PASSWORD_PAGE}
-            element={<ForgotPasswordPage />}
+            element={
+              <PublicRoute redirectPath={ROUTES.HOME_PAGE}>
+                <ForgotPasswordPage />
+              </PublicRoute>
+            }
           />
           <Route
             path={ROUTES.RESET_PASSWORD_PAGE}
-            element={<ResetPasswordPage />}
+            element={
+              <PublicRoute redirectPath={ROUTES.HOME_PAGE}>
+                <ResetPasswordPage />
+              </PublicRoute>
+            }
           />
           <Route path="*" element={<Navigate to={ROUTES.HOME_PAGE} />} />
         </Routes>

@@ -1,0 +1,103 @@
+{
+  "summary": [
+    {
+      "label": "Unresolved",
+      "count": 60
+    },
+    {
+      "label": "Overdue",
+      "count": 16
+    },
+    {
+      "label": "Open",
+      "count": 43
+    },
+    {
+      "label": "On hold",
+      "count": 64
+    }
+  ],
+  "trends": [
+    { "hour": 0, "today": 14, "yesterday": 32 },
+    { "hour": 1, "today": 20, "yesterday": 33 },
+    { "hour": 2, "today": 25, "yesterday": 31 },
+    { "hour": 3, "today": 30, "yesterday": 30 },
+    { "hour": 4, "today": 28, "yesterday": 29 },
+    { "hour": 5, "today": 27, "yesterday": 28 },
+    { "hour": 6, "today": 31, "yesterday": 32 },
+    { "hour": 7, "today": 40, "yesterday": 43 },
+    { "hour": 8, "today": 51, "yesterday": 50 },
+    { "hour": 9, "today": 40, "yesterday": 42 },
+    { "hour": 10, "today": 25, "yesterday": 28 },
+    { "hour": 11, "today": 20, "yesterday": 18 },
+    { "hour": 12, "today": 18, "yesterday": 19 },
+    { "hour": 13, "today": 20, "yesterday": 25 },
+    { "hour": 14, "today": 30, "yesterday": 36 },
+    { "hour": 15, "today": 41, "yesterday": 43 },
+    { "hour": 16, "today": 45, "yesterday": 48 },
+    { "hour": 17, "today": 48, "yesterday": 46 },
+    { "hour": 18, "today": 47, "yesterday": 42 },
+    { "hour": 19, "today": 38, "yesterday": 38 },
+    { "hour": 20, "today": 42, "yesterday": 40 },
+    { "hour": 21, "today": 40, "yesterday": 38 },
+    { "hour": 22, "today": 38, "yesterday": 36 },
+    { "hour": 23, "today": 36, "yesterday": 34 } 
+  ],
+  "statistics": [
+    {
+      "section": "Resolved",
+      "value": "449"
+    },
+    {
+      "section": "Received",
+      "value": "426"
+    },
+    {
+      "section": "Average first response time",
+      "value": "33m"
+    },
+    {
+      "section": "Average response time",
+      "value": "3h 8m"
+    },
+    {
+      "section": "Resolution within SLA",
+      "value": "94%"
+    }
+  ],
+  "unresolved": [
+    {
+      "title": "Waiting on Feature Request",
+      "count": 4238
+    },
+    {
+      "title": "Awaiting Customer Response",
+      "count": 1005
+    },
+    {
+      "title": "Awaiting Developer Fix",
+      "count": 914
+    },
+    {
+      "title": "Pending",
+      "count": 281
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Finish ticket update",
+      "priority": "urgent",
+      "isFinished": false
+    },
+    {
+      "title": "Create new ticket example",
+      "priority": "new",
+      "isFinished": false
+    },
+    {
+      "title": "Update ticket report",
+      "priority": "default",
+      "isFinished": true
+    }
+  ]
+}

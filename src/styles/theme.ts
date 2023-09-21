@@ -60,6 +60,10 @@ export const theme = createTheme({
     },
     MuiButton: {
       styleOverrides: {
+        root: {
+          padding: 0,
+          minWidth: 0,
+        },
         contained: {
           height: 48,
           fontSize: 14,
@@ -140,6 +144,32 @@ export const theme = createTheme({
         },
       },
     },
+    MuiDrawer: {
+      styleOverrides: {
+        root: {
+          '& .MuiDrawer-paper': {
+            width: 255,
+            paddingTop: '37px',
+            backgroundColor: '#363740',
+            color: '#a4a6b3',
+          },
+        },
+      },
+    },
+    MuiList: {
+      styleOverrides: {
+        root: {
+          padding: 0,
+        },
+      },
+    },
+    MuiListItem: {
+      styleOverrides: {
+        root: {
+          padding: 0,
+        },
+      },
+    },
   },
   typography: {
     fontFamily: 'Mulish, sans-serif',
@@ -159,6 +189,12 @@ export const theme = createTheme({
       fontSize: 14,
       lineHeight: 1.43,
       letterSpacing: 0.3,
+    },
+    subtitle2: {
+      fontSize: 14,
+      fontWeight: 600,
+      lineHeight: 1.43,
+      letterSpacing: 0.2,
     },
   },
   palette: {

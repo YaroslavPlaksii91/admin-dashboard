@@ -25,7 +25,7 @@ export const ForgotPasswordForm: FC<ForgotPasswordFormProps> = ({
   const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<ForgotPasswordFormData> = data => {
-    const user = getUser(data);
+    const user = getUser(data.email);
 
     if (!user) {
       return console.error('User not found!');
