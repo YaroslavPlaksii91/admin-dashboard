@@ -25,7 +25,8 @@
 }
 
 .link:hover svg,
-.link:focus svg {
+.link:focus svg,
+.activeLink svg {
   color: var(--accent-sidebar-color);
   opacity: 1;
 }

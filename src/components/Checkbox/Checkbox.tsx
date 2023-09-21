@@ -21,21 +21,16 @@ export const CheckboxComponent: FC = () => {
           cursor: 'pointer',
         }}
       >
-        {checked ? (
-          <SvgIcon
-            titleAccess="Task completed"
-            sx={{ width: '20px', height: '20px' }}
-          >
-            <use href="/src/assets/icons/sprite.svg#icon-activeCheckbox"></use>
-          </SvgIcon>
-        ) : (
-          <SvgIcon
-            titleAccess="Task not completed"
-            sx={{ width: '20px', height: '20px' }}
-          >
-            <use href="/src/assets/icons/sprite.svg#icon-inactiveCheckbox"></use>
-          </SvgIcon>
-        )}
+        <SvgIcon
+          titleAccess={checked ? 'Task completed' : 'Task not completed'}
+          sx={{ width: '20px', height: '20px' }}
+        >
+          <use
+            href={`/src/assets/icons/sprite.svg#icon-${
+              checked ? 'active' : 'inactive'
+            }Checkbox`}
+          ></use>
+        </SvgIcon>
       </Box>
     </label>
   );
