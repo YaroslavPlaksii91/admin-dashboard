@@ -1,4 +1,4 @@
-import { SummaryItemType } from './../layout/Overview/components/Summary/types';
+import { SummaryItemType } from '@layout/Overview/components/Summary/types';
 import { StatisticsItemType } from '@layout/Overview/components/Statistics/types';
 import { ChartItemType } from '@layout/Overview/components/Chart/types';
 import { TasksItemType } from '@layout/Overview/components/Tasks/types';
@@ -13,7 +13,7 @@ export type UserStoreType = {
   isLoggedIn: boolean;
 };
 
-export type DataType = {
+export type OverviewDataType = {
   summary: SummaryItemType[];
   trends: ChartItemType[];
   statistics: StatisticsItemType[];
