@@ -99,5 +99,295 @@
       "priority": "default",
       "isFinished": true
     }
-  ]
+  ],
+  "tickets": [
+  {
+    "id": 1,
+    "title": "Contact Email not Linked",
+    "customer": {
+      "name": "Tom Cruise",
+      "date":"24.05.2023"
+    },
+    "date": "May 26, 2023 6:30 PM",
+    "priority": "high",
+    "image": "/tom-cruise",
+    "updated": "Sep 24, 2023"
+  },
+  {
+    "id": 2,
+    "title": "Adding Images to Featured Posts",
+    "customer": {
+      "name": "Matt Damon",
+      "date":"24.05.2023"
+    },
+    "date": "May 26, 2023 8:00 AM",
+    "priority": "low",
+    "image": "/matt-damon",
+    "updated": "Sep 24, 2023"
+  },
+  {
+    "id": 3,
+    "title": "When will I be charged this month?",
+    "customer": {
+      "name": "Robert Downey",
+      "date":"24.05.2023"
+    },
+    "date": "May 26, 2023 7:30 PM",
+    "priority": "high",
+    "image": "/robert-downey",
+    "updated": "Sep 23, 2023"
+  },
+  {
+    "id": 4,
+    "title": "Payment not going through",
+    "customer": {
+      "name": "Christian Bale",
+      "date":"24.05.2023"
+    },
+    "date": "May 25, 2023 5:00 PM",
+    "priority": "normal",
+    "image": "/christian-bale",
+    "updated": "Sep 23, 2023"
+  },
+  {
+    "id": 5,
+    "title": "Unable to add replies",
+    "customer": {
+      "name": "Henry Cavil",
+      "date":"24.05.2023"
+    },
+    "date": "May 25, 2023 4:00 PM",
+    "priority": "high",
+    "image": "/henry-cavil",
+    "updated": "Sep 22, 2023"
+  },
+  {
+    "id": 6,
+    "title": "Downtime since last week",
+    "customer": {
+      "name": "Chris Evans",
+      "date":"23.05.2023"
+    },
+    "date": "May 25, 2023 2:00 PM",
+    "priority": "normal",
+    "image": "/chris-evans",
+    "updated": "Sep 22, 2023"
+  },
+  {
+    "id": 7,
+    "title": "Referral Bonus",
+    "customer": {
+      "name": "Sam Smith",
+      "date":"22.05.2023"
+    },
+    "date": "May 25, 2023 11:30 AM",
+    "priority": "low",
+    "image": "/sam-smith",
+    "updated": "Sep 21, 2023"
+  },
+  {
+    "id": 8,
+    "title": "How do I change my password?",
+    "customer": {
+      "name": "Steve Rogers",
+      "date":"21.05.2023"
+    },
+    "date": "May 24, 2023 1:00 PM",
+    "priority": "normal",
+    "image": "/steve-rogers",
+    "updated": "Sep 20, 2023"
+  },
+  {
+    "id": 9,
+    "title": "Contact Email not Linked",
+    "customer": {
+      "name": "Tom Cruise",
+      "date":"24.05.2023"
+    },
+    "date": "May 26, 2023 6:30 PM",
+    "priority": "high",
+    "image": "/steve-rogers",
+    "updated": "Sep 24, 2023"
+  },
+  {
+    "id": 10,
+    "title": "Adding Images to Featured Posts",
+    "customer": {
+      "name": "Matt Damon",
+      "date":"24.05.2023"
+    },
+    "date": "May 26, 2023 8:00 AM",
+    "priority": "low",
+    "image": "/sam-smith",
+    "updated": "Sep 24, 2023"
+  },
+  {
+    "id": 11,
+    "title": "When will I be charged this month?",
+    "customer": {
+      "name": "Robert Downey",
+      "date":"24.05.2023"
+    },
+    "date": "May 26, 2023 7:30 PM",
+    "priority": "high",
+    "image": "/matt-damon",
+    "updated": "Sep 23, 2023"
+  },
+  {
+    "id": 12,
+    "title": "Payment not going through",
+    "customer": {
+      "name": "Christian Bale",
+      "date":"24.05.2023"
+    },
+    "date": "May 25, 2023 5:00 PM",
+    "priority": "normal",
+    "image": "/robert-downey",
+    "updated": "Sep 23, 2023"
+  },
+  {
+    "id": 13,
+    "title": "Unable to add replies",
+    "customer": {
+      "name": "Henry Cavil",
+      "date":"24.05.2023"
+    },
+    "date": "May 25, 2023 4:00 PM",
+    "priority": "high",
+    "image": "/chris-evans",
+    "updated": "Sep 22, 2023"
+  },
+  {
+    "id": 14,
+    "title": "Downtime since last week",
+    "customer": {
+      "name": "Chris Evans",
+      "date":"23.05.2023"
+    },
+    "date": "May 25, 2023 2:00 PM",
+    "priority": "normal",
+    "image": "/henry-cavil",
+    "updated": "Sep 22, 2023"
+  },
+  {
+    "id": 15,
+    "title": "Referral Bonus",
+    "customer": {
+      "name": "Sam Smith",
+      "date":"22.05.2023"
+    },
+    "date": "May 25, 2023 11:30 AM",
+    "priority": "low",
+    "image": "/christian-bale",
+    "updated": "Sep 21, 2023"
+  },
+  {
+    "id": 16,
+    "title": "How do I change my password?",
+    "customer": {
+      "name": "Steve Rogers",
+      "date":"21.05.2023"
+    },
+    "date": "May 24, 2023 1:00 PM",
+    "priority": "normal",
+    "image": "/steve-rogers",
+    "updated": "Sep 20, 2023"
+  },
+  {
+    "id": 17,
+    "title": "Contact Email not Linked",
+    "customer": {
+      "name": "Tom Cruise",
+      "date":"24.05.2023"
+    },
+    "date": "May 26, 2023 6:30 PM",
+    "priority": "high",
+    "image": "/steve-rogers",
+    "updated": "Sep 24, 2023"
+  },
+  {
+    "id": 18,
+    "title": "Adding Images to Featured Posts",
+    "customer": {
+      "name": "Matt Damon",
+      "date":"24.05.2023"
+    },
+    "date": "May 26, 2023 8:00 AM",
+    "priority": "low",
+    "image": "/sam-smith",
+    "updated": "Sep 24, 2023"
+  },
+  {
+    "id": 19,
+    "title": "When will I be charged this month?",
+    "customer": {
+      "name": "Robert Downey",
+      "date":"24.05.2023"
+    },
+    "date": "May 26, 2023 7:30 PM",
+    "priority": "high",
+    "image": "/tom-cruise",
+    "updated": "Sep 23, 2023"
+  },
+  {
+    "id": 20,
+    "title": "Payment not going through",
+    "customer": {
+      "name": "Christian Bale",
+      "date":"24.05.2023"
+    },
+    "date": "May 25, 2023 5:00 PM",
+    "priority": "normal",
+    "image": "/henry-cavil",
+    "updated": "Sep 23, 2023"
+  },
+  {
+    "id": 21,
+    "title": "Unable to add replies",
+    "customer": {
+      "name": "Henry Cavil",
+      "date":"24.05.2023"
+    },
+    "date": "May 25, 2023 4:00 PM",
+    "priority": "high",
+    "image": "/matt-damon",
+    "updated": "Sep 22, 2023"
+  },
+  {
+    "id": 22,
+    "title": "Downtime since last week",
+    "customer": {
+      "name": "Chris Evans",
+      "date":"23.05.2023"
+    },
+    "date": "May 25, 2023 2:00 PM",
+    "priority": "normal",
+    "image": "/christian-bale",
+    "updated": "Sep 22, 2023"
+  },
+  {
+    "id": 23,
+    "title": "Referral Bonus",
+    "customer": {
+      "name": "Sam Smith",
+      "date":"22.05.2023"
+    },
+    "date": "May 25, 2023 11:30 AM",
+    "priority": "low",
+    "image": "/chris-evans",
+    "updated": "Sep 21, 2023"
+  },
+  {
+    "id": 24,
+    "title": "How do I change my password?",
+    "customer": {
+      "name": "Steve Rogers",
+      "date":"21.05.2023"
+    },
+    "date": "May 24, 2023 1:00 PM",
+    "priority": "normal",
+    "image": "/steve-rogers",
+    "updated": "Sep 20, 2023"
+  }
+]
 }
