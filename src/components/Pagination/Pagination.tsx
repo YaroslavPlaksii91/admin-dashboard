@@ -5,11 +5,11 @@ import { ROWS_PER_PAGE_OPTIONS } from './constants';
 import { PaginationProps } from './types';
 
 export const Pagination: FC<PaginationProps> = ({
-  count,
   page,
   setPage,
   rowsPerPage,
   setRowsPerPage,
+  count,
 }) => {
   const handleChangePage = (
     _: MouseEvent<HTMLButtonElement> | null,
@@ -18,9 +18,7 @@ export const Pagination: FC<PaginationProps> = ({
     setPage(newPage);
   };
 
-  const handleChangeRowsPerPage = (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
+  const handleChangeRowsPerPage = (event: ChangeEvent<HTMLInputElement>) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
