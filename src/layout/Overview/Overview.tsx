@@ -1,8 +1,8 @@
 import { FC, useState, useEffect } from 'react';
 import { Box } from '@mui/material';
 
-import { getData } from '@services/getData';
-import { DataType } from '@services/types';
+import { getOverviewData } from '@services/getOverviewData';
+import { OverviewDataType } from '@services/types';
 
 import { Summary } from './components/Summary/Summary';
 import { Chart } from './components/Chart/Chart';
@@ -11,11 +11,11 @@ import { Tickets } from './components/Tickets/Tickets';
 import { Tasks } from './components/Tasks/Tasks';
 
 export const Overview: FC = () => {
-  const [data, setData] = useState<DataType | null>(null);
+  const [data, setData] = useState<OverviewDataType | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getData();
+      const data = await getOverviewData();
       setData(data);
     };
 
