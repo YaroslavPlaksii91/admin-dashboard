@@ -75,6 +75,13 @@ export const theme = createTheme({
           backgroundColor: '#3751FF',
           boxShadow: '0px 4px 12px 0px rgba(55, 81, 255, 0.24)',
         },
+        text: {
+          fontSize: 14,
+          fontWeight: 600,
+          lineHeight: 1.43,
+          letterSpacing: 0.2,
+          textTransform: 'none',
+        },
       },
     },
     MuiTextField: {
