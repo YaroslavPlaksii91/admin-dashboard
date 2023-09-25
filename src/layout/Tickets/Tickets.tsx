@@ -1,25 +1,42 @@
-import { FC } from 'react';
+import { FC, useState, useEffect } from 'react';
 import { Box } from '@mui/material';
 
 import { Pagination } from '@components/Pagination/Pagination';
 import { ActionButtons } from '@components/ActionButtons/ActionButtons';
+import { usePagination } from '@components/Pagination/usePagination';
+import { getTickets } from '@services/getTickets';
 
 import { TicketsItem } from './components/TicketsItem/TicketsItem';
+import { TicketType } from './components/TicketsItem/types';
 import { Heading } from './components/Heading/Heading';
-import { useTickets } from './useTickets';
 
 export const Tickets: FC = () => {
-  const {
-    getCurrentPageTickets,
-    page,
-    setPage,
-    rowsPerPage,
-    setRowsPerPage,
-    onAddClick,
-    onFilterClick,
-    onSortClick,
-    ticketsCount,
-  } = useTickets();
+  const [tickets, setTickets] = useState<TicketType[] | []>([]);
+
+  const { getCurrentPageData, page, setPage, rowsPerPage, setRowsPerPage } =
+    usePagination(tickets);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getTickets();
+
+      setTickets(data);
+    };
+
+    fetchData();
+  }, []);
+
+  const onSortClick = () => {
+    console.log('Sort');
+  };
+
+  const onFilterClick = () => {
+    console.log('Filter');
+  };
+
+  const onAddClick = () => {
+    console.log('Add ticket');
+  };
 
   return (
     <Box
@@ -41,12 +58,12 @@ export const Tickets: FC = () => {
 
       <Heading />
 
-      {getCurrentPageTickets().map(ticket => (
+      {getCurrentPageData().map((ticket: any) => (
         <TicketsItem ticket={ticket} key={ticket.id} />
       ))}
 
       <Pagination
-        count={ticketsCount}
+        count={tickets.length}
         page={page}
         setPage={setPage}
         rowsPerPage={rowsPerPage}
