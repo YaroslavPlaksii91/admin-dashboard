@@ -11,7 +11,7 @@ import { TicketType } from './components/TicketsItem/types';
 import { Heading } from './components/Heading/Heading';
 
 export const Tickets: FC = () => {
-  const [tickets, setTickets] = useState<TicketType[] | []>([]);
+  const [tickets, setTickets] = useState<TicketType[]>([]);
 
   const { getCurrentPageData, page, setPage, rowsPerPage, setRowsPerPage } =
     usePagination(tickets);
@@ -58,7 +58,7 @@ export const Tickets: FC = () => {
 
       <Heading />
 
-      {getCurrentPageData().map((ticket: any) => (
+      {getCurrentPageData().map(ticket => (
         <TicketsItem ticket={ticket} key={ticket.id} />
       ))}
 
