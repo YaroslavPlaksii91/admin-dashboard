@@ -13,6 +13,8 @@ export const Tickets: FC = () => {
     getCurrentPageTickets,
     page,
     setPage,
+    rowsPerPage,
+    setRowsPerPage,
     onAddClick,
     onFilterClick,
     onSortClick,
@@ -43,7 +45,13 @@ export const Tickets: FC = () => {
         <TicketsItem ticket={ticket} key={ticket.id} />
       ))}
 
-      <Pagination count={ticketsCount} page={page} setPage={setPage} />
+      <Pagination
+        count={ticketsCount}
+        page={page}
+        setPage={setPage}
+        rowsPerPage={rowsPerPage}
+        setRowsPerPage={setRowsPerPage}
+      />
     </Box>
   );
 };

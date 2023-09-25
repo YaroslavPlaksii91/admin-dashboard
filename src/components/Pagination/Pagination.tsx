@@ -1,12 +1,16 @@
-import { useState, MouseEvent, ChangeEvent, FC } from 'react';
+import { MouseEvent, ChangeEvent, FC } from 'react';
 import { TablePagination } from '@mui/material';
 
-import { ROWS_PER_PAGE, ROWS_PER_PAGE_OPTIONS } from './constants';
+import { ROWS_PER_PAGE_OPTIONS } from './constants';
 import { PaginationProps } from './types';
 
-export const Pagination: FC<PaginationProps> = ({ count, page, setPage }) => {
-  const [rowsPerPage, setRowsPerPage] = useState(ROWS_PER_PAGE);
-
+export const Pagination: FC<PaginationProps> = ({
+  count,
+  page,
+  setPage,
+  rowsPerPage,
+  setRowsPerPage,
+}) => {
   const handleChangePage = (
     _: MouseEvent<HTMLButtonElement> | null,
     newPage: number,

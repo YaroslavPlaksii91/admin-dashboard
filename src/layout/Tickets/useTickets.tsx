@@ -8,6 +8,7 @@ import { TicketType } from './components/TicketsItem/types';
 export const useTickets = () => {
   const [tickets, setTickets] = useState<TicketType[] | []>([]);
   const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(ROWS_PER_PAGE);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,8 +21,8 @@ export const useTickets = () => {
   }, []);
 
   const getCurrentPageTickets = () => {
-    const startIndex = page * ROWS_PER_PAGE;
-    const endIndex = startIndex + ROWS_PER_PAGE;
+    const startIndex = page * rowsPerPage;
+    const endIndex = startIndex + rowsPerPage;
 
     return tickets.slice(startIndex, endIndex);
   };
@@ -44,6 +45,8 @@ export const useTickets = () => {
     getCurrentPageTickets,
     page,
     setPage,
+    rowsPerPage,
+    setRowsPerPage,
     onSortClick,
     onFilterClick,
     onAddClick,
