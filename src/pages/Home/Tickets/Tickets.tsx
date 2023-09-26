@@ -2,13 +2,13 @@ import { FC, useState, useEffect } from 'react';
 import { Box } from '@mui/material';
 
 import { Pagination } from '@components/Pagination/Pagination';
-import { ActionButtons } from '@components/ActionButtons/ActionButtons';
 import { usePagination } from '@components/Pagination/usePagination';
 import { getTickets } from '@services/getTickets';
 
 import { TicketsItem } from './components/TicketsItem/TicketsItem';
 import { TicketType } from './components/TicketsItem/types';
 import { Heading } from './components/Heading/Heading';
+import { ActionButtons } from '../components/ActionButtons/ActionButtons';
 
 export const Tickets: FC = () => {
   const [tickets, setTickets] = useState<TicketType[]>([]);
