@@ -5,38 +5,24 @@ import { ThemeProvider } from '@mui/material/styles';
 import { ROUTES } from '@routes/constants';
 import { PublicRoute } from '@routes/PublicRoute';
 import { ProtectedRoute } from '@routes/ProtectedRoute';
-import { Overview } from '@layout/Overview/Overview';
-import { Contacts } from '@layout/Contacts/Contacts';
-import { Tickets } from '@layout/Tickets/Tickets';
+import { LoginPage } from '@pages/Auth/LoginPage/LoginPage';
+import { RegisterPage } from '@pages/Auth/RegisterPage/RegisterPage';
+import { ForgotPasswordPage } from '@pages/Auth/ForgotPasswordPage/ForgotPasswordPage';
+import { ResetPasswordPage } from '@pages/Auth/ResetPasswordPage/ResetPasswordPage';
+import { Overview } from '@pages/Home/Overview/Overview';
+import { Tickets } from '@pages/Home/Tickets/Tickets';
+import { Contacts } from '@pages/Home/Contacts/Contacts';
 
 import { theme } from '@styles/theme';
 
-const loadHomePage = () => import('@pages/HomePage/HomePage');
-const loadRegisterPage = () => import('@pages/RegisterPage/RegisterPage');
-const loadLoginPage = () => import('@pages/LoginPage/LoginPage');
-const loadForgotPasswordPage = () =>
-  import('@pages/ForgotPasswordPage/ForgotPasswordPage');
-const loadResetPasswordPage = () =>
-  import('@pages/ResetPasswordPage/ResetPasswordPage');
+const loadAuthPage = () => import('@pages/Auth/Auth');
+const loadHomePage = () => import('@pages/Home/HomePage');
 
+const AuthPage = lazy(() =>
+  loadAuthPage().then(module => ({ default: module.Auth })),
+);
 const HomePage = lazy(() =>
   loadHomePage().then(module => ({ default: module.HomePage })),
-);
-const RegisterPage = lazy(() =>
-  loadRegisterPage().then(module => ({ default: module.RegisterPage })),
-);
-const LoginPage = lazy(() =>
-  loadLoginPage().then(module => ({ default: module.LoginPage })),
-);
-const ForgotPasswordPage = lazy(() =>
-  loadForgotPasswordPage().then(module => ({
-    default: module.ForgotPasswordPage,
-  })),
-);
-const ResetPasswordPage = lazy(() =>
-  loadResetPasswordPage().then(module => ({
-    default: module.ResetPasswordPage,
-  })),
 );
 
 export const App: FC = () => {
@@ -45,9 +31,30 @@ export const App: FC = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route
+            path={ROUTES.AUTH}
+            element={
+              <PublicRoute redirectPath={ROUTES.HOME_PAGE}>
+                <AuthPage />
+              </PublicRoute>
+            }
+          >
+            <Route index element={<Navigate to={ROUTES.LOGIN_PAGE} />} />
+            <Route path={ROUTES.LOGIN_PAGE} element={<LoginPage />} />
+            <Route path={ROUTES.REGISTER_PAGE} element={<RegisterPage />} />
+            <Route
+              path={ROUTES.FORGOT_PASSWORD_PAGE}
+              element={<ForgotPasswordPage />}
+            />
+            <Route
+              path={ROUTES.RESET_PASSWORD_PAGE}
+              element={<ResetPasswordPage />}
+            />
+          </Route>
+
+          <Route
             path={ROUTES.HOME_PAGE}
             element={
-              <ProtectedRoute redirectPath={ROUTES.LOGIN_PAGE}>
+              <ProtectedRoute redirectPath={ROUTES.AUTH}>
                 <HomePage />
               </ProtectedRoute>
             }
@@ -57,38 +64,7 @@ export const App: FC = () => {
             <Route path={ROUTES.CONTACTS} element={<Contacts />} />
             <Route path={ROUTES.TICKETS} element={<Tickets />} />
           </Route>
-          <Route
-            path={ROUTES.REGISTER_PAGE}
-            element={
-              <PublicRoute redirectPath={ROUTES.HOME_PAGE}>
-                <RegisterPage />
-              </PublicRoute>
-            }
-          />
-          <Route
-            path={ROUTES.LOGIN_PAGE}
-            element={
-              <PublicRoute redirectPath={ROUTES.HOME_PAGE}>
-                <LoginPage />
-              </PublicRoute>
-            }
-          />
-          <Route
-            path={ROUTES.FORGOT_PASSWORD_PAGE}
-            element={
-              <PublicRoute redirectPath={ROUTES.HOME_PAGE}>
-                <ForgotPasswordPage />
-              </PublicRoute>
-            }
-          />
-          <Route
-            path={ROUTES.RESET_PASSWORD_PAGE}
-            element={
-              <PublicRoute redirectPath={ROUTES.HOME_PAGE}>
-                <ResetPasswordPage />
-              </PublicRoute>
-            }
-          />
+
           <Route path="*" element={<Navigate to={ROUTES.HOME_PAGE} />} />
         </Routes>
       </Suspense>

@@ -2,8 +2,8 @@ import { FC } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Typography, Box } from '@mui/material';
 
-import { Sidebar } from '@components/Sidebar/Sidebar';
-import { UserMenu } from '@components/UserMenu/UserMenu';
+import { Sidebar } from './components/Sidebar/Sidebar';
+import { UserMenu } from './components/UserMenu/UserMenu';
 
 export const HomePage: FC = () => {
   const location = useLocation();
