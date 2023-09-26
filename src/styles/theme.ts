@@ -81,6 +81,7 @@ export const theme = createTheme({
           lineHeight: 1.43,
           letterSpacing: 0.2,
           textTransform: 'none',
+          color: '#3751FF',
         },
       },
     },
