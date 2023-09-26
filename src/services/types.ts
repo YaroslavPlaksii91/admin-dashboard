@@ -1,8 +1,8 @@
-import { SummaryItemType } from '@layout/Overview/components/Summary/types';
-import { StatisticsItemType } from '@layout/Overview/components/Statistics/types';
-import { ChartItemType } from '@layout/Overview/components/Chart/types';
-import { TasksItemType } from '@layout/Overview/components/Tasks/types';
-import { TicketsItemType } from '@layout/Overview/components/Tickets/types';
+import { SummaryItemType } from '@pages/Home/Overview/components/Summary/types';
+import { StatisticsItemType } from '@pages/Home/Overview/components/Statistics/types';
+import { ChartItemType } from '@pages/Home/Overview/components/Chart/types';
+import { TasksItemType } from '@pages/Home/Overview/components/Tasks/types';
+import { TicketsItemType } from '@pages/Home/Overview/components/Tickets/types';
 
 export type UserStoreType = {
   email: string;

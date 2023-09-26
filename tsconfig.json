@@ -4,9 +4,7 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
-      "@layout/*": ["src/layout/*"],
       "@pages/*": ["src/pages/*"],
-      "@redux/*": ["src/redux/*"],
       "@assets/*": ["src/assets/*"],
       "@routes/*": ["src/routes/*"],
       "@services/*": ["src/services/*"],

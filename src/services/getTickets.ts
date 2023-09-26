@@ -1,4 +1,4 @@
-import { TicketType } from '@layout/Tickets/components/TicketsItem/types';
+import { TicketType } from '@pages/Home/Tickets/components/TicketsItem/types';
 
 import data from './data.json';
 
