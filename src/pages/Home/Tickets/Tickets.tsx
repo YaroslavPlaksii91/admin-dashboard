@@ -51,7 +51,7 @@ export const Tickets: FC = () => {
       updated: formatCurrentDate(),
     };
 
-    setTickets([...tickets, newTicket]);
+    setTickets([newTicket, ...tickets]);
 
     setIsModalOpen(false);
   };

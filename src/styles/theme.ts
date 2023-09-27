@@ -161,9 +161,6 @@ export const theme = createTheme({
             padding: '11px 16px',
             opacity: 0.4,
           },
-          '& .MuiSelect-icon': {
-            right: '16px',
-          },
         },
       },
     },
