@@ -11,7 +11,7 @@ jest.mock('react-router', () => ({
   useNavigate: () => navigate,
 }));
 
-jest.mock('@services/localeStorage', () => ({
+jest.mock('@services/localeStorage/localeStorage', () => ({
   getCurrentUser: () => ({
     email: 'test@example.com',
     firstName: 'John',
