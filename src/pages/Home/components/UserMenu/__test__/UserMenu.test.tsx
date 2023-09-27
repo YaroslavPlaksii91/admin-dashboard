@@ -1,7 +1,7 @@
 import { cleanup, render, screen, fireEvent } from '@testing-library/react';
 
 import { ROUTES } from '@routes/constants';
-import * as localeStorage from '@services/localeStorage';
+import * as localeStorage from '@services/localeStorage/localeStorage';
 
 import { UserMenu } from '../UserMenu';
 

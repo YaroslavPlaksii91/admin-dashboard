@@ -5,7 +5,7 @@ import { Button } from '@mui/material';
 
 import { ROUTES } from '@routes/constants';
 import { EMAIL_REGEX, PASSWORD_MIN_LENGTH } from '@utils/constants';
-import { getUser, setIsLoggedIn } from '@services/localeStorage';
+import { getUser, setIsLoggedIn } from '@services/localeStorage/localeStorage';
 import { FormInput } from '@components/FormInput/FormInput';
 
 import { LOGIN_FIELDS, LOGIN_FIELDS_CONFIG } from './constants';

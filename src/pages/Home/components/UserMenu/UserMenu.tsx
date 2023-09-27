@@ -3,7 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { SvgIcon, Typography, Box, Button } from '@mui/material';
 
 import { ROUTES } from '@routes/constants';
-import { setIsLoggedIn, getCurrentUser } from '@services/localeStorage';
+import {
+  setIsLoggedIn,
+  getCurrentUser,
+} from '@services/localeStorage/localeStorage';
 
 export const UserMenu: FC = () => {
   const [isLogoutVisible, setIsLogoutVisible] = useState(false);

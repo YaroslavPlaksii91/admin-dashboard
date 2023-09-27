@@ -4,9 +4,9 @@ import { Box } from '@mui/material';
 import { Pagination } from '@components/Pagination/Pagination';
 import { usePagination } from '@components/Pagination/usePagination';
 import { ModalComponent } from '@components/Modal/Modal';
-import { getTickets } from '@services/getTickets';
-import { formatCurrentDate } from '@services/formatCurrentDate';
-import { formatCustomerDate } from '@services/formatCustomerDate';
+import { getTickets } from '@services/db/getTickets';
+import { formatCurrentDate } from '@services/date/formatCurrentDate';
+import { formatCustomerDate } from '@services/date/formatCustomerDate';
 
 import { TicketsItem } from './components/TicketsItem/TicketsItem';
 import { TicketType } from './components/TicketsItem/types';

@@ -10,7 +10,7 @@ import {
   LAST_NAME_MIN_LENGTH,
 } from '@utils/constants';
 import { ROUTES } from '@routes/constants';
-import { addUser } from '@services/localeStorage';
+import { addUser } from '@services/localeStorage/localeStorage';
 import { FormInput } from '@components/FormInput/FormInput';
 
 import { REGISTER_FIELDS, REGISTER_FIELDS_CONFIG } from './constants';
