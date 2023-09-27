@@ -3,11 +3,13 @@ export const getTicketUpdateTime = (date: string) => {
   const updatedDate = new Date(date).getTime();
 
   const timeDiff = Math.abs(currentDate - updatedDate);
-  const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24) - 1);
+  const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
 
   let updatedString = '';
 
-  if (daysDiff === 1) {
+  if (daysDiff === 0) {
+    updatedString = 'Updated today';
+  } else if (daysDiff === 1) {
     updatedString = 'Updated 1 day ago';
   } else {
     updatedString = `Updated ${daysDiff} days ago`;
