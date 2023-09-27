@@ -5,7 +5,7 @@ import { Button } from '@mui/material';
 
 import { EMAIL_REGEX } from '@utils/constants';
 import { ROUTES } from '@routes/constants';
-import { getUser } from '@services/localeStorage';
+import { getUser } from '@services/localeStorage/localeStorage';
 import { FormInput } from '@components/FormInput/FormInput';
 
 import { ForgotPasswordFormData, ForgotPasswordFormProps } from './types';
