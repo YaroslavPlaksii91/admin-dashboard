@@ -7,7 +7,6 @@ export const ModalComponent: FC<ModalProps> = ({
   isOpen,
   title,
   children,
-  onSubmit,
   onClose,
 }) => {
   return (
@@ -28,16 +27,9 @@ export const ModalComponent: FC<ModalProps> = ({
         <Typography id="modal-title" variant="h2">
           {title}
         </Typography>
+
         {children}
-        <Button
-          variant="contained"
-          type="submit"
-          fullWidth
-          onClick={onSubmit}
-          sx={{ margin: '24px 0' }}
-        >
-          Save
-        </Button>
+
         <Button
           variant="text"
           fullWidth
