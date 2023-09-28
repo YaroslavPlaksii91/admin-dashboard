@@ -161,6 +161,10 @@ export const theme = createTheme({
             padding: '11px 16px',
             opacity: 0.4,
           },
+          '& .MuiTablePagination-select': {
+            opacity: 1,
+            color: '#4B506D',
+          },
         },
       },
     },
