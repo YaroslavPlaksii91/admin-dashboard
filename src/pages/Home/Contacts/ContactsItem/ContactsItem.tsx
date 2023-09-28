@@ -29,10 +29,7 @@ export const ContactsItem: FC<ContactItemProps> = ({ contact }) => {
             overflow: 'hidden',
           }}
         >
-          <img
-            src={`/src/assets/images/users/${contact.image}.png`}
-            alt={contact.name}
-          />
+          <img src={contact.image} alt={contact.name} />
         </Box>
 
         <Typography variant="subtitle2" component="p">
