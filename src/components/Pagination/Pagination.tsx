@@ -43,6 +43,9 @@ export const Pagination: FC<PaginationProps> = ({
         '& .MuiSelect-select': {
           color: 'grayDarkColor',
         },
+        '& .MuiTablePagination-input': {
+          width: 'auto',
+        },
       }}
     />
   );

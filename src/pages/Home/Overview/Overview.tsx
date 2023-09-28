@@ -1,7 +1,7 @@
 import { FC, useState, useEffect } from 'react';
 import { Box } from '@mui/material';
 
-import { getOverviewData } from '@services/getOverviewData';
+import { getOverviewData } from '@services/db/getOverviewData';
 import { OverviewDataType } from '@services/types';
 
 import { Summary } from './components/Summary/Summary';

@@ -11,7 +11,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-import { getCurrentTime } from '@services/getCurrentTime';
+import { getCurrentTime } from '@services/date/getCurrentTime';
 
 import { ActiveDot } from './ActiveDot';
 import { CustomTooltip } from './Tooltip';

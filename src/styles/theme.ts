@@ -110,7 +110,6 @@ export const theme = createTheme({
             fontWeight: 400,
             lineHeight: 1.43,
             letterSpacing: 0.3,
-            color: '#4B506D',
           },
           p: {
             position: 'absolute',
@@ -148,6 +147,19 @@ export const theme = createTheme({
           },
           '&.Mui-error': {
             color: '#f12b2c',
+          },
+        },
+      },
+    },
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          width: '100%',
+          fontSize: 14,
+          textAlign: 'initial',
+          '& .MuiSelect-select': {
+            padding: '11px 16px',
+            opacity: 0.4,
           },
         },
       },

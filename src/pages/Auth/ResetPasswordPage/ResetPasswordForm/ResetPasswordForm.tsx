@@ -4,7 +4,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { Button } from '@mui/material';
 
 import { PASSWORD_MIN_LENGTH } from '@utils/constants';
-import { changeUserPassword } from '@services/localeStorage';
+import { changeUserPassword } from '@services/localeStorage/localeStorage';
 import { FormInput } from '@components/FormInput/FormInput';
 
 import { ResetPasswordFormData } from './types';

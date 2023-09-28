@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Navigate } from 'react-router-dom';
 
-import { getIsLoggedIn } from '@services/localeStorage';
+import { getIsLoggedIn } from '@services/localeStorage/localeStorage';
 
 import { RouteProps } from './types';
 

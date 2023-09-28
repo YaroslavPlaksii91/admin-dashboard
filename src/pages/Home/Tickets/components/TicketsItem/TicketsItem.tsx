@@ -3,7 +3,7 @@ import { Grid, Button, SvgIcon, Box } from '@mui/material';
 
 import { Label } from '@components/Label/Label';
 import { LABEL_TYPES } from '@components/Label/constants';
-import { getTicketUpdateTime } from '@services/getTicketUpdateTime';
+import { getTicketUpdateTime } from '@services/date/getTicketUpdateTime';
 
 import { TicketsItemProps } from './types';
 import { TextCell } from '../TextCell/TextCell';

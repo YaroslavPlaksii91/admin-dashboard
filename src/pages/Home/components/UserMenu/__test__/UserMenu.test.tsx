@@ -1,7 +1,7 @@
 import { cleanup, render, screen, fireEvent } from '@testing-library/react';
 
 import { ROUTES } from '@routes/constants';
-import * as localeStorage from '@services/localeStorage';
+import * as localeStorage from '@services/localeStorage/localeStorage';
 
 import { UserMenu } from '../UserMenu';
 
@@ -11,7 +11,7 @@ jest.mock('react-router', () => ({
   useNavigate: () => navigate,
 }));
 
-jest.mock('@services/localeStorage', () => ({
+jest.mock('@services/localeStorage/localeStorage', () => ({
   getCurrentUser: () => ({
     email: 'test@example.com',
     firstName: 'John',

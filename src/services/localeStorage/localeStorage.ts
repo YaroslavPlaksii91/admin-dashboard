@@ -1,6 +1,6 @@
 import { LOCALE_STORAGE_KEY } from '@utils/constants';
 
-import { UserStoreType } from './types';
+import { UserStoreType } from '../types';
 
 export const getUser = (email: string) => {
   try {
