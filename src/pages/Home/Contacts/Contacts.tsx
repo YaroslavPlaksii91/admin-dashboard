@@ -5,10 +5,13 @@ import { Pagination } from '@components/Pagination/Pagination';
 import { usePagination } from '@components/Pagination/usePagination';
 import { ModalComponent } from '@components/Modal/Modal';
 import { getContacts } from '@services/db/getContacts';
+import { formatCurrentDate } from '@services/date/formatCurrentDate';
 
 import { ContactType } from './ContactsItem/types';
 import { ContactsItem } from './ContactsItem/ContactsItem';
 import { Heading } from './Heading/Heading';
+import { AddContacts } from './AddContacts/AddContacts';
+import { AddContactsData } from './AddContacts/types';
 import { ActionButtons } from '../components/ActionButtons/ActionButtons';
 
 export const Contacts: FC = () => {
@@ -27,6 +30,28 @@ export const Contacts: FC = () => {
 
     fetchData();
   }, []);
+
+  const handleAddContact = ({
+    firstName,
+    lastName,
+    email,
+    address,
+    photo,
+  }: AddContactsData) => {
+    const currentDate = formatCurrentDate().split(' ').slice(0, 3).join(' ');
+    const newContact = {
+      id: contacts.length + 1,
+      name: `${firstName} ${lastName}`,
+      email,
+      address,
+      created: currentDate,
+      image: URL.createObjectURL(photo[0]),
+    };
+
+    setContacts([newContact, ...contacts]);
+
+    setIsModalOpen(false);
+  };
 
   const onSortClick = () => {
     console.log('Sort');
@@ -70,13 +95,10 @@ export const Contacts: FC = () => {
 
       <ModalComponent
         isOpen={isModalOpen}
-        title="Add tickets"
+        title="Add new contact"
         onClose={() => setIsModalOpen(false)}
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni,
-        voluptates accusamus, quidem dignissimos eum distinctio similique esse
-        reprehenderit, sunt explicabo officiis. Adipisci quas debitis in modi
-        nihil dolorum voluptate saepe.
+        <AddContacts addContact={handleAddContact} />
       </ModalComponent>
     </Box>
   );
