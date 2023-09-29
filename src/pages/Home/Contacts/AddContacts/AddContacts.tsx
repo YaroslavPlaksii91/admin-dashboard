@@ -3,7 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { Button, Box } from '@mui/material';
 
 import { FormInput } from '@components/FormInput/FormInput';
-import { FileInput } from '@components/FileInput/FileInput';
+import { AddPhoto } from '@components/AddPhoto/AddPhoto';
 import { EMAIL_REGEX } from '@utils/constants';
 
 import { ADD_CONTACT_CONFIG, ADD_CONTACT_FIELDS } from './constants';
@@ -27,7 +27,7 @@ export const AddContacts: FC<AddContactsProps> = ({ addContact }) => {
       noValidate
       sx={{ margin: '32px 0 24px' }}
     >
-      <FileInput
+      <AddPhoto
         {...ADD_CONTACT_CONFIG[ADD_CONTACT_FIELDS.PHOTO]}
         register={register('photo', {
           required: 'Choose a photo',
