@@ -5,21 +5,25 @@ import { Pagination } from '@components/Pagination/Pagination';
 import { usePagination } from '@components/Pagination/usePagination';
 import { ModalComponent } from '@components/Modal/Modal';
 import { getContacts } from '@services/db/getContacts';
+import { useSort } from '@hooks/useSort';
 
 import { ContactType } from './components/ContactsItem/types';
 import { ContactsItem } from './components/ContactsItem/ContactsItem';
-import { Heading } from './components/Heading/Heading';
 import { AddContacts } from './components/AddContacts/AddContacts';
 import { AddContactsData } from './components/AddContacts/types';
 import { currentDate } from './helpers/getCurrentDate';
+import { CONTACTS_COLUMNS } from './constants';
+import { Heading } from '../components/Heading/Heading';
 import { ActionButtons } from '../components/ActionButtons/ActionButtons';
 
 export const Contacts: FC = () => {
   const [contacts, setContacts] = useState<ContactType[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const { sortedData, handleSort, sortKey, sortDirection } = useSort(contacts);
+
   const { getCurrentPageData, page, setPage, rowsPerPage, setRowsPerPage } =
-    usePagination(contacts);
+    usePagination(sortedData);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -55,9 +59,7 @@ export const Contacts: FC = () => {
     setIsModalOpen(false);
   };
 
-  const onSortClick = () => {
-    console.log('Sort');
-  };
+  const onSortClick = () => {};
 
   const onFilterClick = () => {
     console.log('Filter');
@@ -81,7 +83,12 @@ export const Contacts: FC = () => {
         onSortClick={onSortClick}
       />
 
-      <Heading />
+      <Heading
+        handleSort={handleSort}
+        sortKey={sortKey}
+        sortDirection={sortDirection}
+        columns={CONTACTS_COLUMNS}
+      />
 
       {getCurrentPageData().map(contact => (
         <ContactsItem contact={contact} key={contact.id} />
