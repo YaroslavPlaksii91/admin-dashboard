@@ -7,20 +7,24 @@ import { ModalComponent } from '@components/Modal/Modal';
 import { getTickets } from '@services/db/getTickets';
 import { formatCurrentDate } from '@services/date/formatCurrentDate';
 import { formatCustomerDate } from '@services/date/formatCustomerDate';
+import { useSort } from '@hooks/useSort';
 
 import { TicketsItem } from './components/TicketsItem/TicketsItem';
 import { TicketType } from './components/TicketsItem/types';
-import { Heading } from './components/Heading/Heading';
 import { AddTickets } from './components/AddTickets/AddTickets';
 import { AddTicketsData } from './components/AddTickets/types';
+import { TICKETS_COLUMNS } from './constants';
+import { Heading } from '../components/Heading/Heading';
 import { ActionButtons } from '../components/ActionButtons/ActionButtons';
 
 export const Tickets: FC = () => {
   const [tickets, setTickets] = useState<TicketType[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const { sortedData, handleSort, sortKey, sortDirection } = useSort(tickets);
+
   const { getCurrentPageData, page, setPage, rowsPerPage, setRowsPerPage } =
-    usePagination(tickets);
+    usePagination(sortedData);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -85,7 +89,12 @@ export const Tickets: FC = () => {
         onSortClick={onSortClick}
       />
 
-      <Heading />
+      <Heading
+        handleSort={handleSort}
+        sortKey={sortKey}
+        sortDirection={sortDirection}
+        columns={TICKETS_COLUMNS}
+      />
 
       {getCurrentPageData().map(ticket => (
         <TicketsItem ticket={ticket} key={ticket.id} />
