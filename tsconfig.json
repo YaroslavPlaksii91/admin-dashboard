@@ -10,6 +10,7 @@
       "@services/*": ["src/services/*"],
       "@utils/*": ["src/utils/*"],
       "@styles/*": ["src/styles/*"],
+      "@hooks/*": ["src/hooks/*"],
     },
     "target": "ES2020",
     "useDefineForClassFields": true,
