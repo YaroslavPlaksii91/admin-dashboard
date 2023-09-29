@@ -1,4 +1,4 @@
-import { ContactType } from '@pages/Home/Contacts/ContactsItem/types';
+import { ContactType } from '@pages/Home/Contacts/components/ContactsItem/types';
 
 import data from './data.json';
 
