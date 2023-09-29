@@ -15,8 +15,12 @@ export const Overview: FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getOverviewData();
-      setData(data);
+      try {
+        const data = await getOverviewData();
+        setData(data);
+      } catch (error) {
+        console.error('Error while fetching data: ', error);
+      }
     };
 
     fetchData();

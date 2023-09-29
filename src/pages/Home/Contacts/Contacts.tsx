@@ -5,13 +5,13 @@ import { Pagination } from '@components/Pagination/Pagination';
 import { usePagination } from '@components/Pagination/usePagination';
 import { ModalComponent } from '@components/Modal/Modal';
 import { getContacts } from '@services/db/getContacts';
-import { formatCurrentDate } from '@services/date/formatCurrentDate';
 
-import { ContactType } from './ContactsItem/types';
-import { ContactsItem } from './ContactsItem/ContactsItem';
-import { Heading } from './Heading/Heading';
-import { AddContacts } from './AddContacts/AddContacts';
-import { AddContactsData } from './AddContacts/types';
+import { ContactType } from './components/ContactsItem/types';
+import { ContactsItem } from './components/ContactsItem/ContactsItem';
+import { Heading } from './components/Heading/Heading';
+import { AddContacts } from './components/AddContacts/AddContacts';
+import { AddContactsData } from './components/AddContacts/types';
+import { currentDate } from './helpers/getCurrentDate';
 import { ActionButtons } from '../components/ActionButtons/ActionButtons';
 
 export const Contacts: FC = () => {
@@ -23,9 +23,12 @@ export const Contacts: FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getContacts();
-
-      setContacts(data);
+      try {
+        const data = await getContacts();
+        setContacts(data);
+      } catch (error) {
+        console.error('Error while fetching data: ', error);
+      }
     };
 
     fetchData();
@@ -38,7 +41,6 @@ export const Contacts: FC = () => {
     address,
     photo,
   }: AddContactsData) => {
-    const currentDate = formatCurrentDate().split(' ').slice(0, 3).join(' ');
     const newContact = {
       id: contacts.length + 1,
       name: `${firstName} ${lastName}`,

@@ -24,9 +24,12 @@ export const Tickets: FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getTickets();
-
-      setTickets(data);
+      try {
+        const data = await getTickets();
+        setTickets(data);
+      } catch (error) {
+        console.error('Error while fetching data: ', error);
+      }
     };
 
     fetchData();
