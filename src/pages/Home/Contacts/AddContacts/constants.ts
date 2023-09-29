@@ -1,3 +1,5 @@
+import { IMAGE_SIZE } from '@components/AddPhoto/constants';
+
 export const ADD_CONTACT_FIELDS = Object.freeze({
   PHOTO: 'photo',
   FIRST_NAME: 'firstName',
@@ -10,6 +12,7 @@ export const ADD_CONTACT_CONFIG = Object.freeze({
   [ADD_CONTACT_FIELDS.PHOTO]: {
     label: 'Add photo',
     name: 'photo',
+    size: IMAGE_SIZE.BIG,
   },
   [ADD_CONTACT_FIELDS.FIRST_NAME]: {
     label: 'first name',
