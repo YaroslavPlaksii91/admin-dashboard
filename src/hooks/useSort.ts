@@ -1,8 +1,8 @@
 import { useState, useMemo, useCallback } from 'react';
 
 export const useSort = <T>(data: T[]) => {
-  const [sortKey, setSortKey] = useState<string>('name');
-  const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
+  const [sortKey, setSortKey] = useState<string>('date');
+  const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
 
   const handleSort = useCallback(
     (key: string) => {

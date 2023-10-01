@@ -56,7 +56,7 @@ export const ContactsItem: FC<ContactItemProps> = ({ contact }) => {
         }}
       >
         <Typography variant="subtitle2" component="p">
-          {contact.created}
+          {contact.date}
         </Typography>
         <Button>
           <SvgIcon titleAccess="More options">

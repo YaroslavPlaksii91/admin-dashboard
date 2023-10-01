@@ -50,7 +50,7 @@ export const Contacts: FC = () => {
       name: `${firstName} ${lastName}`,
       email,
       address,
-      created: currentDate,
+      date: currentDate,
       image: URL.createObjectURL(photo[0]),
     };
 
