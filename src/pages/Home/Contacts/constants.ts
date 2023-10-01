@@ -16,7 +16,7 @@ export const CONTACTS_COLUMNS = Object.freeze([
   },
   {
     title: 'Created at',
-    name: 'created',
+    name: 'date',
     size: 2,
   },
 ]);

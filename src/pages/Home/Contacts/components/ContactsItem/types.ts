@@ -4,7 +4,7 @@ export type ContactType = {
   email: string;
   address: string;
   image: string;
-  created: string;
+  date: string;
 };
 
 export type ContactItemProps = {
