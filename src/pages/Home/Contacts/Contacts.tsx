@@ -25,6 +25,8 @@ export const Contacts: FC = () => {
   const { getCurrentPageData, page, setPage, rowsPerPage, setRowsPerPage } =
     usePagination(sortedData);
 
+  const sortOptions = CONTACTS_COLUMNS.map(col => col.name);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -59,8 +61,6 @@ export const Contacts: FC = () => {
     setIsModalOpen(false);
   };
 
-  const onSortClick = () => {};
-
   const onFilterClick = () => {
     console.log('Filter');
   };
@@ -80,7 +80,8 @@ export const Contacts: FC = () => {
         addButtonName="Add contact"
         onAddClick={() => setIsModalOpen(true)}
         onFilterClick={onFilterClick}
-        onSortClick={onSortClick}
+        handleSort={handleSort}
+        sortOptions={sortOptions}
       />
 
       <Heading
