@@ -26,6 +26,8 @@ export const Tickets: FC = () => {
   const { getCurrentPageData, page, setPage, rowsPerPage, setRowsPerPage } =
     usePagination(sortedData);
 
+  const sortOptions = TICKETS_COLUMNS.map(col => col.name);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -63,10 +65,6 @@ export const Tickets: FC = () => {
     setIsModalOpen(false);
   };
 
-  const onSortClick = () => {
-    console.log('Sort');
-  };
-
   const onFilterClick = () => {
     console.log('Filter');
   };
@@ -86,7 +84,8 @@ export const Tickets: FC = () => {
         addButtonName="Add ticket"
         onAddClick={() => setIsModalOpen(true)}
         onFilterClick={onFilterClick}
-        onSortClick={onSortClick}
+        handleSort={handleSort}
+        sortOptions={sortOptions}
       />
 
       <Heading
