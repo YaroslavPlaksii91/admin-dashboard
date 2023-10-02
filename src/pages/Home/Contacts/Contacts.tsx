@@ -6,6 +6,7 @@ import { usePagination } from '@components/Pagination/usePagination';
 import { ModalComponent } from '@components/Modal/Modal';
 import { getContacts } from '@services/db/getContacts';
 import { useSort } from '@hooks/useSort';
+import { useFilter } from '@hooks/useFilter';
 
 import { ContactType } from './components/ContactsItem/types';
 import { ContactsItem } from './components/ContactsItem/ContactsItem';
@@ -19,8 +20,12 @@ import { ActionButtons } from '../components/ActionButtons/ActionButtons';
 export const Contacts: FC = () => {
   const [contacts, setContacts] = useState<ContactType[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [filterValue, setFilterValue] = useState('');
 
-  const { sortedData, handleSort, sortKey, sortDirection } = useSort(contacts);
+  const filteredData = useFilter(contacts, filterValue, 'date');
+
+  const { sortedData, handleSort, sortKey, sortDirection } =
+    useSort(filteredData);
 
   const { getCurrentPageData, page, setPage, rowsPerPage, setRowsPerPage } =
     usePagination(sortedData);
@@ -61,10 +66,6 @@ export const Contacts: FC = () => {
     setIsModalOpen(false);
   };
 
-  const onFilterClick = () => {
-    console.log('Filter');
-  };
-
   return (
     <Box
       sx={{
@@ -79,9 +80,12 @@ export const Contacts: FC = () => {
       <ActionButtons
         addButtonName="Add contact"
         onAddClick={() => setIsModalOpen(true)}
-        onFilterClick={onFilterClick}
         handleSort={handleSort}
         sortOptions={sortOptions}
+        filterValue={filterValue}
+        setFilterValue={setFilterValue}
+        filterTitle="Date"
+        filterOptions={['May 26, 2019', 'May 25, 2019', 'May 24, 2019']}
       />
 
       <Heading
@@ -96,7 +100,7 @@ export const Contacts: FC = () => {
       ))}
 
       <Pagination
-        count={contacts.length}
+        count={filteredData.length}
         page={page}
         setPage={setPage}
         rowsPerPage={rowsPerPage}
