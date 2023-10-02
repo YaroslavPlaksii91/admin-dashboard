@@ -18,25 +18,22 @@ export const useSort = <T>(data: T[]) => {
     [sortKey],
   );
 
-  const sortData = useCallback(
-    (data: any[], key: string) => {
-      return [...data].sort((a, b) => {
-        const valueA = typeof a[key] === 'object' ? a[key].name : a[key];
-        const valueB = typeof b[key] === 'object' ? b[key].name : b[key];
+  const sortData = (data: any[], key: string) => {
+    return [...data].sort((a, b) => {
+      const valueA = typeof a[key] === 'object' ? a[key].name : a[key];
+      const valueB = typeof b[key] === 'object' ? b[key].name : b[key];
 
-        if (valueA === valueB) {
-          return 0;
-        }
+      if (valueA === valueB) {
+        return 0;
+      }
 
-        if (sortDirection === 'asc') {
-          return valueA < valueB ? -1 : 1;
-        } else {
-          return valueA > valueB ? -1 : 1;
-        }
-      });
-    },
-    [sortDirection],
-  );
+      if (sortDirection === 'asc') {
+        return valueA < valueB ? -1 : 1;
+      } else {
+        return valueA > valueB ? -1 : 1;
+      }
+    });
+  };
 
   const sortedData = useMemo(() => {
     return sortData(data, sortKey);
