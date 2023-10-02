@@ -8,6 +8,7 @@ import { getTickets } from '@services/db/getTickets';
 import { formatCurrentDate } from '@services/date/formatCurrentDate';
 import { formatCustomerDate } from '@services/date/formatCustomerDate';
 import { useSort } from '@hooks/useSort';
+import { useFilter } from '@hooks/useFilter';
 
 import { TicketsItem } from './components/TicketsItem/TicketsItem';
 import { TicketType } from './components/TicketsItem/types';
@@ -20,8 +21,12 @@ import { ActionButtons } from '../components/ActionButtons/ActionButtons';
 export const Tickets: FC = () => {
   const [tickets, setTickets] = useState<TicketType[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [filterValue, setFilterValue] = useState('');
 
-  const { sortedData, handleSort, sortKey, sortDirection } = useSort(tickets);
+  const filteredData = useFilter(tickets, filterValue, 'priority');
+
+  const { sortedData, handleSort, sortKey, sortDirection } =
+    useSort(filteredData);
 
   const { getCurrentPageData, page, setPage, rowsPerPage, setRowsPerPage } =
     usePagination(sortedData);
@@ -65,10 +70,6 @@ export const Tickets: FC = () => {
     setIsModalOpen(false);
   };
 
-  const onFilterClick = () => {
-    console.log('Filter');
-  };
-
   return (
     <Box
       sx={{
@@ -83,9 +84,12 @@ export const Tickets: FC = () => {
       <ActionButtons
         addButtonName="Add ticket"
         onAddClick={() => setIsModalOpen(true)}
-        onFilterClick={onFilterClick}
         handleSort={handleSort}
         sortOptions={sortOptions}
+        filterValue={filterValue}
+        setFilterValue={setFilterValue}
+        filterTitle="Priority"
+        filterOptions={['high', 'normal', 'low']}
       />
 
       <Heading
@@ -100,7 +104,7 @@ export const Tickets: FC = () => {
       ))}
 
       <Pagination
-        count={tickets.length}
+        count={filteredData.length}
         page={page}
         setPage={setPage}
         rowsPerPage={rowsPerPage}

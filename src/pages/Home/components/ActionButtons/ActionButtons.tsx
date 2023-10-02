@@ -2,35 +2,56 @@ import { FC, useState, MouseEvent } from 'react';
 import { Box, Button, SvgIcon } from '@mui/material';
 
 import { ActionButtonsProps } from './types';
-import { SortPopover } from '../SortPopover/SortPopover';
+import { Popover } from '../Popover/Popover';
+import { RadioButtons } from '../RadioButtons/RadioButtons';
 
 export const ActionButtons: FC<ActionButtonsProps> = ({
-  onFilterClick,
   handleSort,
   onAddClick,
   addButtonName,
   sortOptions,
+  setFilterValue,
+  filterValue,
+  filterTitle,
+  filterOptions,
 }) => {
-  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+  const [sortAnchorEl, setSortAnchorEl] = useState<HTMLButtonElement | null>(
+    null,
+  );
+  const [filterAnchorEl, setFilterAnchorEl] =
+    useState<HTMLButtonElement | null>(null);
 
-  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
+  const handleSortClick = (event: MouseEvent<HTMLButtonElement>) => {
+    setSortAnchorEl(event.currentTarget);
+  };
+  const handleFilterClick = (event: MouseEvent<HTMLButtonElement>) => {
+    setFilterAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
+  const handleSortClose = () => {
+    setSortAnchorEl(null);
+  };
+  const handleFilterClose = () => {
+    setFilterAnchorEl(null);
   };
 
-  const open = Boolean(anchorEl);
-  const id = open ? 'simple-popover' : undefined;
+  const sortOpen = Boolean(sortAnchorEl);
+  const sortId = sortOpen ? 'sort-popover' : undefined;
+
+  const filterOpen = Boolean(filterAnchorEl);
+  const filterId = filterOpen ? 'filter-popover' : undefined;
+
+  const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFilterValue((event.target as HTMLInputElement).value);
+  };
 
   return (
     <Box sx={{ display: 'flex', mb: '47px', padding: '0 32px' }}>
       <Button
         variant="text"
         sx={{ color: 'grayDarkColor', mr: 8 }}
-        aria-describedby={id}
-        onClick={handleClick}
+        aria-describedby={sortId}
+        onClick={handleSortClick}
       >
         <SvgIcon titleAccess="Sort" fontSize="small" sx={{ mr: 2 }}>
           <use href="/src/assets/icons/sprite.svg#icon-sort"></use>
@@ -38,25 +59,50 @@ export const ActionButtons: FC<ActionButtonsProps> = ({
         Sort
       </Button>
 
-      <SortPopover
-        id={id}
-        open={open}
-        anchorEl={anchorEl}
-        handleClose={handleClose}
-        handleSort={handleSort}
-        options={sortOptions}
-      />
+      <Popover
+        id={sortId}
+        open={sortOpen}
+        anchorEl={sortAnchorEl}
+        handleClose={handleSortClose}
+      >
+        {sortOptions.map(option => (
+          <Button
+            key={option}
+            variant="text"
+            sx={{ display: 'block', width: '100%', padding: '10px' }}
+            onClick={() => handleSort(option)}
+          >
+            By {option}
+          </Button>
+        ))}
+      </Popover>
 
       <Button
         variant="text"
         sx={{ color: 'grayDarkColor' }}
-        onClick={onFilterClick}
+        aria-describedby={filterId}
+        onClick={handleFilterClick}
       >
         <SvgIcon titleAccess="Filter" fontSize="small" sx={{ mr: 2 }}>
           <use href="/src/assets/icons/sprite.svg#icon-filter"></use>
         </SvgIcon>
         Filter
       </Button>
+
+      <Popover
+        id={filterId}
+        open={filterOpen}
+        anchorEl={filterAnchorEl}
+        handleClose={handleFilterClose}
+      >
+        <RadioButtons
+          value={filterValue}
+          handleChange={handleFilterChange}
+          title={filterTitle}
+          options={filterOptions}
+        />
+      </Popover>
+
       <Button
         variant="text"
         sx={{ color: 'accentBlueColor', ml: 'auto' }}

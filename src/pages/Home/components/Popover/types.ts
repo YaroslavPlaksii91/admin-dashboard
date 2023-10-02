@@ -1,8 +1,9 @@
-export type SortPopoverProps = {
+import { ReactNode } from 'react';
+
+export type PopoverProps = {
   id: string | undefined;
   open: boolean;
   anchorEl: HTMLButtonElement | null;
   handleClose: () => void;
-  handleSort: (sortKey: string) => void;
-  options: string[];
+  children: ReactNode;
 };
