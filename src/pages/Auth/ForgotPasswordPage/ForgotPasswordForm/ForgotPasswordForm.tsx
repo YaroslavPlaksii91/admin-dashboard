@@ -1,11 +1,9 @@
 import { FC } from 'react';
-import { useNavigate } from 'react-router';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Button } from '@mui/material';
 
 import { EMAIL_REGEX } from '@utils/constants';
-import { ROUTES } from '@routes/constants';
-import { getUser } from '@services/localeStorage/localeStorage';
+import { sendResetEmail } from '@services/firebase/firebase';
 import { FormInput } from '@components/FormInput/FormInput';
 
 import { ForgotPasswordFormData, ForgotPasswordFormProps } from './types';
@@ -22,20 +20,15 @@ export const ForgotPasswordForm: FC<ForgotPasswordFormProps> = ({
     handleSubmit,
     formState: { errors },
   } = useForm<ForgotPasswordFormData>();
-  const navigate = useNavigate();
 
-  const onSubmit: SubmitHandler<ForgotPasswordFormData> = data => {
-    const user = getUser(data.email);
+  const onSubmit: SubmitHandler<ForgotPasswordFormData> = async data => {
+    try {
+      await sendResetEmail(data.email);
 
-    if (!user) {
-      return console.error('User not found!');
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error('Error: ', error);
     }
-
-    setIsSubmitted(true);
-
-    setTimeout(() => {
-      navigate(ROUTES.RESET_PASSWORD_PAGE, { state: { from: data.email } });
-    }, 3000);
   };
 
   return (

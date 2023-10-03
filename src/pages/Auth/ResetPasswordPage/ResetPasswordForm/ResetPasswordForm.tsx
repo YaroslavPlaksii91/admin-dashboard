@@ -1,10 +1,11 @@
 import { FC } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Button } from '@mui/material';
+import { toast } from 'react-toastify';
 
 import { PASSWORD_MIN_LENGTH } from '@utils/constants';
-import { changeUserPassword } from '@services/localeStorage/localeStorage';
+import { confirmThePasswordReset } from '@services/firebase/firebase';
 import { FormInput } from '@components/FormInput/FormInput';
 
 import { ResetPasswordFormData } from './types';
@@ -19,11 +20,27 @@ export const ResetPasswordForm: FC = () => {
     handleSubmit,
     formState: { errors },
     getValues,
+    reset,
   } = useForm<ResetPasswordFormData>();
-  const location = useLocation();
 
-  const onSubmit: SubmitHandler<ResetPasswordFormData> = ({ password }) => {
-    changeUserPassword(location.state.from, password);
+  const [searchParams] = useSearchParams();
+
+  const oobCode: string | null = searchParams.get('oobCode');
+
+  const onSubmit: SubmitHandler<ResetPasswordFormData> = async ({
+    password,
+  }) => {
+    try {
+      oobCode && (await confirmThePasswordReset(oobCode, password));
+
+      toast.success('Password was updated!', {
+        autoClose: 3000,
+      });
+
+      reset();
+    } catch (error) {
+      console.error('Error: ', error);
+    }
   };
 
   return (

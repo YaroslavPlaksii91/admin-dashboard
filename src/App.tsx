@@ -1,6 +1,7 @@
 import { FC, lazy, Suspense } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
+import { ToastContainer } from 'react-toastify';
 
 import { ROUTES } from '@routes/constants';
 import { PublicRoute } from '@routes/PublicRoute';
@@ -13,6 +14,7 @@ import { Overview } from '@pages/Home/Overview/Overview';
 import { Tickets } from '@pages/Home/Tickets/Tickets';
 import { Contacts } from '@pages/Home/Contacts/Contacts';
 
+import 'react-toastify/dist/ReactToastify.css';
 import { theme } from '@styles/theme';
 
 const loadAuthPage = () => import('@pages/Auth/Auth');
@@ -28,6 +30,7 @@ const HomePage = lazy(() =>
 export const App: FC = () => {
   return (
     <ThemeProvider theme={theme}>
+      <ToastContainer />
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route
