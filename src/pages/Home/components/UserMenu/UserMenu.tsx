@@ -3,10 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { SvgIcon, Typography, Box, Button } from '@mui/material';
 
 import { ROUTES } from '@routes/constants';
-import {
-  setIsLoggedIn,
-  getCurrentUser,
-} from '@services/localeStorage/localeStorage';
+import { endSession } from '@services/localeStorage/localeStorage';
+import { getCurrentUser } from '@services/firebase/firebase';
 
 export const UserMenu: FC = () => {
   const [isLogoutVisible, setIsLogoutVisible] = useState(false);
@@ -19,7 +17,7 @@ export const UserMenu: FC = () => {
   };
 
   const handleLogoutClick = () => {
-    setIsLoggedIn(currentUser.email);
+    endSession();
     navigate(ROUTES.LOGIN_PAGE);
   };
 
@@ -47,7 +45,7 @@ export const UserMenu: FC = () => {
           mr: '14px',
         }}
       >
-        {`${currentUser.firstName} ${currentUser.lastName}`}
+        {currentUser?.displayName}
       </Typography>
       <Button
         sx={{

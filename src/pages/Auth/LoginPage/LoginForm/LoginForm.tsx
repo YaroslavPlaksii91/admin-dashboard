@@ -2,10 +2,12 @@ import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Button } from '@mui/material';
+import { toast } from 'react-toastify';
 
 import { ROUTES } from '@routes/constants';
 import { EMAIL_REGEX, PASSWORD_MIN_LENGTH } from '@utils/constants';
-import { getUser, setIsLoggedIn } from '@services/localeStorage/localeStorage';
+import { startSession } from '@services/localeStorage/localeStorage';
+import { signInUser } from '@services/firebase/firebase';
 import { FormInput } from '@components/FormInput/FormInput';
 
 import { LOGIN_FIELDS, LOGIN_FIELDS_CONFIG } from './constants';
@@ -19,14 +21,20 @@ export const LoginForm: FC = () => {
   } = useForm<LoginFormData>();
   const navigate = useNavigate();
 
-  const onSubmit: SubmitHandler<LoginFormData> = data => {
-    const user = getUser(data.email);
+  const onSubmit: SubmitHandler<LoginFormData> = async data => {
+    try {
+      const userCredential = await signInUser(data.email, data.password);
 
-    if (user?.password === data.password) {
-      setIsLoggedIn(user.email);
+      const token = await userCredential.user.getIdToken();
+
+      startSession(token);
+
       navigate(ROUTES.HOME_PAGE, { replace: true });
-    } else {
-      console.error('User not found!');
+    } catch (error) {
+      console.error('Error during authorization: ', error);
+      toast.error('Wrong password or email!', {
+        autoClose: 3000,
+      });
     }
   };
 
