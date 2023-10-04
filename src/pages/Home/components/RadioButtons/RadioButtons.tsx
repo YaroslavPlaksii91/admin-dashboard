@@ -24,7 +24,7 @@ export const RadioButtons: FC<RadioButtonsProps> = ({
         value={value}
         onChange={handleChange}
       >
-        {options.map(option => (
+        {options.sort().map(option => (
           <FormControlLabel
             key={option}
             value={option}

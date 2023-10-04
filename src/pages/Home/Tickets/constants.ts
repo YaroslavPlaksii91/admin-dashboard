@@ -2,7 +2,7 @@ export const TICKETS_COLUMNS = Object.freeze([
   {
     title: 'Ticket details',
     name: 'title',
-    size: 4,
+    size: 5,
   },
   {
     title: 'Customer name',
@@ -12,7 +12,7 @@ export const TICKETS_COLUMNS = Object.freeze([
   {
     title: 'Date',
     name: 'date',
-    size: 3,
+    size: 2,
   },
   {
     title: 'Priority',
@@ -20,3 +20,5 @@ export const TICKETS_COLUMNS = Object.freeze([
     size: 2,
   },
 ]);
+
+export const PRIORITY_OPTIONS = Object.freeze(['high', 'low', 'normal']);

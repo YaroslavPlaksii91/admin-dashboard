@@ -4,15 +4,6 @@ import { ChartItemType } from '@pages/Home/Overview/components/Chart/types';
 import { TasksItemType } from '@pages/Home/Overview/components/Tasks/types';
 import { TicketsItemType } from '@pages/Home/Overview/components/Tickets/types';
 
-export type UserStoreType = {
-  email: string;
-  firstName: string;
-  lastName: string;
-  password: string;
-  confirmPassword: string;
-  isLoggedIn: boolean;
-};
-
 export type OverviewDataType = {
   summary: SummaryItemType[];
   trends: ChartItemType[];

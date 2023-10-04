@@ -1,10 +1,8 @@
 export type TicketType = {
-  id: number;
+  id: string;
   title: string;
-  customer: {
-    name: string;
-    date: string;
-  };
+  customerName: string;
+  customerDate: string;
   date: string;
   priority: string;
   image: string;

@@ -45,7 +45,7 @@ export const UserMenu: FC = () => {
           mr: '14px',
         }}
       >
-        {currentUser?.displayName}
+        {currentUser && currentUser.displayName}
       </Typography>
       <Button
         sx={{
