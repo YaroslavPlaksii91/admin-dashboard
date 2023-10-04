@@ -5,7 +5,7 @@ import { Button, Box } from '@mui/material';
 import { FormInput } from '@components/FormInput/FormInput';
 import { Select } from '@components/Select/Select';
 import { DatePicker } from '@components/DatePicker/DatePicker';
-import { PRIORITY_OPTIONS } from '@utils/constants';
+import { PRIORITY_OPTIONS } from '@pages/Home/Tickets/constants';
 
 import { ADD_TICKETS_FIELDS, ADD_TICKETS_CONFIG } from './constants';
 import { AddTicketsData, AddTicketsProps } from './types';

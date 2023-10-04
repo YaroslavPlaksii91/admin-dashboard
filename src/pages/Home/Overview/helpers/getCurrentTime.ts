@@ -1,4 +1,4 @@
-import { MONTHS } from '@routes/constants';
+import { MONTHS } from '@utils/constants';
 
 export const getCurrentTime = () => {
   const now = new Date();
