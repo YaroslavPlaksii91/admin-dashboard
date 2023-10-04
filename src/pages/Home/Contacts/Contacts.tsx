@@ -5,6 +5,7 @@ import { Pagination } from '@components/Pagination/Pagination';
 import { usePagination } from '@components/Pagination/usePagination';
 import { ModalComponent } from '@components/Modal/Modal';
 import { getContacts, createContact } from '@services/db/contacts';
+import { formatDate } from '@services/date/formatDate';
 import { useSort } from '@hooks/useSort';
 import { useFilter } from '@hooks/useFilter';
 
@@ -30,6 +31,15 @@ export const Contacts: FC = () => {
     usePagination(sortedData);
 
   const sortOptions = CONTACTS_COLUMNS.map(col => col.name);
+
+  const filterOptions = Array.from(
+    new Set(
+      contacts.map(contact => {
+        const formattedDate = formatDate(contact.date);
+        return formattedDate.date;
+      }),
+    ),
+  );
 
   useEffect(() => {
     const fetchData = async () => {
@@ -87,7 +97,7 @@ export const Contacts: FC = () => {
         filterValue={filterValue}
         setFilterValue={setFilterValue}
         filterTitle="Date"
-        filterOptions={['Oct 4, 2023', 'Oct 3, 2023', 'Oct 2, 2023']}
+        filterOptions={filterOptions}
       />
 
       <Heading
