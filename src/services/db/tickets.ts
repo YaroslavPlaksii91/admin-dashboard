@@ -1,12 +1,9 @@
-import axios from 'axios';
-
+import { axiosInstance } from '@services/axios/axiosInstance';
 import { TicketType } from '@pages/Home/Tickets/components/TicketsItem/types';
 
 export const getTickets = async () => {
   try {
-    const { data } = await axios<TicketType[]>(
-      'https://651bfe75194f77f2a5af33c3.mockapi.io/api/tickets',
-    );
+    const { data } = await axiosInstance<TicketType[]>('/tickets');
 
     return data;
   } catch (error) {
@@ -16,10 +13,7 @@ export const getTickets = async () => {
 
 export const createTicket = async (newTicket: TicketType) => {
   try {
-    const { data } = await axios.post(
-      'https://651bfe75194f77f2a5af33c3.mockapi.io/api/tickets',
-      newTicket,
-    );
+    const { data } = await axiosInstance.post('/tickets', newTicket);
 
     return data;
   } catch (error) {

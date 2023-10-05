@@ -1,12 +1,9 @@
-import axios from 'axios';
-
+import { axiosInstance } from '@services/axios/axiosInstance';
 import { ContactType } from '@pages/Home/Contacts/components/ContactsItem/types';
 
 export const getContacts = async () => {
   try {
-    const { data } = await axios<ContactType[]>(
-      'https://651bfe75194f77f2a5af33c3.mockapi.io/api/contacts',
-    );
+    const { data } = await axiosInstance<ContactType[]>('/contacts');
 
     return data;
   } catch (error) {
@@ -16,10 +13,7 @@ export const getContacts = async () => {
 
 export const createContact = async (newContact: ContactType) => {
   try {
-    const { data } = await axios.post(
-      'https://651bfe75194f77f2a5af33c3.mockapi.io/api/contacts',
-      newContact,
-    );
+    const { data } = await axiosInstance.post('/contacts', newContact);
 
     return data;
   } catch (error) {
