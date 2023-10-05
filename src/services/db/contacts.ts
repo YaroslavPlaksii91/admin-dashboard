@@ -20,3 +20,19 @@ export const createContact = async (newContact: ContactType) => {
     console.error('Error while creating a new contact: ', error);
   }
 };
+
+export const editContact = async (contactId: string, contact: ContactType) => {
+  try {
+    await axiosInstance.patch(`/contacts/${contactId}`, contact);
+  } catch (error) {
+    console.error('Error while updating a contact: ', error);
+  }
+};
+
+export const deleteContact = async (contactId: string) => {
+  try {
+    await axiosInstance.delete(`/contacts/${contactId}`);
+  } catch (error) {
+    console.error('Error while removing a contact: ', error);
+  }
+};
