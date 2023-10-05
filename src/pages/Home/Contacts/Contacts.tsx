@@ -4,7 +4,8 @@ import { Box } from '@mui/material';
 import { Pagination } from '@components/Pagination/Pagination';
 import { usePagination } from '@components/Pagination/usePagination';
 import { ModalComponent } from '@components/Modal/Modal';
-import { getContacts } from '@services/db/getContacts';
+import { getContacts, createContact } from '@services/db/contacts';
+import { formatDate } from '@services/date/formatDate';
 import { useSort } from '@hooks/useSort';
 import { useFilter } from '@hooks/useFilter';
 
@@ -12,7 +13,6 @@ import { ContactType } from './components/ContactsItem/types';
 import { ContactsItem } from './components/ContactsItem/ContactsItem';
 import { AddContacts } from './components/AddContacts/AddContacts';
 import { AddContactsData } from './components/AddContacts/types';
-import { currentDate } from './helpers/getCurrentDate';
 import { CONTACTS_COLUMNS } from './constants';
 import { Heading } from '../components/Heading/Heading';
 import { ActionButtons } from '../components/ActionButtons/ActionButtons';
@@ -32,11 +32,21 @@ export const Contacts: FC = () => {
 
   const sortOptions = CONTACTS_COLUMNS.map(col => col.name);
 
+  const filterOptions = Array.from(
+    new Set(
+      contacts.map(contact => {
+        const formattedDate = formatDate(contact.date);
+        return formattedDate.date;
+      }),
+    ),
+  );
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await getContacts();
-        setContacts(data);
+
+        data && setContacts(data);
       } catch (error) {
         console.error('Error while fetching data: ', error);
       }
@@ -45,7 +55,7 @@ export const Contacts: FC = () => {
     fetchData();
   }, []);
 
-  const handleAddContact = ({
+  const handleAddContact = async ({
     firstName,
     lastName,
     email,
@@ -53,15 +63,17 @@ export const Contacts: FC = () => {
     photo,
   }: AddContactsData) => {
     const newContact = {
-      id: contacts.length + 1,
+      id: String(contacts.length + 1),
       name: `${firstName} ${lastName}`,
       email,
       address,
-      date: currentDate,
+      date: new Date().toISOString(),
       image: URL.createObjectURL(photo[0]),
     };
 
-    setContacts([newContact, ...contacts]);
+    const createdContact = await createContact(newContact);
+
+    setContacts([createdContact, ...contacts]);
 
     setIsModalOpen(false);
   };
@@ -85,7 +97,7 @@ export const Contacts: FC = () => {
         filterValue={filterValue}
         setFilterValue={setFilterValue}
         filterTitle="Date"
-        filterOptions={['May 26, 2019', 'May 25, 2019', 'May 24, 2019']}
+        filterOptions={filterOptions}
       />
 
       <Heading

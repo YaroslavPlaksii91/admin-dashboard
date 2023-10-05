@@ -1,9 +1,13 @@
 import { FC } from 'react';
 import { Grid, Button, SvgIcon, Box, Typography } from '@mui/material';
 
+import { formatDate } from '@services/date/formatDate';
+
 import { ContactItemProps } from './types';
 
 export const ContactsItem: FC<ContactItemProps> = ({ contact }) => {
+  const date = formatDate(contact.date);
+
   return (
     <Grid
       container
@@ -56,7 +60,7 @@ export const ContactsItem: FC<ContactItemProps> = ({ contact }) => {
         }}
       >
         <Typography variant="subtitle2" component="p">
-          {contact.date}
+          {date.date}
         </Typography>
         <Button>
           <SvgIcon titleAccess="More options">

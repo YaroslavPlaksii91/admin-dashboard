@@ -4,9 +4,7 @@ import { Box } from '@mui/material';
 import { Pagination } from '@components/Pagination/Pagination';
 import { usePagination } from '@components/Pagination/usePagination';
 import { ModalComponent } from '@components/Modal/Modal';
-import { getTickets } from '@services/db/getTickets';
-import { formatCurrentDate } from '@services/date/formatCurrentDate';
-import { formatCustomerDate } from '@services/date/formatCustomerDate';
+import { getTickets, createTicket } from '@services/db/tickets';
 import { useSort } from '@hooks/useSort';
 import { useFilter } from '@hooks/useFilter';
 
@@ -37,7 +35,7 @@ export const Tickets: FC = () => {
     const fetchData = async () => {
       try {
         const data = await getTickets();
-        setTickets(data);
+        data && setTickets(data);
       } catch (error) {
         console.error('Error while fetching data: ', error);
       }
@@ -46,26 +44,27 @@ export const Tickets: FC = () => {
     fetchData();
   }, []);
 
-  const handleAddTicket = ({
+  const handleAddTicket = async ({
     title,
     date: { $d },
     name,
     priority,
   }: AddTicketsData) => {
     const newTicket = {
-      id: tickets.length + 1,
+      id: String(tickets.length + 1),
       title,
-      customer: {
-        name,
-        date: formatCustomerDate($d),
-      },
-      date: formatCurrentDate(),
+      customerName: name,
+      customerDate: new Date().toISOString(),
+      date: new Date($d).toISOString(),
       priority,
-      image: '/tom-cruise',
-      updated: formatCurrentDate(),
+      image:
+        'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/574.jpg',
+      updated: new Date().toISOString(),
     };
 
-    setTickets([newTicket, ...tickets]);
+    const createdTicket = await createTicket(newTicket);
+
+    setTickets([createdTicket, ...tickets]);
 
     setIsModalOpen(false);
   };

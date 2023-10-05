@@ -3,16 +3,17 @@ import { Grid, Button, SvgIcon, Box } from '@mui/material';
 
 import { Label } from '@components/Label/Label';
 import { LABEL_TYPES } from '@components/Label/constants';
-import { getTicketUpdateTime } from '@services/date/getTicketUpdateTime';
+import { getTicketUpdateTime } from '@pages/Home/Tickets/helpers/getTicketUpdateTime';
+import { formatCustomerDate } from '@pages/Home/Tickets/helpers/formatCustomerDate';
+import { formatDate } from '@services/date/formatDate';
 
 import { TicketsItemProps } from './types';
 import { TextCell } from '../TextCell/TextCell';
 
 export const TicketsItem: FC<TicketsItemProps> = ({ ticket }) => {
-  const dateTimeParts = ticket.date.split(' ');
-  const datePart = dateTimeParts.slice(0, 3).join(' ');
-  const timePart = dateTimeParts.slice(3).join(' ');
   const updatedTime = getTicketUpdateTime(ticket.updated);
+  const customerDate = formatCustomerDate(ticket.customerDate);
+  const date = formatDate(ticket.date);
 
   return (
     <Grid
@@ -28,7 +29,7 @@ export const TicketsItem: FC<TicketsItemProps> = ({ ticket }) => {
         },
       }}
     >
-      <Grid item xs={4} sx={{ display: 'flex', alignItems: 'center' }}>
+      <Grid item xs={5} sx={{ display: 'flex', alignItems: 'center' }}>
         <Box
           sx={{
             width: '44px',
@@ -38,22 +39,16 @@ export const TicketsItem: FC<TicketsItemProps> = ({ ticket }) => {
             overflow: 'hidden',
           }}
         >
-          <img
-            src={`/src/assets/images/users/${ticket.image}.png`}
-            alt={ticket.customer.name}
-          />
+          <img src={ticket.image} alt={ticket.customerName} />
         </Box>
 
         <TextCell text={ticket.title} subtext={updatedTime} />
       </Grid>
       <Grid item xs={3}>
-        <TextCell
-          text={ticket.customer.name}
-          subtext={`on ${ticket.customer.date}`}
-        />
+        <TextCell text={ticket.customerName} subtext={`on ${customerDate}`} />
       </Grid>
-      <Grid item xs={3}>
-        <TextCell text={datePart} subtext={timePart} />
+      <Grid item xs={2}>
+        <TextCell text={date.date} subtext={date.time} />
       </Grid>
       <Grid
         item

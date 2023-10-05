@@ -8,6 +8,10 @@ jest.mock('react-router', () => ({
   useNavigate: () => navigate,
 }));
 
+jest.mock('@services/firebase/firebase', () => ({
+  signInUser: jest.fn(),
+}));
+
 describe('LoginForm', () => {
   afterEach(cleanup);
 
