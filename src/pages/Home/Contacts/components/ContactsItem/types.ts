@@ -1,3 +1,5 @@
+import { MouseEventHandler } from 'react';
+
 export type ContactType = {
   id: string;
   name: string;
@@ -9,4 +11,6 @@ export type ContactType = {
 
 export type ContactItemProps = {
   contact: ContactType;
+  handleDelete: MouseEventHandler<HTMLDivElement>;
+  handleEdit: MouseEventHandler<HTMLDivElement>;
 };
