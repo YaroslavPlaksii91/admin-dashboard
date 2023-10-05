@@ -1,4 +1,6 @@
+import { MouseEventHandler } from 'react';
+
 export type SpeedDialProps = {
-  handleDelete: () => void;
-  handleEdit: () => void;
+  handleDelete: MouseEventHandler<HTMLDivElement>;
+  handleEdit: MouseEventHandler<HTMLDivElement>;
 };
