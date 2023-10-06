@@ -8,4 +8,5 @@ export type FormInputProps = {
   register: UseFormRegisterReturn;
   errors: FieldErrors;
   isPassword?: boolean;
+  defaultValue?: string;
 };

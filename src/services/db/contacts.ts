@@ -1,5 +1,6 @@
 import { axiosInstance } from '@services/axios/axiosInstance';
 import { ContactType } from '@pages/Home/Contacts/components/ContactsItem/types';
+import { UpdateContactData } from '@pages/Home/Contacts/components/ContactsForm/types';
 
 export const getContacts = async () => {
   try {
@@ -21,9 +22,14 @@ export const createContact = async (newContact: ContactType) => {
   }
 };
 
-export const editContact = async (contactId: string, contact: ContactType) => {
+export const editContact = async (
+  contactId: string,
+  contact: UpdateContactData,
+) => {
   try {
-    await axiosInstance.patch(`/contacts/${contactId}`, contact);
+    const { data } = await axiosInstance.put(`/contacts/${contactId}`, contact);
+
+    return data;
   } catch (error) {
     console.error('Error while updating a contact: ', error);
   }

@@ -23,7 +23,9 @@ export const createTicket = async (newTicket: TicketType) => {
 
 export const editTicket = async (ticketId: string, ticket: TicketType) => {
   try {
-    await axiosInstance.patch(`/tickets/${ticketId}`, ticket);
+    const { data } = await axiosInstance.put(`/tickets/${ticketId}`, ticket);
+
+    return data;
   } catch (error) {
     console.error('Error while updating a ticket: ', error);
   }

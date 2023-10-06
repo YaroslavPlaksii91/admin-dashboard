@@ -6,4 +6,5 @@ export type FileInputProps = {
   register?: UseFormRegisterReturn;
   errors?: FieldErrors;
   size: number;
+  src?: string;
 };

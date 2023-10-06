@@ -6,18 +6,29 @@ import { FormInput } from '@components/FormInput/FormInput';
 import { AddPhoto } from '@components/AddPhoto/AddPhoto';
 import { EMAIL_REGEX } from '@utils/constants';
 
-import { ADD_CONTACT_CONFIG, ADD_CONTACT_FIELDS } from './constants';
-import { AddContactsData, AddContactsProps } from './types';
+import { CONTACTS_FORM_CONFIG, CONTACTS_FORM_FIELDS } from './constants';
+import { AddContactsData, ContactsFormProps } from './types';
 
-export const AddContacts: FC<AddContactsProps> = ({ addContact }) => {
+export const ContactsForm: FC<ContactsFormProps> = ({
+  addContact,
+  editContact,
+  activeContact,
+}) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<AddContactsData>();
 
+  const firstNameDefault = activeContact?.name.split(' ')[0];
+  const lastNameDefault = activeContact?.name.split(' ')[1];
+
   const onSubmit: SubmitHandler<AddContactsData> = data => {
-    addContact(data);
+    if (activeContact) {
+      editContact({ ...data, date: activeContact.date });
+    } else {
+      addContact(data);
+    }
   };
 
   return (
@@ -28,15 +39,16 @@ export const AddContacts: FC<AddContactsProps> = ({ addContact }) => {
       sx={{ margin: '32px 0 24px' }}
     >
       <AddPhoto
-        {...ADD_CONTACT_CONFIG[ADD_CONTACT_FIELDS.PHOTO]}
+        {...CONTACTS_FORM_CONFIG[CONTACTS_FORM_FIELDS.PHOTO]}
         register={register('photo', {
           required: 'Choose a photo',
         })}
         errors={errors}
+        src={activeContact?.image}
       />
 
       <FormInput
-        {...ADD_CONTACT_CONFIG[ADD_CONTACT_FIELDS.FIRST_NAME]}
+        {...CONTACTS_FORM_CONFIG[CONTACTS_FORM_FIELDS.FIRST_NAME]}
         register={register('firstName', {
           required: 'First name is required',
           minLength: {
@@ -45,10 +57,11 @@ export const AddContacts: FC<AddContactsProps> = ({ addContact }) => {
           },
         })}
         errors={errors}
+        defaultValue={firstNameDefault}
       />
 
       <FormInput
-        {...ADD_CONTACT_CONFIG[ADD_CONTACT_FIELDS.LAST_NAME]}
+        {...CONTACTS_FORM_CONFIG[CONTACTS_FORM_FIELDS.LAST_NAME]}
         register={register('lastName', {
           required: 'Last name is required',
           minLength: {
@@ -57,10 +70,11 @@ export const AddContacts: FC<AddContactsProps> = ({ addContact }) => {
           },
         })}
         errors={errors}
+        defaultValue={lastNameDefault}
       />
 
       <FormInput
-        {...ADD_CONTACT_CONFIG[ADD_CONTACT_FIELDS.EMAIL]}
+        {...CONTACTS_FORM_CONFIG[CONTACTS_FORM_FIELDS.EMAIL]}
         register={register('email', {
           required: 'Email is required',
           pattern: {
@@ -69,10 +83,11 @@ export const AddContacts: FC<AddContactsProps> = ({ addContact }) => {
           },
         })}
         errors={errors}
+        defaultValue={activeContact?.email}
       />
 
       <FormInput
-        {...ADD_CONTACT_CONFIG[ADD_CONTACT_FIELDS.ADDRESS]}
+        {...CONTACTS_FORM_CONFIG[CONTACTS_FORM_FIELDS.ADDRESS]}
         register={register('address', {
           required: 'Address is required',
           minLength: {
@@ -81,6 +96,7 @@ export const AddContacts: FC<AddContactsProps> = ({ addContact }) => {
           },
         })}
         errors={errors}
+        defaultValue={activeContact?.address}
       />
 
       <Button variant="contained" type="submit" fullWidth>
