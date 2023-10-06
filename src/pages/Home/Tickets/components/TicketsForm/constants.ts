@@ -1,28 +1,28 @@
-export const ADD_TICKETS_FIELDS = Object.freeze({
+export const TICKETS_FORM_FIELDS = Object.freeze({
   TITLE: 'title',
   NAME: 'name',
   DATE: 'date',
   PRIORITY: 'priority',
 });
 
-export const ADD_TICKETS_CONFIG = Object.freeze({
-  [ADD_TICKETS_FIELDS.TITLE]: {
+export const TICKETS_FORM_CONFIG = Object.freeze({
+  [TICKETS_FORM_FIELDS.TITLE]: {
     label: 'Ticket details',
     type: 'text',
     name: 'title',
     placeholder: 'Add description',
   },
-  [ADD_TICKETS_FIELDS.NAME]: {
+  [TICKETS_FORM_FIELDS.NAME]: {
     label: 'Customer name',
     type: 'text',
     name: 'name',
     placeholder: 'Name',
   },
-  [ADD_TICKETS_FIELDS.DATE]: {
+  [TICKETS_FORM_FIELDS.DATE]: {
     label: 'Date',
     name: 'date',
   },
-  [ADD_TICKETS_FIELDS.PRIORITY]: {
+  [TICKETS_FORM_FIELDS.PRIORITY]: {
     label: 'Priority',
     name: 'priority',
     options: [

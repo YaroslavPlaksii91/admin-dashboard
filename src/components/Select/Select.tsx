@@ -9,12 +9,15 @@ export const Select: FC<SelectProps> = ({
   register,
   errors,
   options,
+  defaultValue: value,
 }) => {
+  const defaultValue = value ? value : options[0].value;
+
   return (
     <TextField
       select
       label={label}
-      defaultValue={options[0].value}
+      defaultValue={defaultValue}
       variant="outlined"
       fullWidth
       {...register}

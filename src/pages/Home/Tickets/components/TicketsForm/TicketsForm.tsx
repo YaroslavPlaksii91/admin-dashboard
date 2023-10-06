@@ -7,19 +7,27 @@ import { Select } from '@components/Select/Select';
 import { DatePicker } from '@components/DatePicker/DatePicker';
 import { PRIORITY_OPTIONS } from '@pages/Home/Tickets/constants';
 
-import { ADD_TICKETS_FIELDS, ADD_TICKETS_CONFIG } from './constants';
-import { AddTicketsData, AddTicketsProps } from './types';
+import { TICKETS_FORM_CONFIG, TICKETS_FORM_FIELDS } from './constants';
+import { TicketsFormData, TicketsFormProps } from './types';
 
-export const AddTickets: FC<AddTicketsProps> = ({ addTicket }) => {
+export const TicketsForm: FC<TicketsFormProps> = ({
+  addTicket,
+  editTicket,
+  activeTicket,
+}) => {
   const {
     register,
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm<AddTicketsData>();
+  } = useForm<TicketsFormData>();
 
-  const onSubmit: SubmitHandler<AddTicketsData> = data => {
-    addTicket(data);
+  const onSubmit: SubmitHandler<TicketsFormData> = data => {
+    if (activeTicket) {
+      editTicket({ ...data, date: { $d: activeTicket.date } });
+    } else {
+      addTicket(data);
+    }
   };
 
   return (
@@ -30,7 +38,7 @@ export const AddTickets: FC<AddTicketsProps> = ({ addTicket }) => {
       sx={{ margin: '70px 0 24px' }}
     >
       <FormInput
-        {...ADD_TICKETS_CONFIG[ADD_TICKETS_FIELDS.TITLE]}
+        {...TICKETS_FORM_CONFIG[TICKETS_FORM_FIELDS.TITLE]}
         register={register('title', {
           required: 'Title is required',
           minLength: {
@@ -39,10 +47,11 @@ export const AddTickets: FC<AddTicketsProps> = ({ addTicket }) => {
           },
         })}
         errors={errors}
+        defaultValue={activeTicket?.title}
       />
 
       <FormInput
-        {...ADD_TICKETS_CONFIG[ADD_TICKETS_FIELDS.NAME]}
+        {...TICKETS_FORM_CONFIG[TICKETS_FORM_FIELDS.NAME]}
         register={register('name', {
           required: 'Name is required',
           minLength: {
@@ -51,14 +60,15 @@ export const AddTickets: FC<AddTicketsProps> = ({ addTicket }) => {
           },
         })}
         errors={errors}
+        defaultValue={activeTicket?.customerName}
       />
 
       <Controller
         control={control}
-        name={ADD_TICKETS_FIELDS.DATE}
+        name={TICKETS_FORM_FIELDS.DATE}
         rules={{
           required: {
-            value: true,
+            value: true && !Boolean(activeTicket),
             message: 'Date is required',
           },
         }}
@@ -67,19 +77,21 @@ export const AddTickets: FC<AddTicketsProps> = ({ addTicket }) => {
             <DatePicker
               field={field}
               errors={errors}
-              {...ADD_TICKETS_CONFIG[ADD_TICKETS_FIELDS.DATE]}
+              disabled={Boolean(activeTicket)}
+              {...TICKETS_FORM_CONFIG[TICKETS_FORM_FIELDS.DATE]}
             />
           );
         }}
       />
 
       <Select
-        {...ADD_TICKETS_CONFIG[ADD_TICKETS_FIELDS.PRIORITY]}
+        {...TICKETS_FORM_CONFIG[TICKETS_FORM_FIELDS.PRIORITY]}
         register={register('priority', {
           validate: value =>
             PRIORITY_OPTIONS.includes(value) || 'Choose priority',
         })}
         errors={errors}
+        defaultValue={activeTicket?.priority}
       />
 
       <Button variant="contained" type="submit" fullWidth>
