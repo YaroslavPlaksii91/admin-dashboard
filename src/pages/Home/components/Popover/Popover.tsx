@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { Popover as PopoverComponent } from '@mui/material';
 
 import { PopoverProps } from './types';
+import { POPOVER_TEST_ID } from './constants';
 
 export const Popover: FC<PopoverProps> = ({
   id,
@@ -20,6 +21,7 @@ export const Popover: FC<PopoverProps> = ({
         vertical: 'bottom',
         horizontal: 'left',
       }}
+      data-testid={POPOVER_TEST_ID}
     >
       {children}
     </PopoverComponent>
