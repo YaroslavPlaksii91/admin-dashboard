@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add photo component should be rendered 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-14h66l3"
+  >
+    <div
+      class="MuiFormControl-root MuiTextField-root css-g4d8h0-MuiFormControl-root-MuiTextField-root"
+    >
+      <div
+        class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+      >
+        <input
+          aria-invalid="false"
+          class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+          id="photo"
+          name="photo"
+          type="file"
+          value=""
+        />
+        <fieldset
+          aria-hidden="true"
+          class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+        >
+          <legend
+            class="css-ihdtdm"
+          >
+            <span
+              class="notranslate"
+            >
+              ​
+            </span>
+          </legend>
+        </fieldset>
+      </div>
+    </div>
+    <label
+      class="MuiFormLabel-root MuiFormLabel-colorPrimary css-goj8zy-MuiFormLabel-root"
+      for="photo"
+    >
+      <span
+        class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1nntmli-MuiButtonBase-root-MuiButton-root"
+        role="button"
+        tabindex="0"
+      >
+        <svg
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1xzf3w3-MuiSvgIcon-root"
+          focusable="false"
+          role="img"
+          viewBox="0 0 24 24"
+        >
+          <use
+            href="/src/assets/icons/sprite.svg#icon-addPhoto"
+          />
+          <title>
+            Add photo
+          </title>
+        </svg>
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </span>
+      Label
+    </label>
+  </div>
+</DocumentFragment>
+`;
