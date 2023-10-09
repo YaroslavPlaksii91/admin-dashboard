@@ -11,4 +11,4 @@ export const FORGOT_PASSWORD_FIELDS_CONFIG = Object.freeze({
   },
 });
 
-
+export const FORGOT_PASSWORD_FORM_TEST_ID = 'forgotPasswordForm';
