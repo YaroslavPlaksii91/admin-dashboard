@@ -1,0 +1,267 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar component should be rendered 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiDrawer-root MuiDrawer-docked css-7ik032-MuiDrawer-docked"
+  >
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiDrawer-paper MuiDrawer-paperAnchorLeft MuiDrawer-paperAnchorDockedLeft css-12i7wg6-MuiPaper-root-MuiDrawer-paper"
+    >
+      <div
+        class="undefined"
+      >
+        <a
+          href="/"
+        >
+          <svg
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium undefined css-i4bv87-MuiSvgIcon-root"
+            focusable="false"
+            role="img"
+            viewBox="0 0 24 24"
+          >
+            <use
+              href="/src/assets/icons/sprite.svg#icon-logo"
+            />
+            <title>
+              Logo
+            </title>
+          </svg>
+          <p
+            class="MuiTypography-root MuiTypography-h3 css-14qosaq-MuiTypography-root"
+          >
+            Dashboard Kit
+          </p>
+        </a>
+      </div>
+      <ul
+        class="MuiList-root MuiList-padding css-ceqh33-MuiList-root"
+      >
+        <li
+          class="MuiListItem-root MuiListItem-gutters css-zjos0a-MuiListItem-root"
+        >
+          <a
+            data-testid="sidebarLink"
+            href="/overview"
+          >
+            <svg
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+              focusable="false"
+              role="img"
+              viewBox="0 0 24 24"
+            >
+              <use
+                href="/src/assets/icons/sprite.svg#icon-overview"
+              />
+              <title>
+                Overview
+              </title>
+            </svg>
+            <span
+              class="MuiTypography-root MuiTypography-body1 css-lfdebc-MuiTypography-root"
+            >
+              Overview
+            </span>
+          </a>
+        </li>
+        <li
+          class="MuiListItem-root MuiListItem-gutters css-zjos0a-MuiListItem-root"
+        >
+          <a
+            data-testid="sidebarLink"
+            href="/tickets"
+          >
+            <svg
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+              focusable="false"
+              role="img"
+              viewBox="0 0 24 24"
+            >
+              <use
+                href="/src/assets/icons/sprite.svg#icon-tickets"
+              />
+              <title>
+                Tickets
+              </title>
+            </svg>
+            <span
+              class="MuiTypography-root MuiTypography-body1 css-lfdebc-MuiTypography-root"
+            >
+              Tickets
+            </span>
+          </a>
+        </li>
+        <li
+          class="MuiListItem-root MuiListItem-gutters css-zjos0a-MuiListItem-root"
+        >
+          <a
+            data-testid="sidebarLink"
+            href="/ideas"
+          >
+            <svg
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+              focusable="false"
+              role="img"
+              viewBox="0 0 24 24"
+            >
+              <use
+                href="/src/assets/icons/sprite.svg#icon-ideas"
+              />
+              <title>
+                Ideas
+              </title>
+            </svg>
+            <span
+              class="MuiTypography-root MuiTypography-body1 css-lfdebc-MuiTypography-root"
+            >
+              Ideas
+            </span>
+          </a>
+        </li>
+        <li
+          class="MuiListItem-root MuiListItem-gutters css-zjos0a-MuiListItem-root"
+        >
+          <a
+            data-testid="sidebarLink"
+            href="/contacts"
+          >
+            <svg
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+              focusable="false"
+              role="img"
+              viewBox="0 0 24 24"
+            >
+              <use
+                href="/src/assets/icons/sprite.svg#icon-contacts"
+              />
+              <title>
+                Contacts
+              </title>
+            </svg>
+            <span
+              class="MuiTypography-root MuiTypography-body1 css-lfdebc-MuiTypography-root"
+            >
+              Contacts
+            </span>
+          </a>
+        </li>
+        <li
+          class="MuiListItem-root MuiListItem-gutters css-zjos0a-MuiListItem-root"
+        >
+          <a
+            data-testid="sidebarLink"
+            href="/agents"
+          >
+            <svg
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+              focusable="false"
+              role="img"
+              viewBox="0 0 24 24"
+            >
+              <use
+                href="/src/assets/icons/sprite.svg#icon-agents"
+              />
+              <title>
+                Agents
+              </title>
+            </svg>
+            <span
+              class="MuiTypography-root MuiTypography-body1 css-lfdebc-MuiTypography-root"
+            >
+              Agents
+            </span>
+          </a>
+        </li>
+        <li
+          class="MuiListItem-root MuiListItem-gutters css-zjos0a-MuiListItem-root"
+        >
+          <a
+            data-testid="sidebarLink"
+            href="/articles"
+          >
+            <svg
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+              focusable="false"
+              role="img"
+              viewBox="0 0 24 24"
+            >
+              <use
+                href="/src/assets/icons/sprite.svg#icon-articles"
+              />
+              <title>
+                Articles
+              </title>
+            </svg>
+            <span
+              class="MuiTypography-root MuiTypography-body1 css-lfdebc-MuiTypography-root"
+            >
+              Articles
+            </span>
+          </a>
+        </li>
+      </ul>
+      <hr
+        class="MuiDivider-root MuiDivider-fullWidth css-gpu97-MuiDivider-root"
+      />
+      <ul
+        class="MuiList-root MuiList-padding css-1k9zc9v-MuiList-root"
+      >
+        <li
+          class="MuiListItem-root MuiListItem-gutters css-zjos0a-MuiListItem-root"
+        >
+          <a
+            data-testid="sidebarLink"
+            href="/settings"
+          >
+            <svg
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+              focusable="false"
+              role="img"
+              viewBox="0 0 24 24"
+            >
+              <use
+                href="/src/assets/icons/sprite.svg#icon-settings"
+              />
+              <title>
+                Settings
+              </title>
+            </svg>
+            <span
+              class="MuiTypography-root MuiTypography-body1 css-lfdebc-MuiTypography-root"
+            >
+              Settings
+            </span>
+          </a>
+        </li>
+        <li
+          class="MuiListItem-root MuiListItem-gutters css-zjos0a-MuiListItem-root"
+        >
+          <a
+            data-testid="sidebarLink"
+            href="/subscription"
+          >
+            <svg
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+              focusable="false"
+              role="img"
+              viewBox="0 0 24 24"
+            >
+              <use
+                href="/src/assets/icons/sprite.svg#icon-subscription"
+              />
+              <title>
+                Subscription
+              </title>
+            </svg>
+            <span
+              class="MuiTypography-root MuiTypography-body1 css-lfdebc-MuiTypography-root"
+            >
+              Subscription
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</DocumentFragment>
+`;
