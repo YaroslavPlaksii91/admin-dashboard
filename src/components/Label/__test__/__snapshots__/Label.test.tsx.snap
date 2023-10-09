@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Label component should be rendered 1`] = `
+<DocumentFragment>
+  <span
+    class="undefined"
+  >
+    Label
+  </span>
+</DocumentFragment>
+`;
