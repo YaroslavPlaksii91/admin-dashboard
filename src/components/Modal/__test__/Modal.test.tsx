@@ -2,7 +2,7 @@ import { cleanup, render, screen, fireEvent } from '@testing-library/react';
 
 import { ModalComponent } from '../Modal';
 
-describe('Label component', () => {
+describe('Modal component', () => {
   afterEach(cleanup);
 
   const closeModal = jest.fn();
