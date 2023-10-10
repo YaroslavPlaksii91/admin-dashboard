@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Summary component should be rendered 1`] = `
+<DocumentFragment>
+  <ul
+    class="MuiList-root MuiList-padding css-1ixztv0-MuiList-root"
+  >
+    <li
+      class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1vni9sx-MuiListItem-root"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-h3 css-wy4g72-MuiTypography-root"
+      >
+        Label 1
+      </h3>
+      <span
+        class="MuiTypography-root MuiTypography-body1 css-zun636-MuiTypography-root"
+      >
+        10
+      </span>
+    </li>
+    <li
+      class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1vni9sx-MuiListItem-root"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-h3 css-wy4g72-MuiTypography-root"
+      >
+        Label 2
+      </h3>
+      <span
+        class="MuiTypography-root MuiTypography-body1 css-zun636-MuiTypography-root"
+      >
+        20
+      </span>
+    </li>
+    <li
+      class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1vni9sx-MuiListItem-root"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-h3 css-wy4g72-MuiTypography-root"
+      >
+        Label 3
+      </h3>
+      <span
+        class="MuiTypography-root MuiTypography-body1 css-zun636-MuiTypography-root"
+      >
+        30
+      </span>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
