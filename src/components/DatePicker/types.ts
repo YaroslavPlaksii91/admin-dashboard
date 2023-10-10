@@ -5,4 +5,5 @@ export type DatePickerProps = {
   field: FieldValues;
   label: string;
   name: string;
+  disabled: boolean;
 };

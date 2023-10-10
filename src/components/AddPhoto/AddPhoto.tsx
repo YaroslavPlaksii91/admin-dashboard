@@ -17,14 +17,16 @@ export const AddPhoto: FC<FileInputProps> = ({
   errors,
   register,
   size,
+  src = '',
 }) => {
-  const [imagePreviewUrl, setImagePreviewUrl] = useState<string>('');
+  const [imagePreviewUrl, setImagePreviewUrl] = useState<string>(src);
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
       const imageUrl = URL.createObjectURL(file);
       setImagePreviewUrl(imageUrl);
+      return;
     }
   };
 

@@ -9,6 +9,7 @@ export const DatePicker: FC<DatePickerProps> = ({
   field,
   label,
   name,
+  disabled,
 }) => {
   const errorMessage = errors[name]?.message?.toString();
 
@@ -20,6 +21,7 @@ export const DatePicker: FC<DatePickerProps> = ({
         inputRef={field.ref}
         onChange={field.onChange}
         onAccept={field.onChange}
+        disabled={disabled}
         slotProps={{
           textField: {
             variant: 'outlined',

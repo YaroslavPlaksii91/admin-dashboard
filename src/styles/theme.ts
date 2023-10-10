@@ -168,6 +168,22 @@ export const theme = createTheme({
         },
       },
     },
+    MuiSpeedDial: {
+      styleOverrides: {
+        root: {
+          '& .MuiSpeedDial-actions': {
+            marginBottom: '-110px',
+            gap: '20px',
+          },
+          '& .MuiButtonBase-root': {
+            minHeight: 'auto',
+            width: 24,
+            backgroundColor: 'inherit',
+            boxShadow: 'none',
+          },
+        },
+      },
+    },
     MuiDrawer: {
       styleOverrides: {
         root: {

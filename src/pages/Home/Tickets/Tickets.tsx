@@ -4,14 +4,19 @@ import { Box } from '@mui/material';
 import { Pagination } from '@components/Pagination/Pagination';
 import { usePagination } from '@components/Pagination/usePagination';
 import { ModalComponent } from '@components/Modal/Modal';
-import { getTickets, createTicket } from '@services/db/tickets';
+import {
+  getTickets,
+  createTicket,
+  deleteTicket,
+  editTicket,
+} from '@services/db/tickets';
 import { useSort } from '@hooks/useSort';
 import { useFilter } from '@hooks/useFilter';
 
 import { TicketsItem } from './components/TicketsItem/TicketsItem';
 import { TicketType } from './components/TicketsItem/types';
-import { AddTickets } from './components/AddTickets/AddTickets';
-import { AddTicketsData } from './components/AddTickets/types';
+import { TicketsForm } from './components/TicketsForm/TicketsForm';
+import { TicketsFormData } from './components/TicketsForm/types';
 import { TICKETS_COLUMNS } from './constants';
 import { Heading } from '../components/Heading/Heading';
 import { ActionButtons } from '../components/ActionButtons/ActionButtons';
@@ -20,6 +25,7 @@ export const Tickets: FC = () => {
   const [tickets, setTickets] = useState<TicketType[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [filterValue, setFilterValue] = useState('');
+  const [activeTicketId, setActiveTicketId] = useState('');
 
   const filteredData = useFilter(tickets, filterValue, 'priority');
 
@@ -44,12 +50,22 @@ export const Tickets: FC = () => {
     fetchData();
   }, []);
 
+  const onAddButtonClick = () => {
+    setActiveTicketId('');
+    setIsModalOpen(true);
+  };
+
+  const onEditButtonClick = (id: string) => {
+    setIsModalOpen(true);
+    setActiveTicketId(id);
+  };
+
   const handleAddTicket = async ({
     title,
     date: { $d },
     name,
     priority,
-  }: AddTicketsData) => {
+  }: TicketsFormData) => {
     const newTicket = {
       id: String(tickets.length + 1),
       title,
@@ -69,6 +85,40 @@ export const Tickets: FC = () => {
     setIsModalOpen(false);
   };
 
+  const handleEditTicket = async ({
+    title,
+    date: { $d },
+    name,
+    priority,
+  }: TicketsFormData) => {
+    const body = {
+      title,
+      customerName: name,
+      customerDate: new Date().toISOString(),
+      date: new Date($d).toISOString(),
+      priority,
+      image:
+        'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/574.jpg',
+      updated: new Date().toISOString(),
+    };
+
+    const updatedTicket = await editTicket(activeTicketId, body);
+
+    const newTickets = tickets.map(ticket =>
+      ticket.id === activeTicketId ? updatedTicket : ticket,
+    );
+
+    setTickets([...newTickets]);
+
+    setIsModalOpen(false);
+  };
+
+  const handleDeleteTicket = async (id: string) => {
+    await deleteTicket(id);
+
+    setTickets([...tickets.filter(ticket => ticket.id !== id)]);
+  };
+
   return (
     <Box
       sx={{
@@ -82,7 +132,7 @@ export const Tickets: FC = () => {
     >
       <ActionButtons
         addButtonName="Add ticket"
-        onAddClick={() => setIsModalOpen(true)}
+        onAddClick={onAddButtonClick}
         handleSort={handleSort}
         sortOptions={sortOptions}
         filterValue={filterValue}
@@ -99,7 +149,12 @@ export const Tickets: FC = () => {
       />
 
       {getCurrentPageData().map(ticket => (
-        <TicketsItem ticket={ticket} key={ticket.id} />
+        <TicketsItem
+          ticket={ticket}
+          key={ticket.id}
+          handleDelete={() => handleDeleteTicket(ticket.id)}
+          handleEdit={() => onEditButtonClick(ticket.id)}
+        />
       ))}
 
       <Pagination
@@ -115,7 +170,11 @@ export const Tickets: FC = () => {
         title="Add tickets"
         onClose={() => setIsModalOpen(false)}
       >
-        <AddTickets addTicket={handleAddTicket} />
+        <TicketsForm
+          addTicket={handleAddTicket}
+          editTicket={handleEditTicket}
+          activeTicket={tickets.find(ticket => ticket.id === activeTicketId)}
+        />
       </ModalComponent>
     </Box>
   );

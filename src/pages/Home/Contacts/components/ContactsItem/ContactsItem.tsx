@@ -1,11 +1,16 @@
 import { FC } from 'react';
-import { Grid, Button, SvgIcon, Box, Typography } from '@mui/material';
+import { Grid, Box, Typography } from '@mui/material';
 
 import { formatDate } from '@services/date/formatDate';
+import { SpeedDial } from '@pages/Home/components/SpeedDial/SpeedDial';
 
 import { ContactItemProps } from './types';
 
-export const ContactsItem: FC<ContactItemProps> = ({ contact }) => {
+export const ContactsItem: FC<ContactItemProps> = ({
+  contact,
+  handleDelete,
+  handleEdit,
+}) => {
   const date = formatDate(contact.date);
 
   return (
@@ -40,16 +45,19 @@ export const ContactsItem: FC<ContactItemProps> = ({ contact }) => {
           {contact.name}
         </Typography>
       </Grid>
+
       <Grid item xs={3}>
         <Typography variant="subtitle2" component="p">
           {contact.email}
         </Typography>
       </Grid>
+
       <Grid item xs={3} sx={{ pr: 5 }}>
         <Typography variant="subtitle2" component="p">
           {contact.address}
         </Typography>
       </Grid>
+
       <Grid
         item
         xs={2}
@@ -62,11 +70,8 @@ export const ContactsItem: FC<ContactItemProps> = ({ contact }) => {
         <Typography variant="subtitle2" component="p">
           {date.date}
         </Typography>
-        <Button>
-          <SvgIcon titleAccess="More options">
-            <use href="/src/assets/icons/sprite.svg#icon-more"></use>
-          </SvgIcon>
-        </Button>
+
+        <SpeedDial handleDelete={handleDelete} handleEdit={handleEdit} />
       </Grid>
     </Grid>
   );

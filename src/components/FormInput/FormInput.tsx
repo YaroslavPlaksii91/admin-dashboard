@@ -13,6 +13,7 @@ export const FormInput: FC<FormInputProps> = ({
   register,
   errors,
   isPassword,
+  defaultValue,
 }) => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -24,6 +25,7 @@ export const FormInput: FC<FormInputProps> = ({
 
   return (
     <TextField
+      defaultValue={defaultValue}
       label={label}
       type={showPassword ? 'text' : type}
       placeholder={placeholder}

@@ -1,5 +1,7 @@
+import { MouseEventHandler } from 'react';
+
 export type TicketType = {
-  id: string;
+  id?: string;
   title: string;
   customerName: string;
   customerDate: string;
@@ -11,4 +13,6 @@ export type TicketType = {
 
 export type TicketsItemProps = {
   ticket: TicketType;
+  handleDelete: MouseEventHandler<HTMLDivElement>;
+  handleEdit: MouseEventHandler<HTMLDivElement>;
 };

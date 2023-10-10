@@ -1,16 +1,21 @@
 import { FC } from 'react';
-import { Grid, Button, SvgIcon, Box } from '@mui/material';
+import { Grid, Box } from '@mui/material';
 
 import { Label } from '@components/Label/Label';
 import { LABEL_TYPES } from '@components/Label/constants';
 import { getTicketUpdateTime } from '@pages/Home/Tickets/helpers/getTicketUpdateTime';
 import { formatCustomerDate } from '@pages/Home/Tickets/helpers/formatCustomerDate';
+import { SpeedDial } from '@pages/Home/components/SpeedDial/SpeedDial';
 import { formatDate } from '@services/date/formatDate';
 
 import { TicketsItemProps } from './types';
 import { TextCell } from '../TextCell/TextCell';
 
-export const TicketsItem: FC<TicketsItemProps> = ({ ticket }) => {
+export const TicketsItem: FC<TicketsItemProps> = ({
+  ticket,
+  handleDelete,
+  handleEdit,
+}) => {
   const updatedTime = getTicketUpdateTime(ticket.updated);
   const customerDate = formatCustomerDate(ticket.customerDate);
   const date = formatDate(ticket.date);
@@ -64,11 +69,8 @@ export const TicketsItem: FC<TicketsItemProps> = ({ ticket }) => {
           color={ticket.priority}
           type={LABEL_TYPES.ROUND}
         />
-        <Button>
-          <SvgIcon titleAccess="More options">
-            <use href="/src/assets/icons/sprite.svg#icon-more"></use>
-          </SvgIcon>
-        </Button>
+
+        <SpeedDial handleDelete={handleDelete} handleEdit={handleEdit} />
       </Grid>
     </Grid>
   );

@@ -10,4 +10,5 @@ export type SelectProps = {
     label: string;
     disabled?: boolean;
   }[];
+  defaultValue?: string;
 };
