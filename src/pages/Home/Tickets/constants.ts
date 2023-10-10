@@ -6,7 +6,7 @@ export const TICKETS_COLUMNS = Object.freeze([
   },
   {
     title: 'Customer name',
-    name: 'customer',
+    name: 'customerName',
     size: 3,
   },
   {

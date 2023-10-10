@@ -20,8 +20,8 @@ export const useSort = <T>(data: T[]) => {
 
   const sortData = (data: any[], key: string) => {
     return [...data].sort((a, b) => {
-      const valueA = typeof a[key] === 'object' ? a[key].name : a[key];
-      const valueB = typeof b[key] === 'object' ? b[key].name : b[key];
+      const valueA = a[key];
+      const valueB = b[key];
 
       if (valueA === valueB) {
         return 0;
