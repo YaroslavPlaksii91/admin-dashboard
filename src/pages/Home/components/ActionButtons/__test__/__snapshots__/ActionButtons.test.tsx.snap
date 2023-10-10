@@ -69,7 +69,7 @@ exports[`ActionButtons component should be rendered 1`] = `
           href="/src/assets/icons/sprite.svg#icon-add"
         />
         <title>
-          Add new ticket
+          Add new item
         </title>
       </svg>
       Add button

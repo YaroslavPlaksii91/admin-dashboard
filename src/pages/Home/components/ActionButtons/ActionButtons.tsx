@@ -116,10 +116,7 @@ export const ActionButtons: FC<ActionButtonsProps> = ({
         onClick={onAddClick}
         data-testid={ADD_BTN_TEST_ID}
       >
-        <SvgIcon
-          titleAccess="Add new ticket"
-          sx={{ mr: 2, width: 8, height: 8 }}
-        >
+        <SvgIcon titleAccess="Add new item" sx={{ mr: 2, width: 8, height: 8 }}>
           <use href="/src/assets/icons/sprite.svg#icon-add"></use>
         </SvgIcon>
         {addButtonName}
