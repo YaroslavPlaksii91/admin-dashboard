@@ -1,9 +1,7 @@
 import { cleanup, render, screen } from '@testing-library/react';
-import {
-  UseFormRegisterReturn,
-  FieldErrors,
-  FieldError,
-} from 'react-hook-form';
+import { FieldErrors, FieldError } from 'react-hook-form';
+
+import { createRegister } from '@utils/testMocks';
 
 import { Select } from '../Select';
 
@@ -17,12 +15,7 @@ describe('Select component', () => {
   ];
   const label = 'Select component';
   const name = 'select';
-  const register: UseFormRegisterReturn<any> = {
-    onChange: jest.fn(),
-    onBlur: jest.fn(),
-    name: name,
-    ref: null as any,
-  };
+  const register = createRegister(name);
   const errors: FieldErrors = {};
 
   it('should be rendered', () => {

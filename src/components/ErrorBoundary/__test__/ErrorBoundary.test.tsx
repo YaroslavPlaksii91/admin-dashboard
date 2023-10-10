@@ -5,16 +5,6 @@ import { ErrorBoundary } from '../ErrorBoundary';
 describe('ErrorBoundary component', () => {
   afterEach(cleanup);
 
-  it('makes snapshot', () => {
-    const { asFragment } = render(
-      <ErrorBoundary>
-        <div>Child Component</div>
-      </ErrorBoundary>,
-    );
-
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('renders children when there is no error', () => {
     render(
       <ErrorBoundary>

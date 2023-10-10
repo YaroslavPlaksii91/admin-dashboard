@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`ErrorBoundary component makes snapshot 1`] = `
-<DocumentFragment>
-  <div>
-    Child Component
-  </div>
-</DocumentFragment>
-`;

@@ -1,5 +1,7 @@
 import { cleanup, render, screen } from '@testing-library/react';
-import { UseFormRegisterReturn, FieldErrors } from 'react-hook-form';
+import { FieldErrors } from 'react-hook-form';
+
+import { createRegister } from '@utils/testMocks';
 
 import { AddPhoto } from '../AddPhoto';
 import { IMAGE_SIZE } from '../constants';
@@ -10,12 +12,7 @@ describe('Add photo component', () => {
   const label = 'Label';
   const name = 'photo';
   const size = IMAGE_SIZE.BIG;
-  const register: UseFormRegisterReturn<any> = {
-    onChange: jest.fn(),
-    onBlur: jest.fn(),
-    name: name,
-    ref: null as any,
-  };
+  const register = createRegister(name);
   const errors: FieldErrors = {};
 
   it('should be rendered', () => {
