@@ -43,3 +43,5 @@ export const USERS_SETTINGS = Object.freeze([
     link: '/subscription',
   },
 ]);
+
+export const SIDEBAR_LINK_TEST_ID = 'sidebarLink';

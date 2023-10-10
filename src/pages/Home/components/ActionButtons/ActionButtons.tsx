@@ -2,6 +2,11 @@ import { FC, useState, MouseEvent } from 'react';
 import { Box, Button, SvgIcon } from '@mui/material';
 
 import { ActionButtonsProps } from './types';
+import {
+  SORT_BTN_TEST_ID,
+  FILTER_BTN_TEST_ID,
+  ADD_BTN_TEST_ID,
+} from './constants';
 import { Popover } from '../Popover/Popover';
 import { RadioButtons } from '../RadioButtons/RadioButtons';
 
@@ -52,6 +57,7 @@ export const ActionButtons: FC<ActionButtonsProps> = ({
         sx={{ color: 'grayDarkColor', mr: 8 }}
         aria-describedby={sortId}
         onClick={handleSortClick}
+        data-testid={SORT_BTN_TEST_ID}
       >
         <SvgIcon titleAccess="Sort" fontSize="small" sx={{ mr: 2 }}>
           <use href="/src/assets/icons/sprite.svg#icon-sort"></use>
@@ -82,6 +88,7 @@ export const ActionButtons: FC<ActionButtonsProps> = ({
         sx={{ color: 'grayDarkColor' }}
         aria-describedby={filterId}
         onClick={handleFilterClick}
+        data-testid={FILTER_BTN_TEST_ID}
       >
         <SvgIcon titleAccess="Filter" fontSize="small" sx={{ mr: 2 }}>
           <use href="/src/assets/icons/sprite.svg#icon-filter"></use>
@@ -107,11 +114,9 @@ export const ActionButtons: FC<ActionButtonsProps> = ({
         variant="text"
         sx={{ color: 'accentBlueColor', ml: 'auto' }}
         onClick={onAddClick}
+        data-testid={ADD_BTN_TEST_ID}
       >
-        <SvgIcon
-          titleAccess="Add new ticket"
-          sx={{ mr: 2, width: 8, height: 8 }}
-        >
+        <SvgIcon titleAccess="Add new item" sx={{ mr: 2, width: 8, height: 8 }}>
           <use href="/src/assets/icons/sprite.svg#icon-add"></use>
         </SvgIcon>
         {addButtonName}

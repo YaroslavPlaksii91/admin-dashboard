@@ -10,6 +10,7 @@ import { ForgotPasswordFormData, ForgotPasswordFormProps } from './types';
 import {
   FORGOT_PASSWORD_FIELDS,
   FORGOT_PASSWORD_FIELDS_CONFIG,
+  FORGOT_PASSWORD_FORM_TEST_ID,
 } from './constants';
 
 export const ForgotPasswordForm: FC<ForgotPasswordFormProps> = ({
@@ -32,7 +33,11 @@ export const ForgotPasswordForm: FC<ForgotPasswordFormProps> = ({
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      noValidate
+      data-testid={FORGOT_PASSWORD_FORM_TEST_ID}
+    >
       <FormInput
         {...FORGOT_PASSWORD_FIELDS_CONFIG[FORGOT_PASSWORD_FIELDS.EMAIL]}
         register={register('email', {

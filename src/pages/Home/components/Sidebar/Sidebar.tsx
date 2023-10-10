@@ -11,7 +11,7 @@ import {
 import { Logo } from '@components/Logo/Logo';
 import { LOGO_TYPES } from '@components/Logo/constants';
 
-import { USERS_PAGES, USERS_SETTINGS } from './constants';
+import { USERS_PAGES, USERS_SETTINGS, SIDEBAR_LINK_TEST_ID } from './constants';
 
 import styles from './Sidebar.module.css';
 
@@ -28,6 +28,7 @@ export const Sidebar = () => {
               className={({ isActive }) =>
                 isActive ? styles.activeLink : styles.link
               }
+              data-testid={SIDEBAR_LINK_TEST_ID}
             >
               <SvgIcon titleAccess={page.name} fontSize="small">
                 <use href={page.icon}></use>
@@ -59,6 +60,7 @@ export const Sidebar = () => {
               className={({ isActive }) =>
                 isActive ? styles.activeLink : styles.link
               }
+              data-testid={SIDEBAR_LINK_TEST_ID}
             >
               <SvgIcon titleAccess={page.name} fontSize="small">
                 <use href={page.icon}></use>

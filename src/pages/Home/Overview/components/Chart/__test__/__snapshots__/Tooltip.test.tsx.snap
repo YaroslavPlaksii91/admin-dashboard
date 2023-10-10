@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomTooltip component makes snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    aria-hidden="true"
+    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-sp8ucn-MuiSvgIcon-root"
+    data-testid="tooltip"
+    focusable="false"
+    viewBox="0 0 24 24"
+  >
+    <use
+      href="/src/assets/icons/sprite.svg#icon-sheet"
+    />
+    <text
+      fill="#252733"
+      font-size="5"
+      font-weight="600"
+      x="9"
+      y="12"
+    >
+      10
+    </text>
+  </svg>
+</DocumentFragment>
+`;

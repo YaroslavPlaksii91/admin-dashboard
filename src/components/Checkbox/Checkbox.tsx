@@ -1,6 +1,8 @@
 import { FC, useState } from 'react';
 import { Checkbox, SvgIcon, Box } from '@mui/material';
 
+import { CHECKBOX_TEST_ID } from './constants';
+
 export const CheckboxComponent: FC = () => {
   const [checked, setChecked] = useState(false);
 
@@ -14,6 +16,7 @@ export const CheckboxComponent: FC = () => {
         checked={checked}
         onChange={handleChange}
         sx={{ display: 'none' }}
+        data-testid={CHECKBOX_TEST_ID}
       />
       <Box
         sx={{

@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tickets component should be rendered 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-1wjthba"
+  >
+    <div
+      class="MuiBox-root css-tgxzo7"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-h3 css-gepadz-MuiTypography-root"
+      >
+        Unresolved tickets
+      </h3>
+      <a
+        href="/"
+      >
+        View details
+      </a>
+    </div>
+    <p
+      class="MuiTypography-root MuiTypography-body1 css-1u7yd7a-MuiTypography-root"
+    >
+      Group: 
+      <span
+        class="MuiTypography-root MuiTypography-body1 css-u5hitt-MuiTypography-root"
+      >
+        Support
+      </span>
+    </p>
+    <ul
+      class="MuiList-root MuiList-padding css-h4y409-MuiList-root"
+    >
+      <li
+        class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-pcq8dq-MuiListItem-root"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-b34im6-MuiTypography-root"
+        >
+          Ticket 1
+        </p>
+        <span
+          class="MuiTypography-root MuiTypography-body1 css-1wgps9j-MuiTypography-root"
+        >
+          3
+        </span>
+      </li>
+      <li
+        class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-pcq8dq-MuiListItem-root"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-b34im6-MuiTypography-root"
+        >
+          Ticket 2
+        </p>
+        <span
+          class="MuiTypography-root MuiTypography-body1 css-1wgps9j-MuiTypography-root"
+        >
+          5
+        </span>
+      </li>
+      <li
+        class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-pcq8dq-MuiListItem-root"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-b34im6-MuiTypography-root"
+        >
+          Ticket 3
+        </p>
+        <span
+          class="MuiTypography-root MuiTypography-body1 css-1wgps9j-MuiTypography-root"
+        >
+          2
+        </span>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
