@@ -7,6 +7,7 @@ exports[`ActionButtons component should be rendered 1`] = `
   >
     <button
       class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-17u4eyv-MuiButtonBase-root-MuiButton-root"
+      data-testid="sortButton"
       tabindex="0"
       type="button"
     >
@@ -30,6 +31,7 @@ exports[`ActionButtons component should be rendered 1`] = `
     </button>
     <button
       class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-dpl43n-MuiButtonBase-root-MuiButton-root"
+      data-testid="filterButton"
       tabindex="0"
       type="button"
     >
@@ -53,6 +55,7 @@ exports[`ActionButtons component should be rendered 1`] = `
     </button>
     <button
       class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-e9wzt7-MuiButtonBase-root-MuiButton-root"
+      data-testid="addButton"
       tabindex="0"
       type="button"
     >
@@ -69,7 +72,7 @@ exports[`ActionButtons component should be rendered 1`] = `
           Add new ticket
         </title>
       </svg>
-      Add ticket
+      Add button
       <span
         class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
       />
