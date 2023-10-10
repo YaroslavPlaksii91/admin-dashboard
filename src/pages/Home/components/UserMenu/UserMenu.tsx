@@ -1,16 +1,22 @@
-import { FC, useState } from 'react';
+import { FC, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { User } from 'firebase/auth';
 import { SvgIcon, Typography, Box, Button } from '@mui/material';
 
 import { ROUTES } from '@routes/constants';
 import { endSession } from '@services/localeStorage/localeStorage';
-import { getCurrentUser } from '@services/firebase/firebase';
+import { initAuthStateListener } from '@services/firebase/firebase';
 
 export const UserMenu: FC = () => {
   const [isLogoutVisible, setIsLogoutVisible] = useState(false);
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
   const navigate = useNavigate();
 
-  const currentUser = getCurrentUser();
+  useEffect(() => {
+    const unsubscribe = initAuthStateListener(setCurrentUser);
+
+    return () => unsubscribe();
+  }, []);
 
   const handleIconClick = () => {
     setIsLogoutVisible(!isLogoutVisible);
