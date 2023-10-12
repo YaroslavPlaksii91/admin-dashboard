@@ -1,33 +1,40 @@
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { observer } from 'mobx-react-lite';
+
 import { Button } from '@mui/material';
 import { toast } from 'react-toastify';
 
 import { ROUTES } from '@routes/constants';
 import { EMAIL_REGEX, PASSWORD_MIN_LENGTH } from '@utils/constants';
-import { startSession } from '@services/localeStorage/localeStorage';
+// import { startSession } from '@services/localeStorage/localeStorage';
 import { signInUser } from '@services/firebase/firebase';
 import { FormInput } from '@components/FormInput/FormInput';
+import { useAuthStore } from '@store/auth';
 
 import { LOGIN_FIELDS, LOGIN_FIELDS_CONFIG } from './constants';
 import { LoginFormData } from './types';
 
-export const LoginForm: FC = () => {
+export const LoginForm: FC = observer(() => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<LoginFormData>();
   const navigate = useNavigate();
+  const authStore = useAuthStore();
 
   const onSubmit: SubmitHandler<LoginFormData> = async data => {
     try {
       const userCredential = await signInUser(data.email, data.password);
 
-      const token = await userCredential.user.getIdToken();
+      // const token = await userCredential.user.getIdToken();
 
-      startSession(token);
+      authStore.login();
+      authStore.setUser(userCredential.user);
+
+      // startSession(token);
 
       navigate(ROUTES.HOME_PAGE, { replace: true });
     } catch (error) {
@@ -69,4 +76,4 @@ export const LoginForm: FC = () => {
       </Button>
     </form>
   );
-};
+});

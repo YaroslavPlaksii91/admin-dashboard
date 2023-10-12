@@ -13,6 +13,7 @@ import { ResetPasswordPage } from '@pages/Auth/ResetPasswordPage/ResetPasswordPa
 import { Overview } from '@pages/Home/Overview/Overview';
 import { Tickets } from '@pages/Home/Tickets/Tickets';
 import { Contacts } from '@pages/Home/Contacts/Contacts';
+import { AppProps } from '@utils/types';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { theme } from '@styles/theme';
@@ -27,7 +28,7 @@ const HomePage = lazy(() =>
   loadHomePage().then(module => ({ default: module.HomePage })),
 );
 
-export const App: FC = () => {
+export const App: FC<AppProps> = () => {
   return (
     <ThemeProvider theme={theme}>
       <ToastContainer />

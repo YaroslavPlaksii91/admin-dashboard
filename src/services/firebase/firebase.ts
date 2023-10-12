@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react';
+// import { Dispatch, SetStateAction } from 'react';
 import { initializeApp } from 'firebase/app';
 import {
   createUserWithEmailAndPassword,
@@ -7,7 +7,6 @@ import {
   confirmPasswordReset,
   getAuth,
   onAuthStateChanged,
-  User,
 } from 'firebase/auth';
 
 const firebaseConfig = {
@@ -44,9 +43,7 @@ export const confirmThePasswordReset = async (
   return confirmPasswordReset(auth, oobCode, newPassword);
 };
 
-export const initAuthStateListener = (
-  setCurrentUser: Dispatch<SetStateAction<User | null>>,
-) => {
+export const initAuthStateListener = (setCurrentUser: any) => {
   const unsubscribe = onAuthStateChanged(auth, user => {
     if (user) {
       setCurrentUser(user);

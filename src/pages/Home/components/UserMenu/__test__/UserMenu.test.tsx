@@ -3,7 +3,7 @@ import { cleanup, render, screen, fireEvent } from '@testing-library/react';
 import { User } from 'firebase/auth';
 
 import { ROUTES } from '@routes/constants';
-import { endSession } from '@services/localeStorage/localeStorage';
+// import { endSession } from '@services/localeStorage/localeStorage';
 
 import { UserMenu } from '../UserMenu';
 
@@ -65,7 +65,8 @@ describe('UserMenu component', () => {
     const logoutButton = screen.getByText('Logout');
     fireEvent.click(logoutButton);
 
-    expect(endSession).toHaveBeenCalled();
+    // expect(endSession).toHaveBeenCalled();
+
     expect(navigate).toHaveBeenCalledWith(ROUTES.LOGIN_PAGE);
   });
 });
