@@ -7,13 +7,12 @@ import { observer } from 'mobx-react-lite';
 import { ROUTES } from '@routes/constants';
 // import { endSession } from '@services/localeStorage/localeStorage';
 import { initAuthStateListener } from '@services/firebase/firebase';
-import { useAuthStore } from '@store/auth';
+import { authStore } from '@store/auth';
 
 export const UserMenu: FC = observer(() => {
   const [isLogoutVisible, setIsLogoutVisible] = useState(false);
   // const [currentUser, setCurrentUser] = useState<User | null>(null);
   const navigate = useNavigate();
-  const authStore = useAuthStore();
 
   useEffect(() => {
     // const unsubscribe = initAuthStateListener(setCurrentUser);

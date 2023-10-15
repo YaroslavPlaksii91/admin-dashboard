@@ -11,7 +11,7 @@ import { EMAIL_REGEX, PASSWORD_MIN_LENGTH } from '@utils/constants';
 // import { startSession } from '@services/localeStorage/localeStorage';
 import { signInUser } from '@services/firebase/firebase';
 import { FormInput } from '@components/FormInput/FormInput';
-import { useAuthStore } from '@store/auth';
+import { authStore } from '@store/auth';
 
 import { LOGIN_FIELDS, LOGIN_FIELDS_CONFIG } from './constants';
 import { LoginFormData } from './types';
@@ -23,7 +23,6 @@ export const LoginForm: FC = observer(() => {
     formState: { errors },
   } = useForm<LoginFormData>();
   const navigate = useNavigate();
-  const authStore = useAuthStore();
 
   const onSubmit: SubmitHandler<LoginFormData> = async data => {
     try {
