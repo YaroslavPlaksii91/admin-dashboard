@@ -1,4 +1,6 @@
+import { Dispatch, SetStateAction } from 'react';
 import { cleanup, render, screen, fireEvent } from '@testing-library/react';
+import { User } from 'firebase/auth';
 
 import { ROUTES } from '@routes/constants';
 import { endSession } from '@services/localeStorage/localeStorage';
@@ -17,7 +19,12 @@ jest.mock('@services/localeStorage/localeStorage', () => ({
 }));
 
 jest.mock('@services/firebase/firebase', () => ({
-  getCurrentUser: () => ({ displayName: 'John Doe' }),
+  initAuthStateListener: (
+    setCurrentUser: Dispatch<SetStateAction<User | null>>,
+  ) => {
+    setCurrentUser({ displayName: 'John Doe' } as User);
+    return jest.fn();
+  },
 }));
 
 describe('UserMenu component', () => {
