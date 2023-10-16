@@ -10,6 +10,7 @@ import { EMAIL_REGEX, PASSWORD_MIN_LENGTH } from '@utils/constants';
 import { signInUser } from '@services/firebase/firebase';
 import { FormInput } from '@components/FormInput/FormInput';
 import { authStore } from '@store/auth';
+import { startSession } from '@services/localeStorage/localeStorage';
 
 import { LOGIN_FIELDS, LOGIN_FIELDS_CONFIG } from './constants';
 import { LoginFormData } from './types';
@@ -28,6 +29,8 @@ export const LoginForm: FC = observer(() => {
 
       authStore.login();
       authStore.setUser(userCredential.user);
+
+      startSession(userCredential.user);
 
       navigate(ROUTES.HOME_PAGE, { replace: true });
     } catch (error) {

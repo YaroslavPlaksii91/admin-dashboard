@@ -1,5 +1,4 @@
 import { cleanup, render, screen, fireEvent } from '@testing-library/react';
-import { User } from 'firebase/auth';
 
 import { ROUTES } from '@routes/constants';
 import { authStore } from '@store/auth';
@@ -24,13 +23,6 @@ jest.mock('@store/auth', () => {
     },
   };
 });
-
-jest.mock('@services/firebase/firebase', () => ({
-  initAuthStateListener: () => {
-    authStore.setUser({ displayName: 'John Doe' } as User);
-    return jest.fn();
-  },
-}));
 
 describe('UserMenu component', () => {
   afterEach(cleanup);

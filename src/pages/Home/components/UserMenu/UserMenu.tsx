@@ -1,21 +1,15 @@
-import { FC, useState, useEffect } from 'react';
+import { FC, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SvgIcon, Typography, Box, Button } from '@mui/material';
 import { observer } from 'mobx-react-lite';
 
 import { ROUTES } from '@routes/constants';
-import { initAuthStateListener } from '@services/firebase/firebase';
 import { authStore } from '@store/auth';
+import { endSession } from '@services/localeStorage/localeStorage';
 
 export const UserMenu: FC = observer(() => {
   const [isLogoutVisible, setIsLogoutVisible] = useState(false);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const unsubscribe = initAuthStateListener(authStore.setUser);
-
-    return () => unsubscribe();
-  }, []);
 
   const handleIconClick = () => {
     setIsLogoutVisible(!isLogoutVisible);
@@ -23,6 +17,7 @@ export const UserMenu: FC = observer(() => {
 
   const handleLogoutClick = () => {
     authStore.logout();
+    endSession();
     navigate(ROUTES.LOGIN_PAGE);
   };
 

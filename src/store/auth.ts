@@ -1,9 +1,11 @@
 import { makeAutoObservable } from 'mobx';
 import { User } from 'firebase/auth';
 
+import { isLoggedIn, getUser } from '@services/localeStorage/localeStorage';
+
 class AuthStore {
-  isLoggedIn = false;
-  user: User | null = null;
+  isLoggedIn = isLoggedIn();
+  user: User | null = getUser();
 
   constructor() {
     makeAutoObservable(this);

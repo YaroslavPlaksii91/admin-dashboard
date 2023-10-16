@@ -5,8 +5,6 @@ import {
   sendPasswordResetEmail,
   confirmPasswordReset,
   getAuth,
-  onAuthStateChanged,
-  User,
 } from 'firebase/auth';
 
 const firebaseConfig = {
@@ -41,18 +39,4 @@ export const confirmThePasswordReset = async (
   if (!oobCode && !newPassword) return;
 
   return confirmPasswordReset(auth, oobCode, newPassword);
-};
-
-export const initAuthStateListener = (
-  setCurrentUser: (user: User | null) => void,
-) => {
-  const unsubscribe = onAuthStateChanged(auth, user => {
-    if (user) {
-      setCurrentUser(user);
-    } else {
-      setCurrentUser(null);
-    }
-  });
-
-  return unsubscribe;
 };
