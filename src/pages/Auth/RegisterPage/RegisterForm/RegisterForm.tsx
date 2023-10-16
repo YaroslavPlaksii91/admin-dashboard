@@ -14,6 +14,7 @@ import {
 import { ROUTES } from '@routes/constants';
 import { FormInput } from '@components/FormInput/FormInput';
 import { createUser } from '@services/firebase/firebase';
+import { authStore } from '@store/auth';
 import { startSession } from '@services/localeStorage/localeStorage';
 
 import { REGISTER_FIELDS, REGISTER_FIELDS_CONFIG } from './constants';
@@ -36,9 +37,10 @@ export const RegisterForm: FC = () => {
         displayName: `${user.firstName} ${user.lastName}`,
       });
 
-      const token = await userCredential.user.getIdToken();
+      authStore.login();
+      authStore.setUser(userCredential.user);
 
-      startSession(token);
+      startSession(userCredential.user);
 
       navigate(ROUTES.HOME_PAGE, { replace: true });
     } catch (error) {
