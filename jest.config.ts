@@ -16,6 +16,7 @@ const config: Config = {
     '@services(.*)$': '<rootDir>/src/services/$1',
     '@utils(.*)$': '<rootDir>/src/utils/$1',
     '@hooks(.*)$': '<rootDir>/src/hooks/$1',
+    '@store(.*)$': '<rootDir>/src/store/$1',
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 };

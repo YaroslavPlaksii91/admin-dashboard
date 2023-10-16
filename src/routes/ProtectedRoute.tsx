@@ -1,10 +1,17 @@
 import { FC } from 'react';
 import { Navigate } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
 
-import { isLoggedIn } from '@services/localeStorage/localeStorage';
+import { authStore } from '@store/auth';
 
 import { RouteProps } from './types';
 
-export const ProtectedRoute: FC<RouteProps> = ({ redirectPath, children }) => {
-  return isLoggedIn() ? children : <Navigate to={redirectPath} replace />;
-};
+export const ProtectedRoute: FC<RouteProps> = observer(
+  ({ redirectPath, children }) => {
+    return authStore.isLoggedIn ? (
+      children
+    ) : (
+      <Navigate to={redirectPath} replace />
+    );
+  },
+);
