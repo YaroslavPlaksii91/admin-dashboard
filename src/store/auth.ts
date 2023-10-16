@@ -1,24 +1,26 @@
-import { useLocalObservable } from 'mobx-react-lite';
+import { makeAutoObservable } from 'mobx';
 import { User } from 'firebase/auth';
 
-export const useAuthStore = () => {
-  const store = useLocalObservable(() => ({
-    isLoggedIn: false,
-    user: null as User | null,
+class AuthStore {
+  isLoggedIn = false;
+  user: User | null = null;
 
-    login() {
-      store.isLoggedIn = true;
-    },
+  constructor() {
+    makeAutoObservable(this);
+  }
 
-    logout() {
-      store.isLoggedIn = false;
-      store.user = null;
-    },
+  login() {
+    this.isLoggedIn = true;
+  }
 
-    setUser(user: User) {
-      store.user = user;
-    },
-  }));
+  logout() {
+    this.isLoggedIn = false;
+    this.user = null;
+  }
 
-  return store;
-};
+  setUser(user: User | null) {
+    this.user = user;
+  }
+}
+
+export const authStore = new AuthStore();

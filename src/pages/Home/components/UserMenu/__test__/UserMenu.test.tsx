@@ -1,9 +1,8 @@
-import { Dispatch, SetStateAction } from 'react';
 import { cleanup, render, screen, fireEvent } from '@testing-library/react';
 import { User } from 'firebase/auth';
 
 import { ROUTES } from '@routes/constants';
-// import { endSession } from '@services/localeStorage/localeStorage';
+import { authStore } from '@store/auth';
 
 import { UserMenu } from '../UserMenu';
 
@@ -14,15 +13,21 @@ jest.mock('react-router-dom', () => ({
   useNavigate: () => navigate,
 }));
 
-jest.mock('@services/localeStorage/localeStorage', () => ({
-  endSession: jest.fn(),
-}));
+jest.mock('@store/auth', () => {
+  return {
+    authStore: {
+      isLoggedIn: false,
+      user: { displayName: 'John Doe' },
+      login: jest.fn(),
+      logout: jest.fn(),
+      setUser: jest.fn(),
+    },
+  };
+});
 
 jest.mock('@services/firebase/firebase', () => ({
-  initAuthStateListener: (
-    setCurrentUser: Dispatch<SetStateAction<User | null>>,
-  ) => {
-    setCurrentUser({ displayName: 'John Doe' } as User);
+  initAuthStateListener: () => {
+    authStore.setUser({ displayName: 'John Doe' } as User);
     return jest.fn();
   },
 }));
@@ -40,9 +45,9 @@ describe('UserMenu component', () => {
     render(<UserMenu />);
 
     const userName = screen.getByText('John Doe');
-    const logoutButton = screen.queryByText('Logout');
-
     expect(userName).toBeInTheDocument();
+
+    const logoutButton = screen.queryByText('Logout');
     expect(logoutButton).not.toBeInTheDocument();
   });
 
@@ -63,10 +68,10 @@ describe('UserMenu component', () => {
     fireEvent.click(userIcon);
 
     const logoutButton = screen.getByText('Logout');
+    expect(logoutButton).toBeInTheDocument();
     fireEvent.click(logoutButton);
 
-    // expect(endSession).toHaveBeenCalled();
-
+    expect(authStore.isLoggedIn).toBe(false);
     expect(navigate).toHaveBeenCalledWith(ROUTES.LOGIN_PAGE);
   });
 });

@@ -1,22 +1,17 @@
 import { FC, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { User } from 'firebase/auth';
 import { SvgIcon, Typography, Box, Button } from '@mui/material';
 import { observer } from 'mobx-react-lite';
 
 import { ROUTES } from '@routes/constants';
-// import { endSession } from '@services/localeStorage/localeStorage';
 import { initAuthStateListener } from '@services/firebase/firebase';
-import { useAuthStore } from '@store/auth';
+import { authStore } from '@store/auth';
 
 export const UserMenu: FC = observer(() => {
   const [isLogoutVisible, setIsLogoutVisible] = useState(false);
-  // const [currentUser, setCurrentUser] = useState<User | null>(null);
   const navigate = useNavigate();
-  const authStore = useAuthStore();
 
   useEffect(() => {
-    // const unsubscribe = initAuthStateListener(setCurrentUser);
     const unsubscribe = initAuthStateListener(authStore.setUser);
 
     return () => unsubscribe();
@@ -27,7 +22,6 @@ export const UserMenu: FC = observer(() => {
   };
 
   const handleLogoutClick = () => {
-    // endSession();
     authStore.logout();
     navigate(ROUTES.LOGIN_PAGE);
   };
@@ -56,7 +50,6 @@ export const UserMenu: FC = observer(() => {
           mr: '14px',
         }}
       >
-        {/* {currentUser && currentUser.displayName} */}
         {authStore.user && authStore.user.displayName}
       </Typography>
       <Button

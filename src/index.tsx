@@ -3,15 +3,13 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
 import { ErrorBoundary } from '@components/ErrorBoundary/ErrorBoundary';
-import { useAuthStore } from '@store/auth';
+import { authStore } from '@store/auth';
 
 import { App } from './App';
 
 import './index.css';
 
 const Root = () => {
-  const authStore = useAuthStore();
-
   return (
     <React.StrictMode>
       <BrowserRouter>
