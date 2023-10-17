@@ -27,7 +27,7 @@ exports[`TicketsItem component should be rendered 1`] = `
         <p
           class="MuiTypography-root MuiTypography-body1 css-1edc1f9-MuiTypography-root"
         >
-          Updated 5 days ago
+          Updated 6 days ago
         </p>
       </div>
     </div>
