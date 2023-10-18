@@ -1,6 +1,6 @@
 export type HeadingProps = {
   sortKey: string;
-  sortDirection: string;
+  sortDirection: 'asc' | 'desc';
   handleSort: (name: string) => void;
   columns: readonly {
     title: string;
