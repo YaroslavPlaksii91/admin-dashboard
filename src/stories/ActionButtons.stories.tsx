@@ -1,8 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { ThemeProvider } from '@mui/material/styles';
 
 import { ActionButtons } from '@pages/Home/components/ActionButtons/ActionButtons';
-import { theme } from '@styles/theme';
 
 import '../index.css';
 
@@ -10,13 +8,6 @@ const meta: Meta<typeof ActionButtons> = {
   title: 'Home/ActionButtons',
   component: ActionButtons,
   tags: ['autodocs'],
-  decorators: [
-    Story => (
-      <ThemeProvider theme={theme}>
-        <Story />
-      </ThemeProvider>
-    ),
-  ],
 };
 
 export default meta;

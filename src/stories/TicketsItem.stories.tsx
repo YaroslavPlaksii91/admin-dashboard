@@ -1,7 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { ThemeProvider } from '@mui/material/styles';
 
-import { theme } from '@styles/theme';
 import { TicketsItem } from '@pages/Home/Tickets/components/TicketsItem/TicketsItem';
 
 import '../index.css';
@@ -10,13 +8,6 @@ const meta: Meta<typeof TicketsItem> = {
   title: 'Home/TicketsItem',
   component: TicketsItem,
   tags: ['autodocs'],
-  decorators: [
-    Story => (
-      <ThemeProvider theme={theme}>
-        <Story />
-      </ThemeProvider>
-    ),
-  ],
 };
 
 export default meta;

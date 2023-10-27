@@ -1,8 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { ThemeProvider } from '@mui/material/styles';
 
 import { Heading } from '@pages/Home/components/Heading/Heading';
-import { theme } from '@styles/theme';
 
 import '../index.css';
 
@@ -20,13 +18,6 @@ const meta: Meta<typeof Heading> = {
       control: { type: 'radio' },
     },
   },
-  decorators: [
-    Story => (
-      <ThemeProvider theme={theme}>
-        <Story />
-      </ThemeProvider>
-    ),
-  ],
 };
 
 export default meta;

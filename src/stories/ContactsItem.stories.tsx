@@ -1,7 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { ThemeProvider } from '@mui/material/styles';
 
-import { theme } from '@styles/theme';
 import { ContactsItem } from '@pages/Home/Contacts/components/ContactsItem/ContactsItem';
 
 import '../index.css';
@@ -10,13 +8,6 @@ const meta: Meta<typeof ContactsItem> = {
   title: 'Home/ContactsItem',
   component: ContactsItem,
   tags: ['autodocs'],
-  decorators: [
-    Story => (
-      <ThemeProvider theme={theme}>
-        <Story />
-      </ThemeProvider>
-    ),
-  ],
 };
 
 export default meta;

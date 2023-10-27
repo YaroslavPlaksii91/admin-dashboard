@@ -1,8 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { ThemeProvider } from '@mui/material/styles';
 
 import { Select } from '@components/Select/Select';
-import { theme } from '@styles/theme';
 
 import '../index.css';
 
@@ -12,15 +10,13 @@ const meta: Meta<typeof Select> = {
   tags: ['autodocs'],
   decorators: [
     Story => (
-      <ThemeProvider theme={theme}>
-        <div
-          style={{
-            maxWidth: '380px',
-          }}
-        >
-          <Story />
-        </div>
-      </ThemeProvider>
+      <div
+        style={{
+          maxWidth: '380px',
+        }}
+      >
+        <Story />
+      </div>
     ),
   ],
 };

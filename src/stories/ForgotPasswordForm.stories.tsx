@@ -1,9 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { MemoryRouter } from 'react-router-dom';
-import { ThemeProvider } from '@mui/material/styles';
 
 import { ForgotPasswordForm } from '@pages/Auth/ForgotPasswordPage/ForgotPasswordForm/ForgotPasswordForm';
-import { theme } from '@styles/theme';
 
 import '../index.css';
 
@@ -13,17 +10,14 @@ const meta: Meta<typeof ForgotPasswordForm> = {
   tags: ['autodocs'],
   decorators: [
     Story => (
-      <MemoryRouter>
-        <ThemeProvider theme={theme}>
-          <div
-            style={{
-              maxWidth: '380px',
-            }}
-          >
-            <Story />
-          </div>
-        </ThemeProvider>
-      </MemoryRouter>
+      <div
+        style={{
+          maxWidth: '380px',
+          margin: '100px auto',
+        }}
+      >
+        <Story />
+      </div>
     ),
   ],
 };

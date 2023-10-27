@@ -1,7 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { ThemeProvider } from '@mui/material/styles';
 
-import { theme } from '@styles/theme';
 import { TicketsForm } from '@pages/Home/Tickets/components/TicketsForm/TicketsForm';
 
 import '../index.css';
@@ -12,16 +10,14 @@ const meta: Meta<typeof TicketsForm> = {
   tags: ['autodocs'],
   decorators: [
     Story => (
-      <ThemeProvider theme={theme}>
-        <div
-          style={{
-            maxWidth: '500px',
-            margin: '0 auto',
-          }}
-        >
-          <Story />
-        </div>
-      </ThemeProvider>
+      <div
+        style={{
+          maxWidth: '500px',
+          margin: '0 auto',
+        }}
+      >
+        <Story />
+      </div>
     ),
   ],
 };

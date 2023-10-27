@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { MemoryRouter } from 'react-router-dom';
 
 import { Link } from '@components/Link/Link';
 
@@ -9,13 +8,6 @@ const meta: Meta<typeof Link> = {
   title: 'App/Link',
   component: Link,
   tags: ['autodocs'],
-  decorators: [
-    Story => (
-      <MemoryRouter>
-        <Story />
-      </MemoryRouter>
-    ),
-  ],
 };
 
 export default meta;
