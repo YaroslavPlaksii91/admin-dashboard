@@ -5,7 +5,7 @@ import { Heading } from '@pages/Home/components/Heading/Heading';
 import '../index.css';
 
 const meta: Meta<typeof Heading> = {
-  title: 'Home/Heading',
+  title: 'Home/TableHeading',
   component: Heading,
   tags: ['autodocs'],
   argTypes: {

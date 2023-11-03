@@ -12,8 +12,8 @@ const meta: Meta<typeof SpeedDial> = {
     Story => (
       <div
         style={{
-          maxWidth: '380px',
-          paddingTop: '50px',
+          maxWidth: '200px',
+          paddingTop: '30px',
         }}
       >
         <Story />

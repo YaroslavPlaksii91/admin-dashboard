@@ -18,6 +18,14 @@ const meta: Meta<typeof Label> = {
 
 export default meta;
 
+export const Default: StoryObj<typeof Label> = {
+  args: {
+    type: 'round',
+    color: 'default',
+    text: 'Label',
+  },
+};
+
 export const Round: StoryObj<typeof Label> = {
   args: {
     type: 'round',
