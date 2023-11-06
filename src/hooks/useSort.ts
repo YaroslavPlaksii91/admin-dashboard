@@ -18,26 +18,26 @@ export const useSort = <T>(data: T[]) => {
     [sortKey],
   );
 
-  const sortData = (data: any[], key: string) => {
-    return [...data].sort((a, b) => {
-      const valueA = a[key];
-      const valueB = b[key];
-
-      if (valueA === valueB) {
-        return 0;
-      }
-
-      if (sortDirection === 'asc') {
-        return valueA < valueB ? -1 : 1;
-      } else {
-        return valueA > valueB ? -1 : 1;
-      }
-    });
-  };
-
   const sortedData = useMemo(() => {
+    const sortData = (data: any[], key: string) => {
+      return [...data].sort((a, b) => {
+        const valueA = a[key];
+        const valueB = b[key];
+
+        if (valueA === valueB) {
+          return 0;
+        }
+
+        if (sortDirection === 'asc') {
+          return valueA < valueB ? -1 : 1;
+        } else {
+          return valueA > valueB ? -1 : 1;
+        }
+      });
+    };
+
     return sortData(data, sortKey);
-  }, [data, sortKey, sortData]);
+  }, [data, sortKey, sortDirection]);
 
   return {
     sortedData,
