@@ -101,12 +101,4 @@ describe('FormInput component', () => {
 
     expect(value).toBeInTheDocument();
   });
-
-  it('', () => {
-    render(<FormInput {...textInputProps} />);
-
-    // const value = screen.getByDisplayValue(defaultValue);
-
-    // expect(value).toBeInTheDocument();
-  });
 });

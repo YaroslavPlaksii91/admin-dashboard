@@ -18,3 +18,5 @@ export const LOGIN_FIELDS_CONFIG = Object.freeze({
     isPassword: true,
   },
 });
+
+export const LOGIN_FORM_TEST_ID = 'loginForm';
