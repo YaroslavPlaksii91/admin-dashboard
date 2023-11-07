@@ -64,6 +64,15 @@ describe('LoginForm', () => {
 
     fireEvent.change(emailInput, { target: { value: 'invalid-email' } });
     fireEvent.change(passwordInput, { target: { value: 'pass' } });
+
+    const errorEmailMessage = screen.queryByText('Invalid email address');
+    const errorPasswordMessage = screen.queryByText(
+      'Password must be at least 6 characters',
+    );
+
+    expect(errorEmailMessage).not.toBeInTheDocument();
+    expect(errorPasswordMessage).not.toBeInTheDocument();
+
     fireEvent.click(submitButton);
 
     expect(

@@ -6,22 +6,12 @@ import {
   waitFor,
 } from '@testing-library/react';
 
+import { sendResetEmail } from '@services/firebase/firebase';
+
 import { ForgotPasswordForm } from '../ForgotPasswordForm';
-import { FORGOT_PASSWORD_FORM_TEST_ID } from '../constants';
 
 jest.mock('@services/firebase/firebase', () => ({
-  signInUser: jest.fn(),
-}));
-
-const onSubmit = jest.fn();
-
-jest.mock('react-hook-form', () => ({
-  ...jest.requireActual('react-hook-form'),
-  useForm: () => ({
-    register: jest.fn(),
-    handleSubmit: onSubmit,
-    formState: { errors: {} },
-  }),
+  sendResetEmail: jest.fn(),
 }));
 
 describe('ForgotPasswordForm component', () => {
@@ -40,26 +30,27 @@ describe('ForgotPasswordForm component', () => {
   it('renders correctly', () => {
     render(<ForgotPasswordForm setIsSubmitted={setIsSubmitted} />);
 
-    expect(
-      screen.getByTestId(FORGOT_PASSWORD_FORM_TEST_ID),
-    ).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Send' })).toBeInTheDocument();
+    const emailInput = screen.getByLabelText('Email');
+    const submitButton = screen.getByRole('button', { name: 'Send' });
+
+    expect(emailInput).toBeInTheDocument();
+    expect(submitButton).toBeInTheDocument();
   });
 
   it('submits the form with valid email', async () => {
     render(<ForgotPasswordForm setIsSubmitted={setIsSubmitted} />);
 
     const emailInput = screen.getByLabelText('Email');
-    const sendButton = screen.getByRole('button', { name: 'Send' });
+    const submitButton = screen.getByRole('button', { name: 'Send' });
 
     fireEvent.change(emailInput, {
-      target: { value: 'example@example.com' },
+      target: { value: 'example@mail.com' },
     });
 
-    fireEvent.click(sendButton);
+    fireEvent.click(submitButton);
 
     await waitFor(() => {
-      expect(onSubmit).toHaveBeenCalled();
+      expect(sendResetEmail).toHaveBeenCalledWith('example@mail.com');
     });
   });
 
@@ -67,10 +58,17 @@ describe('ForgotPasswordForm component', () => {
     render(<ForgotPasswordForm setIsSubmitted={setIsSubmitted} />);
 
     const emailInput = screen.getByLabelText('Email');
-    const sendButton = screen.getByRole('button', { name: 'Send' });
+    const submitButton = screen.getByRole('button', { name: 'Send' });
 
-    fireEvent.change(emailInput, { target: { value: 'invalidemail' } });
+    fireEvent.change(emailInput, { target: { value: 'invalid-email' } });
 
-    fireEvent.click(sendButton);
+    const errorMessage = screen.queryByText('Invalid email address');
+    expect(errorMessage).not.toBeInTheDocument();
+
+    fireEvent.click(submitButton);
+
+    expect(
+      await screen.findByText('Invalid email address'),
+    ).toBeInTheDocument();
   });
 });
