@@ -12,6 +12,7 @@ import { ResetPasswordFormData } from './types';
 import {
   RESET_PASSWORD_FIELDS,
   RESET_PASSWORD_FIELDS_CONFIG,
+  RESET_PASSWORD_FORM_TEST_ID,
 } from './constants';
 
 export const ResetPasswordForm: FC = () => {
@@ -44,7 +45,11 @@ export const ResetPasswordForm: FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      noValidate
+      data-testid={RESET_PASSWORD_FORM_TEST_ID}
+    >
       <FormInput
         {...RESET_PASSWORD_FIELDS_CONFIG[RESET_PASSWORD_FIELDS.PASSWORD]}
         register={register('password', {
