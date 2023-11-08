@@ -82,4 +82,18 @@ describe('LoginForm', () => {
       await screen.findByText('Password must be at least 6 characters'),
     ).toBeInTheDocument();
   });
+
+  it('will not be submitted if the fields are empty', async () => {
+    render(<LoginForm />);
+
+    const submitButton = screen.getByRole('button', { name: 'Log In' });
+
+    expect(screen.queryByText('Email is required')).not.toBeInTheDocument();
+    expect(screen.queryByText('Password is required')).not.toBeInTheDocument();
+
+    fireEvent.click(submitButton);
+
+    expect(await screen.findByText('Email is required')).toBeInTheDocument();
+    expect(await screen.findByText('Password is required')).toBeInTheDocument();
+  });
 });

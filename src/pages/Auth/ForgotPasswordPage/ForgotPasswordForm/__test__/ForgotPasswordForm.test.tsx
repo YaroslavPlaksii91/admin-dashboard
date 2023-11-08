@@ -71,4 +71,17 @@ describe('ForgotPasswordForm component', () => {
       await screen.findByText('Invalid email address'),
     ).toBeInTheDocument();
   });
+
+  it('will not be submitted if email is empty string', async () => {
+    render(<ForgotPasswordForm setIsSubmitted={setIsSubmitted} />);
+
+    const submitButton = screen.getByRole('button', { name: 'Send' });
+
+    const errorMessage = screen.queryByText('Email is required');
+    expect(errorMessage).not.toBeInTheDocument();
+
+    fireEvent.click(submitButton);
+
+    expect(await screen.findByText('Email is required')).toBeInTheDocument();
+  });
 });
