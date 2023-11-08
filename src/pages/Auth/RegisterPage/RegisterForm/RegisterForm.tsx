@@ -17,7 +17,11 @@ import { createUser } from '@services/firebase/firebase';
 import { authStore } from '@store/auth';
 import { startSession } from '@services/localeStorage/localeStorage';
 
-import { REGISTER_FIELDS, REGISTER_FIELDS_CONFIG } from './constants';
+import {
+  REGISTER_FIELDS,
+  REGISTER_FIELDS_CONFIG,
+  REGISTER_FORM_TEST_ID,
+} from './constants';
 import { RegisterFormData } from './types';
 
 export const RegisterForm: FC = () => {
@@ -53,7 +57,11 @@ export const RegisterForm: FC = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} noValidate>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        noValidate
+        data-testid={REGISTER_FORM_TEST_ID}
+      >
         <FormInput
           {...REGISTER_FIELDS_CONFIG[REGISTER_FIELDS.EMAIL]}
           register={register('email', {

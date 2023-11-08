@@ -1,7 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RegisterForm should be rendered 1`] = `
+exports[`RegisterPage should be rendered 1`] = `
 <DocumentFragment>
+  <h2
+    class="MuiTypography-root MuiTypography-h2 css-1xpe0c-MuiTypography-root"
+  >
+    Sign Up
+  </h2>
+  <p
+    class="MuiTypography-root MuiTypography-subtitle1 css-3bfrl2-MuiTypography-root"
+  >
+    Create a new account
+  </p>
   <form
     data-testid="registerForm"
     novalidate=""
