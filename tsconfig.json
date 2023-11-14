@@ -1,15 +1,17 @@
 {
   "compilerOptions": {
+    "types": ["jest", "@testing-library/jest-dom"],
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
-      "@layout/*": ["src/layout/*"],
       "@pages/*": ["src/pages/*"],
-      "@redux/*": ["src/redux/*"],
       "@assets/*": ["src/assets/*"],
       "@routes/*": ["src/routes/*"],
-      "@services/*": ["src/service/*"],
+      "@services/*": ["src/services/*"],
       "@utils/*": ["src/utils/*"],
+      "@styles/*": ["src/styles/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@store/*": ["src/store/*"],
     },
     "target": "ES2020",
     "useDefineForClassFields": true,
@@ -36,5 +38,6 @@
     "node_modules",
     "./src/**/*.spec.ts"
   ],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [{ "path": "./tsconfig.node.json" }],
+  
 }

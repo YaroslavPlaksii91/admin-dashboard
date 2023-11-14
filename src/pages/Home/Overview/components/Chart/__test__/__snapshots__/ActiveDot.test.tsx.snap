@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActiveDot component renders ActiveDot correctly 1`] = `
+<DocumentFragment>
+  <g>
+    <circle
+      cx="50"
+      cy="50"
+      fill="none"
+      opacity="0.16"
+      r="13"
+      stroke="#3751FF"
+      stroke-width="2"
+    />
+    <circle
+      class="recharts-dot"
+      cx="50"
+      cy="50"
+      fill="#fff"
+      filter="drop-shadow(0px 1px 2px rgba(55, 81, 255, 0.20))"
+      height="14px"
+      r="4"
+      stroke="#3751FF"
+      stroke-width="4px"
+      width="14px"
+    />
+  </g>
+</DocumentFragment>
+`;

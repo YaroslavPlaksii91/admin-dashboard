@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthContainer component should render AuthContainer component 1`] = `
+<DocumentFragment>
+  <section
+    data-testid="authContainer"
+  >
+    <div
+      class=""
+    >
+      <a
+        href="/"
+      >
+        <svg
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          focusable="false"
+          role="img"
+          viewBox="0 0 24 24"
+        >
+          <use
+            href="/src/assets/icons/sprite.svg#icon-logo"
+          />
+          <title>
+            Logo
+          </title>
+        </svg>
+        <p
+          class="MuiTypography-root MuiTypography-h3 css-14qosaq-MuiTypography-root"
+        >
+          Dashboard Kit
+        </p>
+      </a>
+    </div>
+    <div>
+      Mocked Children
+    </div>
+  </section>
+</DocumentFragment>
+`;

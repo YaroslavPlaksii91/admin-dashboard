@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColumnHeading component should be rendered 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 css-13i4rnv-MuiGrid-root"
+  >
+    Column Title 
+    <svg
+      aria-hidden="true"
+      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-1j6x8sl-MuiSvgIcon-root"
+      data-testid="NorthIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="m5 9 1.41 1.41L11 5.83V22h2V5.83l4.59 4.59L19 9l-7-7-7 7z"
+      />
+    </svg>
+  </div>
+</DocumentFragment>
+`;

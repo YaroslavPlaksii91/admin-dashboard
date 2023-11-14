@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActionButtons component should be rendered 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-la04gv"
+  >
+    <button
+      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-17u4eyv-MuiButtonBase-root-MuiButton-root"
+      data-testid="sortButton"
+      tabindex="0"
+      type="button"
+    >
+      <svg
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-1v1n4yu-MuiSvgIcon-root"
+        focusable="false"
+        role="img"
+        viewBox="0 0 24 24"
+      >
+        <use
+          href="/src/assets/icons/sprite.svg#icon-sort"
+        />
+        <title>
+          Sort
+        </title>
+      </svg>
+      Sort
+      <span
+        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+      />
+    </button>
+    <button
+      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-dpl43n-MuiButtonBase-root-MuiButton-root"
+      data-testid="filterButton"
+      tabindex="0"
+      type="button"
+    >
+      <svg
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-1v1n4yu-MuiSvgIcon-root"
+        focusable="false"
+        role="img"
+        viewBox="0 0 24 24"
+      >
+        <use
+          href="/src/assets/icons/sprite.svg#icon-filter"
+        />
+        <title>
+          Filter
+        </title>
+      </svg>
+      Filter
+      <span
+        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+      />
+    </button>
+    <button
+      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-e9wzt7-MuiButtonBase-root-MuiButton-root"
+      data-testid="addButton"
+      tabindex="0"
+      type="button"
+    >
+      <svg
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1vh51qy-MuiSvgIcon-root"
+        focusable="false"
+        role="img"
+        viewBox="0 0 24 24"
+      >
+        <use
+          href="/src/assets/icons/sprite.svg#icon-add"
+        />
+        <title>
+          Add new item
+        </title>
+      </svg>
+      Add button
+      <span
+        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+      />
+    </button>
+  </div>
+</DocumentFragment>
+`;

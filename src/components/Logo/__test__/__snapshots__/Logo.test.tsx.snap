@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo component should render Logo component with horizontal type 1`] = `
+<DocumentFragment>
+  <div
+    class="undefined"
+  >
+    <a
+      href="/"
+    >
+      <svg
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium undefined css-i4bv87-MuiSvgIcon-root"
+        focusable="false"
+        role="img"
+        viewBox="0 0 24 24"
+      >
+        <use
+          href="/src/assets/icons/sprite.svg#icon-logo"
+        />
+        <title>
+          Logo
+        </title>
+      </svg>
+      <p
+        class="MuiTypography-root MuiTypography-h3 css-14qosaq-MuiTypography-root"
+      >
+        Dashboard Kit
+      </p>
+    </a>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Logo component should render Logo component with vertical type 1`] = `
+<DocumentFragment>
+  <div
+    class=""
+  >
+    <a
+      href="/"
+    >
+      <svg
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        focusable="false"
+        role="img"
+        viewBox="0 0 24 24"
+      >
+        <use
+          href="/src/assets/icons/sprite.svg#icon-logo"
+        />
+        <title>
+          Logo
+        </title>
+      </svg>
+      <p
+        class="MuiTypography-root MuiTypography-h3 css-14qosaq-MuiTypography-root"
+      >
+        Dashboard Kit
+      </p>
+    </a>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,6 @@
+@import 'modern-normalize/modern-normalize.css';
+
+@import url('@styles/fonts.css');
+@import url('@styles/colors.css');
+@import url('@styles/common.css');
+@import url('@styles/reset.css');

@@ -1,0 +1,7 @@
+.link {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.43;
+  letter-spacing: 0.2px;
+  color: var(--accent-blue-color);
+}

@@ -1,0 +1,28 @@
+.wrapperVertical {
+  margin-bottom: 32px;
+}
+
+.wrapperHorizontal {
+  margin-bottom: 59px;
+}
+
+.wrapperHorizontal:hover p,
+.wrapperHorizontal:focus p {
+  color: var(--accent-sidebar-color);
+}
+
+.wrapperVertical .iconVertical {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.wrapperHorizontal .iconHorizontal {
+  font-size: 32px;
+  margin-right: 12px;
+}
+
+.wrapperHorizontal .link {
+  display: flex;
+  align-items: center;
+  padding-left: 32px;
+}
