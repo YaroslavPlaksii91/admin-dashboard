@@ -34,16 +34,6 @@ export const WithoutLabel: StoryObj<typeof AddPhoto> = {
     name: 'addPhoto',
     errors: {},
     src: '',
-    size: 60,
-  },
-};
-
-export const Small: StoryObj<typeof AddPhoto> = {
-  args: {
-    label: 'Add new photo',
-    name: 'addPhoto',
-    errors: {},
-    src: '',
     size: 44,
   },
 };

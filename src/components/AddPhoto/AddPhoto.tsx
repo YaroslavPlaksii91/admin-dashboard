@@ -92,7 +92,7 @@ export const AddPhoto: FC<FileInputProps> = ({
             </SvgIcon>
           )}
         </Button>
-        {label}
+        {isImageBig && label}
         {shouldShowError && (
           <Typography
             sx={{

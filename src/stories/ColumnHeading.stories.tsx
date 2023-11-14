@@ -25,6 +25,5 @@ export const Default: StoryObj<typeof ColumnHeading> = {
     sortKey: 'name',
     sortDirection: 'asc',
     size: 3,
-    onClick: () => {},
   },
 };

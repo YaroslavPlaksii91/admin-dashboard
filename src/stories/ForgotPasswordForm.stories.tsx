@@ -13,7 +13,7 @@ const meta: Meta<typeof ForgotPasswordForm> = {
       <div
         style={{
           maxWidth: '380px',
-          margin: '100px auto',
+          margin: '50px auto',
         }}
       >
         <Story />
