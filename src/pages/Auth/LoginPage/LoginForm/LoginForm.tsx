@@ -12,7 +12,11 @@ import { FormInput } from '@components/FormInput/FormInput';
 import { authStore } from '@store/auth';
 import { startSession } from '@services/localeStorage/localeStorage';
 
-import { LOGIN_FIELDS, LOGIN_FIELDS_CONFIG } from './constants';
+import {
+  LOGIN_FIELDS,
+  LOGIN_FIELDS_CONFIG,
+  LOGIN_FORM_TEST_ID,
+} from './constants';
 import { LoginFormData } from './types';
 
 export const LoginForm: FC = observer(() => {
@@ -42,7 +46,11 @@ export const LoginForm: FC = observer(() => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      noValidate
+      data-testid={LOGIN_FORM_TEST_ID}
+    >
       <FormInput
         {...LOGIN_FIELDS_CONFIG[LOGIN_FIELDS.EMAIL]}
         register={register('email', {

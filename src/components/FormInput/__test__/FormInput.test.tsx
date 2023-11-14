@@ -1,126 +1,104 @@
 import { cleanup, render, screen, fireEvent } from '@testing-library/react';
 
+import { createRegister } from '@utils/testMocks';
+
 import { TOGGLE_BUTTON_TEST_ID } from '../constants';
 import { FormInput } from '../FormInput';
+
+const register = createRegister('name');
+
+jest.mock('react-hook-form', () => ({
+  useForm: () => ({
+    register,
+  }),
+}));
 
 describe('FormInput component', () => {
   afterEach(cleanup);
 
-  const useFormMock = () => ({
-    register: jest.fn() as any,
-  });
+  const textInputProps = {
+    label: 'Label',
+    placeholder: 'Placeholder',
+    name: 'name',
+    type: 'text',
+    errors: {},
+    isPassword: false,
+    register,
+  };
 
-  jest.mock('react-hook-form', () => ({
-    useForm: useFormMock,
-  }));
+  const passwordInputProps = {
+    ...textInputProps,
+    type: 'password',
+    isPassword: true,
+  };
 
-  const label = 'Label';
-  const placeholder = 'Placeholder';
-  const name = 'name';
-  const type = 'text';
-  const errors = {};
-  const isPassword = false;
-  const register = useFormMock().register;
-
-  it('should be rendered', () => {
-    const { asFragment } = render(
-      <FormInput
-        label={label}
-        placeholder={placeholder}
-        type={type}
-        name={name}
-        register={register}
-        errors={errors}
-        isPassword={isPassword}
-      />,
-    );
+  it('should rendered text type input', () => {
+    const { asFragment } = render(<FormInput {...textInputProps} />);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render password type', () => {
-    const type = 'password';
-    const label = 'Password';
-    const isPassword = true;
-
-    const { asFragment } = render(
-      <FormInput
-        label={label}
-        placeholder={placeholder}
-        type={type}
-        name={name}
-        register={register}
-        errors={errors}
-        isPassword={isPassword}
-      />,
-    );
+  it('should render password type input', () => {
+    const { asFragment } = render(<FormInput {...passwordInputProps} />);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should be rendered correctly', () => {
-    render(
-      <FormInput
-        label={label}
-        placeholder={placeholder}
-        type={type}
-        name={name}
-        register={register}
-        errors={errors}
-        isPassword={isPassword}
-      />,
-    );
+    render(<FormInput {...textInputProps} />);
 
-    const inputElement = screen.getByLabelText(label);
-    const placeholderElement = screen.getByPlaceholderText(placeholder);
+    const inputElement = screen.getByLabelText(textInputProps.label);
+    const placeholderElement = screen.getByPlaceholderText(
+      textInputProps.placeholder,
+    );
 
     expect(inputElement).toBeInTheDocument();
     expect(placeholderElement).toBeInTheDocument();
-    expect(inputElement).toHaveAttribute('type', type);
+    expect(inputElement).toHaveAttribute('type', textInputProps.type);
   });
 
   it('toggles password visibility when it is a password input', () => {
-    const type = 'password';
-    const label = 'Password';
-    const isPassword = true;
+    render(<FormInput {...passwordInputProps} />);
 
-    render(
-      <FormInput
-        label={label}
-        type={type}
-        name={name}
-        placeholder={placeholder}
-        register={register}
-        errors={errors}
-        isPassword={isPassword}
-      />,
-    );
-
-    const inputElement = screen.getByLabelText(label);
+    const inputElement = screen.getByLabelText(passwordInputProps.label);
     const toggleButton = screen.getByTestId(TOGGLE_BUTTON_TEST_ID);
+
+    expect(inputElement).toHaveAttribute('type', passwordInputProps.type);
 
     fireEvent.click(toggleButton);
 
-    expect(inputElement).toHaveAttribute('type', 'text');
+    expect(inputElement).toHaveAttribute('type', textInputProps.type);
   });
 
   it('does not toggle password visibility when it is not a password input', () => {
-    render(
-      <FormInput
-        label={label}
-        type={type}
-        name={name}
-        placeholder={placeholder}
-        register={register}
-        errors={errors}
-        isPassword={isPassword}
-      />,
-    );
+    render(<FormInput {...textInputProps} />);
 
-    const inputElement = screen.getByLabelText(label);
+    const inputElement = screen.getByLabelText(textInputProps.label);
     const toggleButton = screen.queryByTestId(TOGGLE_BUTTON_TEST_ID);
 
-    expect(inputElement).not.toHaveAttribute('type', 'password');
+    expect(inputElement).not.toHaveAttribute('type', passwordInputProps.type);
     expect(toggleButton).toBeNull();
+  });
+
+  it('shows the value entered by the user', () => {
+    const enteredValue = 'Text value';
+
+    render(<FormInput {...textInputProps} />);
+
+    const inputElement = screen.getByLabelText(textInputProps.label);
+
+    fireEvent.change(inputElement, { target: { value: enteredValue } });
+
+    expect(screen.getByDisplayValue(enteredValue)).toBeInTheDocument();
+  });
+
+  it('shows default value if it is', () => {
+    const defaultValue = 'Default value';
+
+    render(<FormInput {...{ ...textInputProps, defaultValue }} />);
+
+    const value = screen.getByDisplayValue(defaultValue);
+
+    expect(value).toBeInTheDocument();
   });
 });

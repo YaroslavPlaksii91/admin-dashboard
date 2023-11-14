@@ -40,3 +40,5 @@ export const REGISTER_FIELDS_CONFIG = Object.freeze({
     isPassword: true,
   },
 });
+
+export const REGISTER_FORM_TEST_ID = 'registerForm';

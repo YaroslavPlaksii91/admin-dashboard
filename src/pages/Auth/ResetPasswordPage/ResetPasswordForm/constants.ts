@@ -19,3 +19,5 @@ export const RESET_PASSWORD_FIELDS_CONFIG = Object.freeze({
     isPassword: true,
   },
 });
+
+export const RESET_PASSWORD_FORM_TEST_ID = 'resetPasswordForm';

@@ -1,7 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoginForm should be rendered 1`] = `
+exports[`LoginPage should be rendered 1`] = `
 <DocumentFragment>
+  <h2
+    class="MuiTypography-root MuiTypography-h2 css-1xpe0c-MuiTypography-root"
+  >
+    Log In to Dashboard Kit
+  </h2>
+  <p
+    class="MuiTypography-root MuiTypography-subtitle1 css-3bfrl2-MuiTypography-root"
+  >
+    Enter your email and password
+  </p>
   <form
     data-testid="loginForm"
     novalidate=""
@@ -117,5 +127,24 @@ exports[`LoginForm should be rendered 1`] = `
       />
     </button>
   </form>
+  <span>
+    <a
+      href="/auth/forgot-password"
+    >
+      Forgot password?
+    </a>
+  </span>
+  <div>
+    <p
+      class="MuiTypography-root MuiTypography-body1 css-c7xp52-MuiTypography-root"
+    >
+      Don't have an account?
+    </p>
+    <a
+      href="/auth/register"
+    >
+      Sign up
+    </a>
+  </div>
 </DocumentFragment>
 `;
