@@ -4,5 +4,5 @@ export type ColumnHeadingProps = {
   name: string;
   title: string;
   sortKey: string;
-  sortDirection: string;
+  sortDirection: 'asc' | 'desc';
 };
