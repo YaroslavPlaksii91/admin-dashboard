@@ -10,7 +10,7 @@ exports[`CustomTooltip component makes snapshot 1`] = `
     viewBox="0 0 24 24"
   >
     <use
-      href="/src/assets/icons/sprite.svg#icon-sheet"
+      href="/sprite.svg#icon-sheet"
     />
     <text
       fill="#252733"

@@ -21,7 +21,7 @@ exports[`Sidebar component should be rendered 1`] = `
             viewBox="0 0 24 24"
           >
             <use
-              href="/src/assets/icons/sprite.svg#icon-logo"
+              href="/sprite.svg#icon-logo"
             />
             <title>
               Logo
@@ -51,7 +51,7 @@ exports[`Sidebar component should be rendered 1`] = `
               viewBox="0 0 24 24"
             >
               <use
-                href="/src/assets/icons/sprite.svg#icon-overview"
+                href="/sprite.svg#icon-overview"
               />
               <title>
                 Overview
@@ -78,7 +78,7 @@ exports[`Sidebar component should be rendered 1`] = `
               viewBox="0 0 24 24"
             >
               <use
-                href="/src/assets/icons/sprite.svg#icon-tickets"
+                href="/sprite.svg#icon-tickets"
               />
               <title>
                 Tickets
@@ -105,7 +105,7 @@ exports[`Sidebar component should be rendered 1`] = `
               viewBox="0 0 24 24"
             >
               <use
-                href="/src/assets/icons/sprite.svg#icon-ideas"
+                href="/sprite.svg#icon-ideas"
               />
               <title>
                 Ideas
@@ -132,7 +132,7 @@ exports[`Sidebar component should be rendered 1`] = `
               viewBox="0 0 24 24"
             >
               <use
-                href="/src/assets/icons/sprite.svg#icon-contacts"
+                href="/sprite.svg#icon-contacts"
               />
               <title>
                 Contacts
@@ -159,7 +159,7 @@ exports[`Sidebar component should be rendered 1`] = `
               viewBox="0 0 24 24"
             >
               <use
-                href="/src/assets/icons/sprite.svg#icon-agents"
+                href="/sprite.svg#icon-agents"
               />
               <title>
                 Agents
@@ -186,7 +186,7 @@ exports[`Sidebar component should be rendered 1`] = `
               viewBox="0 0 24 24"
             >
               <use
-                href="/src/assets/icons/sprite.svg#icon-articles"
+                href="/sprite.svg#icon-articles"
               />
               <title>
                 Articles
@@ -220,7 +220,7 @@ exports[`Sidebar component should be rendered 1`] = `
               viewBox="0 0 24 24"
             >
               <use
-                href="/src/assets/icons/sprite.svg#icon-settings"
+                href="/sprite.svg#icon-settings"
               />
               <title>
                 Settings
@@ -247,7 +247,7 @@ exports[`Sidebar component should be rendered 1`] = `
               viewBox="0 0 24 24"
             >
               <use
-                href="/src/assets/icons/sprite.svg#icon-subscription"
+                href="/sprite.svg#icon-subscription"
               />
               <title>
                 Subscription

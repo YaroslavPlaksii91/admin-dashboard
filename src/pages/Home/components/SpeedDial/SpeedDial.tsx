@@ -21,7 +21,7 @@ export const SpeedDial: FC<SpeedDialProps> = ({ handleDelete, handleEdit }) => {
       sx={{ height: 24 }}
       icon={
         <SvgIcon titleAccess="More options">
-          <use href="/src/assets/icons/sprite.svg#icon-more"></use>
+          <use href="/sprite.svg#icon-more"></use>
         </SvgIcon>
       }
     >

@@ -15,7 +15,7 @@ exports[`Logo component should render Logo component with horizontal type 1`] = 
         viewBox="0 0 24 24"
       >
         <use
-          href="/src/assets/icons/sprite.svg#icon-logo"
+          href="/sprite.svg#icon-logo"
         />
         <title>
           Logo
@@ -46,7 +46,7 @@ exports[`Logo component should render Logo component with vertical type 1`] = `
         viewBox="0 0 24 24"
       >
         <use
-          href="/src/assets/icons/sprite.svg#icon-logo"
+          href="/sprite.svg#icon-logo"
         />
         <title>
           Logo
