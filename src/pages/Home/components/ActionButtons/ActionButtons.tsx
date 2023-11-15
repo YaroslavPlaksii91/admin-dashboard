@@ -60,7 +60,7 @@ export const ActionButtons: FC<ActionButtonsProps> = ({
         data-testid={SORT_BTN_TEST_ID}
       >
         <SvgIcon titleAccess="Sort" fontSize="small" sx={{ mr: 2 }}>
-          <use href="/src/assets/icons/sprite.svg#icon-sort"></use>
+          <use href="/sprite.svg#icon-sort"></use>
         </SvgIcon>
         Sort
       </Button>
@@ -91,7 +91,7 @@ export const ActionButtons: FC<ActionButtonsProps> = ({
         data-testid={FILTER_BTN_TEST_ID}
       >
         <SvgIcon titleAccess="Filter" fontSize="small" sx={{ mr: 2 }}>
-          <use href="/src/assets/icons/sprite.svg#icon-filter"></use>
+          <use href="/sprite.svg#icon-filter"></use>
         </SvgIcon>
         Filter
       </Button>
@@ -117,7 +117,7 @@ export const ActionButtons: FC<ActionButtonsProps> = ({
         data-testid={ADD_BTN_TEST_ID}
       >
         <SvgIcon titleAccess="Add new item" sx={{ mr: 2, width: 8, height: 8 }}>
-          <use href="/src/assets/icons/sprite.svg#icon-add"></use>
+          <use href="/sprite.svg#icon-add"></use>
         </SvgIcon>
         {addButtonName}
       </Button>

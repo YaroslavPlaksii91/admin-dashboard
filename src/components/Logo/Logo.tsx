@@ -25,7 +25,7 @@ export const Logo: FC<LogoProps> = ({ type = LOGO_TYPES.VERTICAL }) => {
     <div className={wrapperClassName}>
       <Link to={ROUTES.HOME_PAGE} className={styles.link}>
         <SvgIcon titleAccess="Logo" className={iconClassName}>
-          <use href="/src/assets/icons/sprite.svg#icon-logo"></use>
+          <use href="/sprite.svg#icon-logo"></use>
         </SvgIcon>
         <Typography
           variant="h3"

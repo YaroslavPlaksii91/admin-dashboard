@@ -17,7 +17,7 @@ export const CustomTooltip: FC<TooltipProps> = ({ active, payload }) => {
         }}
         data-testid={TOOLTIP_TEST_ID}
       >
-        <use href="/src/assets/icons/sprite.svg#icon-sheet"></use>
+        <use href="/sprite.svg#icon-sheet"></use>
         <text x="9" y="12" fill="#252733" fontSize={5} fontWeight={600}>
           {value}
         </text>

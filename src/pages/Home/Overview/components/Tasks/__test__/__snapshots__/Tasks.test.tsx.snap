@@ -44,7 +44,7 @@ exports[`Tasks component should be rendered 1`] = `
           viewBox="0 0 24 24"
         >
           <use
-            href="/src/assets/icons/sprite.svg#icon-create"
+            href="/sprite.svg#icon-create"
           />
           <title>
             Add new task

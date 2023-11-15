@@ -88,7 +88,7 @@ export const AddPhoto: FC<FileInputProps> = ({
             </Box>
           ) : (
             <SvgIcon titleAccess="Add photo" sx={{ width: size, height: size }}>
-              <use href="/src/assets/icons/sprite.svg#icon-addPhoto"></use>
+              <use href="/sprite.svg#icon-addPhoto"></use>
             </SvgIcon>
           )}
         </Button>

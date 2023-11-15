@@ -17,7 +17,7 @@ exports[`UserMenu component should render correctly 1`] = `
         viewBox="0 0 24 24"
       >
         <use
-          href="/src/assets/icons/sprite.svg#icon-search"
+          href="/sprite.svg#icon-search"
         />
         <title>
           Search
@@ -39,7 +39,7 @@ exports[`UserMenu component should render correctly 1`] = `
         viewBox="0 0 24 24"
       >
         <use
-          href="/src/assets/icons/sprite.svg#icon-new"
+          href="/sprite.svg#icon-new"
         />
         <title>
           New message
@@ -49,16 +49,25 @@ exports[`UserMenu component should render correctly 1`] = `
         class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
       />
     </button>
-    <svg
-      aria-hidden="true"
-      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-42ddvs-MuiSvgIcon-root"
-      focusable="false"
-      viewBox="0 0 24 24"
+    <button
+      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+      tabindex="0"
+      type="button"
     >
-      <use
-        href="/src/assets/icons/sprite.svg#icon-vertical"
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-42ddvs-MuiSvgIcon-root"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <use
+          href="/sprite.svg#icon-vertical"
+        />
+      </svg>
+      <span
+        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
       />
-    </svg>
+    </button>
     <p
       class="MuiTypography-root MuiTypography-body1 css-12plx43-MuiTypography-root"
     >
