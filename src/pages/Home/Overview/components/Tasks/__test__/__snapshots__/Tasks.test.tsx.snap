@@ -99,7 +99,7 @@ exports[`Tasks component should be rendered 1`] = `
                 viewBox="0 0 24 24"
               >
                 <use
-                  href="/src/assets/icons/sprite.svg#icon-inactiveCheckbox"
+                  href="/sprite.svg#icon-inactiveCheckbox"
                 />
                 <title>
                   Task not completed
@@ -160,7 +160,7 @@ exports[`Tasks component should be rendered 1`] = `
                 viewBox="0 0 24 24"
               >
                 <use
-                  href="/src/assets/icons/sprite.svg#icon-inactiveCheckbox"
+                  href="/sprite.svg#icon-inactiveCheckbox"
                 />
                 <title>
                   Task not completed
@@ -221,7 +221,7 @@ exports[`Tasks component should be rendered 1`] = `
                 viewBox="0 0 24 24"
               >
                 <use
-                  href="/src/assets/icons/sprite.svg#icon-inactiveCheckbox"
+                  href="/sprite.svg#icon-inactiveCheckbox"
                 />
                 <title>
                   Task not completed

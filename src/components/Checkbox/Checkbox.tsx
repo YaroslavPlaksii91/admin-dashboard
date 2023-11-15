@@ -29,9 +29,7 @@ export const CheckboxComponent: FC = () => {
           sx={{ width: '20px', height: '20px' }}
         >
           <use
-            href={`/src/assets/icons/sprite.svg#icon-${
-              checked ? 'active' : 'inactive'
-            }Checkbox`}
+            href={`/sprite.svg#icon-${checked ? 'active' : 'inactive'}Checkbox`}
           ></use>
         </SvgIcon>
       </Box>

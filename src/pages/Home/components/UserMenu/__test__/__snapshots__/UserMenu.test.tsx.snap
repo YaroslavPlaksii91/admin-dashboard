@@ -83,7 +83,7 @@ exports[`UserMenu component should render correctly 1`] = `
       >
         <img
           alt="User's photo"
-          src="/src/assets/images/users/jones-ferdinand@2x.png"
+          src="/user.png"
         />
       </div>
       <span
