@@ -70,10 +70,7 @@ export const UserMenu: FC = observer(() => {
             overflow: 'hidden',
           }}
         >
-          <img
-            src="/src/assets/images/users/jones-ferdinand@2x.png"
-            alt="User's photo"
-          />
+          <img src="/user.png" alt="User's photo" />
         </Box>
       </Button>
 
