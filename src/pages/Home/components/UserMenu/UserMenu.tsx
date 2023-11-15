@@ -33,9 +33,12 @@ export const UserMenu: FC = observer(() => {
           <use href="/sprite.svg#icon-new"></use>
         </SvgIcon>
       </Button>
-      <SvgIcon sx={{ height: '32px', ml: '20px', mr: '20px' }}>
-        <use href="/sprite.svg#icon-vertical"></use>
-      </SvgIcon>
+      <Button>
+        <SvgIcon sx={{ height: '32px', ml: '20px', mr: '20px' }}>
+          <use href="/sprite.svg#icon-vertical"></use>
+        </SvgIcon>
+      </Button>
+
       <Typography
         sx={{
           fontSize: '14px',
