@@ -18,7 +18,7 @@ exports[`ActionButtons component should be rendered 1`] = `
         viewBox="0 0 24 24"
       >
         <use
-          href="/src/assets/icons/sprite.svg#icon-sort"
+          href="/sprite.svg#icon-sort"
         />
         <title>
           Sort
@@ -42,7 +42,7 @@ exports[`ActionButtons component should be rendered 1`] = `
         viewBox="0 0 24 24"
       >
         <use
-          href="/src/assets/icons/sprite.svg#icon-filter"
+          href="/sprite.svg#icon-filter"
         />
         <title>
           Filter
@@ -66,7 +66,7 @@ exports[`ActionButtons component should be rendered 1`] = `
         viewBox="0 0 24 24"
       >
         <use
-          href="/src/assets/icons/sprite.svg#icon-add"
+          href="/sprite.svg#icon-add"
         />
         <title>
           Add new item

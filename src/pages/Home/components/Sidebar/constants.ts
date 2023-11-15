@@ -1,32 +1,32 @@
 export const USERS_PAGES = Object.freeze([
   {
     name: 'Overview',
-    icon: '/src/assets/icons/sprite.svg#icon-overview',
+    icon: '/sprite.svg#icon-overview',
     link: '/overview',
   },
   {
     name: 'Tickets',
-    icon: '/src/assets/icons/sprite.svg#icon-tickets',
+    icon: '/sprite.svg#icon-tickets',
     link: '/tickets',
   },
   {
     name: 'Ideas',
-    icon: '/src/assets/icons/sprite.svg#icon-ideas',
+    icon: '/sprite.svg#icon-ideas',
     link: '/ideas',
   },
   {
     name: 'Contacts',
-    icon: '/src/assets/icons/sprite.svg#icon-contacts',
+    icon: '/sprite.svg#icon-contacts',
     link: '/contacts',
   },
   {
     name: 'Agents',
-    icon: '/src/assets/icons/sprite.svg#icon-agents',
+    icon: '/sprite.svg#icon-agents',
     link: '/agents',
   },
   {
     name: 'Articles',
-    icon: '/src/assets/icons/sprite.svg#icon-articles',
+    icon: '/sprite.svg#icon-articles',
     link: '/articles',
   },
 ]);
@@ -34,12 +34,12 @@ export const USERS_PAGES = Object.freeze([
 export const USERS_SETTINGS = Object.freeze([
   {
     name: 'Settings',
-    icon: '/src/assets/icons/sprite.svg#icon-settings',
+    icon: '/sprite.svg#icon-settings',
     link: '/settings',
   },
   {
     name: 'Subscription',
-    icon: '/src/assets/icons/sprite.svg#icon-subscription',
+    icon: '/sprite.svg#icon-subscription',
     link: '/subscription',
   },
 ]);

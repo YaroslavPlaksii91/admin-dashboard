@@ -24,13 +24,13 @@ export const renderLegend = ({ payload }: RenderLegendProps) => {
     >
       <ListItem key={payload[1].value} sx={{ width: 'auto' }}>
         <SvgIcon sx={{ stroke: '#3751FF', mr: 2 }}>
-          <use href="/src/assets/icons/sprite.svg#icon-horizontal"></use>
+          <use href="/sprite.svg#icon-horizontal"></use>
         </SvgIcon>
         {payload[1].value}
       </ListItem>
       <ListItem key={payload[0].value} sx={{ width: 'auto' }}>
         <SvgIcon sx={{ stroke: '#DFE0EB', mr: 2 }}>
-          <use href="/src/assets/icons/sprite.svg#icon-horizontal"></use>
+          <use href="/sprite.svg#icon-horizontal"></use>
         </SvgIcon>
         {payload[0].value}
       </ListItem>

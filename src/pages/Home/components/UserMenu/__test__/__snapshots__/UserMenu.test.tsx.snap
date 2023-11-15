@@ -17,7 +17,7 @@ exports[`UserMenu component should render correctly 1`] = `
         viewBox="0 0 24 24"
       >
         <use
-          href="/src/assets/icons/sprite.svg#icon-search"
+          href="/sprite.svg#icon-search"
         />
         <title>
           Search
@@ -39,7 +39,7 @@ exports[`UserMenu component should render correctly 1`] = `
         viewBox="0 0 24 24"
       >
         <use
-          href="/src/assets/icons/sprite.svg#icon-new"
+          href="/sprite.svg#icon-new"
         />
         <title>
           New message
@@ -56,7 +56,7 @@ exports[`UserMenu component should render correctly 1`] = `
       viewBox="0 0 24 24"
     >
       <use
-        href="/src/assets/icons/sprite.svg#icon-vertical"
+        href="/sprite.svg#icon-vertical"
       />
     </svg>
     <p

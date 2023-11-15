@@ -27,7 +27,7 @@ exports[`TicketsItem component should be rendered 1`] = `
         <p
           class="MuiTypography-root MuiTypography-body1 css-1edc1f9-MuiTypography-root"
         >
-          Updated 34 days ago
+          Updated 35 days ago
         </p>
       </div>
     </div>
@@ -96,7 +96,7 @@ exports[`TicketsItem component should be rendered 1`] = `
             viewBox="0 0 24 24"
           >
             <use
-              href="/src/assets/icons/sprite.svg#icon-more"
+              href="/sprite.svg#icon-more"
             />
             <title>
               More options

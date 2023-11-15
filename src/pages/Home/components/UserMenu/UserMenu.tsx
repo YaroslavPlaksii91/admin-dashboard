@@ -25,16 +25,16 @@ export const UserMenu: FC = observer(() => {
     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'end' }}>
       <Button sx={{ mr: '24px' }}>
         <SvgIcon titleAccess="Search" fontSize="small">
-          <use href="/src/assets/icons/sprite.svg#icon-search"></use>
+          <use href="/sprite.svg#icon-search"></use>
         </SvgIcon>
       </Button>
       <Button>
         <SvgIcon titleAccess="New message" fontSize="small">
-          <use href="/src/assets/icons/sprite.svg#icon-new"></use>
+          <use href="/sprite.svg#icon-new"></use>
         </SvgIcon>
       </Button>
       <SvgIcon sx={{ height: '32px', ml: '20px', mr: '20px' }}>
-        <use href="/src/assets/icons/sprite.svg#icon-vertical"></use>
+        <use href="/sprite.svg#icon-vertical"></use>
       </SvgIcon>
       <Typography
         sx={{

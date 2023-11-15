@@ -74,7 +74,7 @@ export const Tasks: FC<TasksProps> = ({ data }) => {
         </Typography>
         <Button>
           <SvgIcon titleAccess="Add new task">
-            <use href="/src/assets/icons/sprite.svg#icon-create"></use>
+            <use href="/sprite.svg#icon-create"></use>
           </SvgIcon>
         </Button>
       </Box>
